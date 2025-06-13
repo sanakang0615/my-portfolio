@@ -4,24 +4,24 @@ import Link from 'next/link';
 import { Github, Linkedin, Search, Sun, Moon } from 'lucide-react';
 
 const Header = ({ darkMode, setDarkMode, showSearch, setShowSearch, searchQuery, setSearchQuery }) => (
-  <header className={`sticky top-0 z-50 border-b backdrop-blur-md transition-colors duration-300 ${
+  <header className={`sticky top-0 z-50 border-b backdrop-blur-md transition-colors duration-300 font-['Pretendard'] ${
     darkMode ? 'bg-gray-900/80 border-gray-800' : 'bg-white/80 border-gray-200'
   }`}>
-    <div className="max-w-7xl mx-auto px-6 py-4">
-      <div className="flex justify-between items-center">
+    <div className="w-full px-6 py-4">
+      <div className="flex justify-between items-center w-full">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-              <span className="text-white text-sm font-bold">SK</span>
+              <span className="text-white text-sm font-bold font-['Pretendard']">SK</span>
             </div>
-            <h1 className="text-xl font-semibold">Sana Kang</h1>
+            <h1 className="text-xl font-semibold font-['Pretendard']">Sana Kang</h1>
           </div>
           <nav className="hidden md:flex space-x-6 ml-8">
-            <Link href="/" className="text-sm hover:text-blue-400 transition-colors">About Me</Link>
-            <Link href="/hobbies" className="text-sm hover:text-blue-400 transition-colors">Hobbies</Link>
-            <Link href="/blog" className="text-sm hover:text-blue-400 transition-colors">Blog</Link>
-            <Link href="/cv" className="text-sm hover:text-blue-400 transition-colors">CV</Link>
-            <Link href="/aboutsite" className="text-sm hover:text-blue-400 transition-colors">What&apos;s This?</Link>
+            <Link href="/" className="text-sm hover:text-blue-400 transition-colors font-['Pretendard']">About Me</Link>
+            <Link href="/hobbies" className="text-sm hover:text-blue-400 transition-colors font-['Pretendard']">Hobbies</Link>
+            <Link href="/blog" className="text-sm hover:text-blue-400 transition-colors font-['Pretendard']">Blog</Link>
+            <Link href="/cv" className="text-sm hover:text-blue-400 transition-colors font-['Pretendard']">CV</Link>
+            <Link href="/aboutsite" className="text-sm hover:text-blue-400 transition-colors font-['Pretendard']">What&apos;s This?</Link>
           </nav>
         </div>
         <div className="flex items-center space-x-4">
@@ -43,7 +43,7 @@ const Header = ({ darkMode, setDarkMode, showSearch, setShowSearch, searchQuery,
           </button>
           <button
             onClick={() => setShowSearch(!showSearch)}
-            className={`flex items-center space-x-2 px-3 py-2 rounded-md border transition-colors ${
+            className={`flex items-center space-x-2 px-3 py-2 rounded-md border transition-colors font-['Pretendard'] ${
               darkMode 
                 ? 'border-gray-700 bg-gray-800 hover:bg-gray-700' 
                 : 'border-gray-300 bg-white hover:bg-gray-50'
@@ -66,11 +66,11 @@ const Header = ({ darkMode, setDarkMode, showSearch, setShowSearch, searchQuery,
               placeholder="Search..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className={`flex-1 bg-transparent text-lg outline-none ${darkMode ? 'placeholder-gray-400' : 'placeholder-gray-500'}`}
+              className={`flex-1 bg-transparent text-lg outline-none font-['Pretendard'] ${darkMode ? 'placeholder-gray-400' : 'placeholder-gray-500'}`}
               autoFocus
             />
           </div>
-          <div className="px-4 pb-4 text-gray-400 text-sm">(Search functionality coming soon)</div>
+          <div className="px-4 pb-4 text-gray-400 text-sm font-['Pretendard']">(Search functionality coming soon)</div>
         </div>
       </div>
     )}

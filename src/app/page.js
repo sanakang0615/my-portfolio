@@ -38,15 +38,20 @@ import SidebarLayout from './SidebarLayout';
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [activeSection, setActiveSection] = useState('about');
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedMode = localStorage.getItem('darkMode');
+      return savedMode ? JSON.parse(savedMode) : true;
+    }
+    return true;
+  });
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [showSearch, setShowSearch] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const navigationItems = [
-    { id: 'about', label: 'About', icon: Users },
-    { id: 'news', label: 'News', icon: Calendar },
+    { id: 'about', label: 'About Me', icon: Users },
     { id: 'projects', label: 'Projects', icon: Code },
     { id: 'publications', label: 'Publications', icon: FileText },
     { id: 'blog', label: 'Blog', icon: MessageCircle },
@@ -250,6 +255,10 @@ const Portfolio = () => {
     }
   }, [searchQuery]);
 
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -262,7 +271,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'news', 'projects', 'publications', 'blog', 'cv'];
+      const sections = ['about', 'projects', 'publications', 'blog', 'cv'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -281,8 +290,7 @@ const Portfolio = () => {
   }, []);
 
   const aboutNavItems = [
-    { id: 'about', label: 'About', icon: Users },
-    { id: 'news', label: 'News', icon: Calendar },
+    { id: 'about', label: 'About Me', icon: Users },
     { id: 'projects', label: 'Projects', icon: Code },
     { id: 'publications', label: 'Publications', icon: FileText },
   ];
@@ -295,14 +303,11 @@ const Portfolio = () => {
       <header className={`sticky top-0 z-50 border-b backdrop-blur-md transition-colors duration-300 ${
         darkMode ? 'bg-gray-900/80 border-gray-800' : 'bg-white/80 border-gray-200'
       }`}>
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="w-full px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">SK</span>
-                </div>
-                <h1 className="text-xl font-semibold">Sana Kang</h1>
+                <h1 className="text-xl font-semibold tossface">⛰️ Sana Kang</h1>
               </div>
               
               <nav className="hidden md:flex space-x-6 ml-8">
@@ -344,8 +349,12 @@ const Portfolio = () => {
                 <Search size={16} />
                 <span className="text-sm">Search</span>
                 <div className="hidden sm:flex items-center space-x-1">
-                  <kbd className="px-1 py-0.5 text-xs bg-gray-200 dark:bg-gray-700 rounded">⌘</kbd>
-                  <kbd className="px-1 py-0.5 text-xs bg-gray-200 dark:bg-gray-700 rounded">K</kbd>
+                  <kbd className={`px-1 py-0.5 text-xs rounded ${
+                    darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
+                  }`}>⌘</kbd>
+                  <kbd className={`px-1 py-0.5 text-xs rounded ${
+                    darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
+                  }`}>K</kbd>
                 </div>
               </button>
             </div>
@@ -467,16 +476,16 @@ const Portfolio = () => {
         )}
       </AnimatePresence>
 
-      <SidebarLayout navItems={aboutNavItems} sidebarTitle="NAVIGATION" darkMode={darkMode}>
+      <SidebarLayout navItems={aboutNavItems} sidebarTitle="NAVIGATION" darkMode={darkMode} newsItems={newsItems} activeSection={activeSection}>
         {/* Main Content (About, News, Projects, Publications 섹션만) */}
         {/* About Section */}
         <section id="about" className="mb-16">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
             {/* Profile Image */}
             <div className="flex-shrink-0">
-              <div className={`w-40 h-52 rounded-lg overflow-hidden border-4 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-blue-200 bg-blue-100'} flex items-center justify-center`}>
+              <div className={`w-55 mt-0 rounded-lg overflow-hidden border-4 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
                 <img
-                  src="/my_photo.png"
+                  src="/my_photo_2.jpeg"
                   alt="Profile Photo"
                   className="w-full h-full object-cover"
                 />
@@ -484,27 +493,12 @@ const Portfolio = () => {
             </div>
             {/* Info + 소개문단 */}
             <div className="flex-1 flex flex-col justify-center h-full min-w-0">
-              {/* <div className={`p-6 rounded-lg border mb-8 ${
-                darkMode ? 'bg-gray-800 border-gray-700' : 'bg-blue-50 border-blue-200'
-              }`}>
-                <div className="flex items-center space-x-2 mb-2">
-                  <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs">ℹ️</span>
-                  </div>
-                  <span className="font-semibold text-blue-700 dark:text-blue-300">INFO</span>
-                </div>
-                <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-blue-800'}`}>
-                  Hey there! I used to have fancy 3D graphics here, but I realized that this—just you and me having an honest conversation—would be a better way to tell you about myself. 
-                  We&apos;ve seen enough humblebragging, so let&apos;s cut it and talk about some genuine stuff. Feel free to explore around!
-                </p>
-              </div> */}
-
-              <div className="prose prose-gray dark:prose-invert max-w-none">
+              <div className="prose max-w-none" style={{color: darkMode ? '#cbd5e1' : '#374151'}}>
                 <p className="text-lg leading-relaxed mb-4">
                   I am a second-year Master&apos;s student in Management Engineering at{' '}
-                  <span className="tossface mr-1">🦊</span><span className="text-blue-500 font-semibold">KAIST</span>, specializing in Information Systems. 
+                  <span className="tossface mr-1">🇰🇷</span><span className="text-blue-600 font-semibold">KAIST</span>, specializing in Information Systems. 
                   I am currently a Short-term Scholar at{' '}
-                  <span className="tossface mr-1">🐿️</span><span className="text-blue-500 font-semibold">Carnegie Mellon University</span> (until July 2025).
+                  <span className="tossface mr-1">🇺🇸</span><span className="text-red-400 font-semibold">Carnegie Mellon University</span> (until July 2025).
 
                   My research interests lie at the intersection of AI/ML applications, 
                   quantitative marketing, and information systems. 
@@ -522,31 +516,143 @@ const Portfolio = () => {
           </div>
         </section>
 
-        {/* News Section */}
-        <section id="news" className="mb-16">
-          <h2 className="text-2xl font-bold mb-8">News</h2>
-          <div className="space-y-4">
-            {newsItems.map((news, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`flex items-start space-x-4 p-4 rounded-lg border transition-colors ${
-                  darkMode ? 'bg-gray-800 border-gray-700 hover:bg-gray-750' : 'bg-white border-gray-200 hover:bg-gray-50'
-                }`}
-              >
-                <div className="text-sm font-mono text-gray-500 min-w-[60px]">
-                  {news.date}
+        {/* Majors Section */}
+        <section id="majors" className="mb-16">
+          <div className="mb-8">  
+            <h2 className="text-2xl font-bold mb-4">Academic Journey</h2>
+            {/* <p className="text-gray-600 dark:text-gray-400 mb-6">
+              A selection of previous projects that I have either led or co-led, for research, coursework, and of course, for fun!
+            </p> */}
+          
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 opacity-30"></div>
+            
+            <div className="space-y-4">
+              {/* Graduate - KAIST Business School */}
+              <div className="relative pl-16">
+                <div className={`absolute left-6 top-4 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full ring-4 shadow-lg 
+                  ${darkMode ? 'ring-gray-900' : 'ring-gray-100'}`}></div>
+                <div className={`group hover:scale-[1.02] transition-all duration-300 cursor-default
+                  ${darkMode 
+                    ? 'bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50' 
+                    : 'bg-gradient-to-br from-white/90 to-gray-50/90 backdrop-blur-sm border border-gray-200/50'}
+                  rounded-xl p-3 shadow-md font-['Pretendard']`}>
+                  
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl tossface">🎓</span>
+                      <span className="px-2 pt-1 text-xs bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-semibold rounded-full font-['Pretendard']">
+                        Graduate
+                      </span>
+                    </div>
+                    <span className="text-xs opacity-60">2024.04 - Current</span>
+                  </div>
+                  
+                  <h3 className="text-base mb-1 text-blue-600 dark:text-blue-400 font-['Pretendard']">
+                    Information Systems @ <a href="https://business.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 decoration-2 font-['Pretendard'] font-semibold">KAIST Business School</a>
+                  </h3>
+                  <p className="text-xs opacity-70 font-['Pretendard']">
+                    AI/ML applications, quantitative marketing, and information systems
+                  </p>
                 </div>
-                <div className="text-xl">{news.icon}</div>
-                <div className="flex-1">
-                  <h3 className="font-semibold mb-1">{news.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">{news.description}</p>
+              </div>
+
+              {/* Undergraduate - KAIST */}
+              <div className="relative pl-16">
+                <div className={`absolute left-6 top-4 w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full ring-4 shadow-lg 
+                  ${darkMode ? 'ring-gray-900' : 'ring-gray-100'}`}></div>
+                <div className={`group hover:scale-[1.02] transition-all duration-300 cursor-default
+                  ${darkMode 
+                    ? 'bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50' 
+                    : 'bg-gradient-to-br from-white/90 to-gray-50/90 backdrop-blur-sm border border-gray-200/50'}
+                  rounded-xl p-3 shadow-md font-['Pretendard']`}>
+                  
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl tossface">🏛️</span>
+                      <span className="px-2 pt-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-semibold rounded-full font-['Pretendard']">
+                        Visiting Scholar
+                      </span>
+                    </div>
+                    <span className="text-xs opacity-60">2025.01 - 2025.07</span>
+                  </div>
+                  
+
+                  <h3 className="text-base mb-1 text-purple-600 dark:text-purple-400 font-['Pretendard']">
+                    Computer Science @ {' '}
+                    <a href="https://www.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 decoration-2 font-['Pretendard'] font-semibold">
+                      Carnegie Mellon University
+                    </a>
+                  </h3>
+                  <p className="text-xs opacity-70 font-['Pretendard']">
+                    Software and Societal Systems Department under School of Computer Science
+                  </p>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+
+              {/* CMU Affiliation */}
+              <div className="relative pl-16">
+                <div className={`absolute left-6 top-4 w-4 h-4 bg-gradient-to-r from-pink-500 to-red-500 rounded-full ring-4 shadow-lg 
+                  ${darkMode ? 'ring-gray-900' : 'ring-gray-100'}`}></div>
+                <div className={`group hover:scale-[1.02] transition-all duration-300 cursor-default
+                  ${darkMode 
+                    ? 'bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50' 
+                    : 'bg-gradient-to-br from-white/90 to-gray-50/90 backdrop-blur-sm border border-gray-200/50'}
+                  rounded-xl p-3 shadow-md font-['Pretendard']`}>
+                  
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl tossface">💻</span>
+                      <span className="px-2 pt-1 text-xs bg-gradient-to-r from-pink-500 to-red-500 text-white text-xs font-semibold rounded-full font-['Pretendard']">
+                        Undergraduate
+                      </span>
+                    </div>
+                    <span className="text-xs opacity-60">2019.03 - 2025.02</span>
+                  </div>
+                  
+                    <h3 className="text-base mb-1 text-purple-600 dark:text-purple-400 font-['Pretendard']">
+                    Computer Science and Business Technology & Management @ {' '}
+                    <a href="https://www.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 decoration-2 font-['Pretendard'] font-semibold">
+                      KAIST
+                    </a>
+                  </h3>
+                  <p className="text-xs opacity-70 font-['Pretendard']">
+                    Double major combining technical computer science with business management
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Fun Facts Card */}
+            <div className={`mt-4 relative overflow-hidden
+              ${darkMode 
+                ? 'bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-sm border border-purple-500/30' 
+                : 'bg-gradient-to-br from-purple-50/80 to-pink-50/80 backdrop-blur-sm border border-purple-200/50'}
+              rounded-xl p-3 shadow-md font-['Pretendard']`}>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full -translate-y-10 translate-x-10"></div>
+              <div className="absolute bottom-0 left-0 w-14 h-14 bg-gradient-to-tr from-blue-400/10 to-purple-400/10 rounded-full translate-y-6 -translate-x-6"></div>
+              <div className="relative">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xl tossface">🔬</span>
+                  <h3 className="text-base font-bold text-purple-600 dark:text-purple-400 font-['Pretendard']">Fun Facts</h3>
+                </div>
+                <p className="text-sm leading-snug text-purple-700 dark:text-purple-400 font-['Pretendard']">
+                  I was deeply involved in <span className="font-semibold">Physics</span> from middle school (
+                  <a href="https://www.isabelle.ac.kr" target="_blank" rel="noopener noreferrer"
+                    className="font-semibold decoration-2 hover:text-purple-800 dark:hover:text-purple-200 transition-colors font-['Pretendard']">
+                    ISabelle
+                  </a>
+                  ) through high school (
+                  <a href="https://www.kmla.hs.kr" target="_blank" rel="noopener noreferrer"
+                    className="font-semibold decoration-2 hover:text-purple-800 dark:hover:text-purple-200 transition-colors font-['Pretendard']">
+                    KMLA
+                  </a>
+                  ). My ideal type was Richard Feynman!
+                </p>
+              </div>
+            </div>
+          </div>
           </div>
         </section>
 

@@ -1,14 +1,24 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SidebarLayout from './SidebarLayout';
 import Link from 'next/link';
 import { Github, Linkedin, Search, Sun, Moon } from 'lucide-react';
 import Header from './Header';
 
 const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children }) => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedMode = localStorage.getItem('darkMode');
+      return savedMode ? JSON.parse(savedMode) : true;
+    }
+    return true;
+  });
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
@@ -42,7 +52,7 @@ const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children }) => {
       )}
       {/* Sidebar + Main Content */}
       <SidebarLayout navItems={navItems} sidebarTitle={sidebarTitle} darkMode={darkMode}>
-        {children}
+        {typeof children === 'function' ? children({ darkMode }) : children}
       </SidebarLayout>
     </div>
   );

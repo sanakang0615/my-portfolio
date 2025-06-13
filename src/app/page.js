@@ -107,31 +107,31 @@ const Portfolio = () => {
   const newsItems = [
     {
       date: '2025.04',
-      icon: '🎓',
+      icon: <span className="tossface">🎓</span>,
       title: "Starting PhD at Princeton University",
       description: "Excited to begin my PhD journey in Computer Science at Princeton University in Fall 2025!"
     },
     {
       date: '2025.01',
-      icon: '📄',
+      icon: <span className="tossface">📄</span>,
       title: "EMNLP 2025 Paper Submitted",
       description: "First-authored paper on LLM-based Brand-Influencer Evaluation Framework submitted to EMNLP 2025."
     },
     {
       date: '2024.12',
-      icon: '🏆',
+      icon: <span className="tossface">🏆</span>,
       title: "ICIS 2025 Paper Accepted",
       description: "Our paper on Information Systems research has been accepted to ICIS 2025 as 2nd author."
     },
     {
       date: '2024.11',
-      icon: '📚',
+      icon: <span className="tossface">📚</span>,
       title: "Book Chapter Accepted",
       description: "Collaborative research with Harvard Business School, Boston College, and UMich accepted for publication."
     },
     {
       date: '2024.08',
-      icon: '🇺🇸',
+      icon: <span className="tossface">🇺🇸</span>,
       title: "Started at CMU as Short-term Scholar",
       description: "Beginning research collaboration at Carnegie Mellon University Tepper School of Business."
     }
@@ -467,7 +467,7 @@ const Portfolio = () => {
         )}
       </AnimatePresence>
 
-      <SidebarLayout navItems={aboutNavItems} sidebarTitle="NAVIGATION">
+      <SidebarLayout navItems={aboutNavItems} sidebarTitle="NAVIGATION" darkMode={darkMode}>
         {/* Main Content (About, News, Projects, Publications 섹션만) */}
         {/* About Section */}
         <section id="about" className="mb-16">
@@ -484,7 +484,7 @@ const Portfolio = () => {
             </div>
             {/* Info + 소개문단 */}
             <div className="flex-1 flex flex-col justify-center h-full min-w-0">
-              <div className={`p-6 rounded-lg border mb-8 ${
+              {/* <div className={`p-6 rounded-lg border mb-8 ${
                 darkMode ? 'bg-gray-800 border-gray-700' : 'bg-blue-50 border-blue-200'
               }`}>
                 <div className="flex items-center space-x-2 mb-2">
@@ -497,27 +497,24 @@ const Portfolio = () => {
                   Hey there! I used to have fancy 3D graphics here, but I realized that this—just you and me having an honest conversation—would be a better way to tell you about myself. 
                   We&apos;ve seen enough humblebragging, so let&apos;s cut it and talk about some genuine stuff. Feel free to explore around!
                 </p>
-              </div>
+              </div> */}
 
               <div className="prose prose-gray dark:prose-invert max-w-none">
                 <p className="text-lg leading-relaxed mb-4">
-                  I am a second-year <strong>Master&apos;s student in Management Engineering</strong> at{' '}
-                  <span className="text-blue-500 font-semibold">KAIST</span>, specializing in Information Systems. 
-                  I am currently a <strong>Short-term Scholar</strong> at{' '}
-                  <span className="text-blue-500 font-semibold">Carnegie Mellon University</span> (until July 2025).
-                </p>
-                
-                <p className="text-base leading-relaxed mb-4">
-                  My research interests lie at the intersection of <strong>AI/ML applications</strong>, 
-                  <strong>quantitative marketing</strong>, and <strong>information systems</strong>. 
+                  I am a second-year Master&apos;s student in Management Engineering at{' '}
+                  <span className="tossface mr-1">🦊</span><span className="text-blue-500 font-semibold">KAIST</span>, specializing in Information Systems. 
+                  I am currently a Short-term Scholar at{' '}
+                  <span className="tossface mr-1">🐿️</span><span className="text-blue-500 font-semibold">Carnegie Mellon University</span> (until July 2025).
+
+                  My research interests lie at the intersection of AI/ML applications, 
+                  quantitative marketing, and information systems. 
                   I am passionate about leveraging advanced analytics and machine learning techniques 
                   to solve real-world business problems.
-                </p>
-
-                <p className="text-base leading-relaxed mb-6">
-                  Beyond academia, I&apos;m a console gamer (currently obsessed with story-rich games), 
-                  a digital artist who loves creating while listening to music, and someone who turned 
-                  GRE vocabulary study into a fun word game project. I believe the best ideas come from 
+                  </p>
+                  <p className="text-lg leading-relaxed mb-4">
+                  Beyond academia, I&apos;m a <span className="tossface mr-1">🎮</span>console gamer (currently obsessed with story-rich games), 
+                  a <span className="tossface mr-1">🎨</span>digital artist who loves creating while listening to music, and someone who turned 
+                  <span className="tossface mr-1">📚</span>GRE vocabulary study into a fun word game project. I believe the best ideas come from 
                   the intersection of different interests and experiences.
                 </p>
               </div>

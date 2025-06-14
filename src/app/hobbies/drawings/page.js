@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Palette, ExternalLink, Music, Play, Youtube, Apple, Gamepad2, Map } from 'lucide-react';
-import AppLayout from '../AppLayout';
+import AppLayout from '../../AppLayout';
 import { Users, Calendar, Code, FileText } from 'lucide-react';
 import { Sun, Moon } from 'lucide-react';
 

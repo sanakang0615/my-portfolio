@@ -42,9 +42,9 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
                 Works
               </Link>
               <Link 
-                href="/hobbies" 
+                href="/hobbies/drawings" 
                 className={`text-sm transition-colors ${
-                  isActive('/hobbies') 
+                  isActive('/hobbies/drawings') 
                     ? 'text-blue-500 font-medium' 
                     : 'hover:text-blue-400'
                 }`}

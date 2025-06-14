@@ -35,33 +35,13 @@
     },
     {
       "title": "Transforming Cardiology with AI: A Rigorous Review of Machine Learning Innovations and Implementation Pathways",
-      "authors": "Sana Kang, Daesan-Oh, Sung-Hyuk Park, Firenze Inc. Team",
+      "authors": "<span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Daesan-Oh, Sung-Hyuk Park, Firenze Inc. Team",
       "status": "In Preparation",
       "type": "Survey Paper",
       "tags": ["Healthcare", "Clinical AI", "ML Fairness"],
       "links": {  },
       "image": "/publications/healthcare-ai.png",
       "description": "A survey paper that highlights the clinical utility and machine learning impact of large-scale health datasets, including population biobanks (e.g., UK Biobank, KoGES) and electronic health records (e.g., CPRD). The paper synthesizes key characteristics, such as data types and ancestry diversity, and demonstrates their role in improving risk prediction, validating cross-ethnic generalization, and addressing algorithmic bias in clinical applications."
-    },
-    {
-      "title": "Causal Inference in Information Systems",
-      "authors": "Prof. X, Sana Kang, Prof. Y",
-      "venue": "ICIS 2025",
-      "status": "Under Review",
-      "type": "Conference",
-      "tags": ["IS", "Causal Inference"],
-      "links": { "paper": "#" },
-      "description": "Exploring causal relationships in information systems and business analytics applications."
-    },
-    {
-      "title": "Strategic Business Analysis in Digital Era",
-      "authors": "Harvard Team, Boston College Team, UMich Team, Sana Kang",
-      "venue": "Strategic Management Book Chapter",
-      "status": "Accepted",
-      "type": "Book Chapter",
-      "tags": ["Strategy", "Business"],
-      "links": { "publisher": "#" },
-      "description": "Collaborative research on business strategy with leading academic institutions."
     }
   ]
 } 

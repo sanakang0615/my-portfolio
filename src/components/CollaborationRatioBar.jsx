@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const CollaborationRatioBar = ({ darkMode = false }) => {
+  
   const [hoveredSection, setHoveredSection] = useState(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 

@@ -6,7 +6,7 @@ const SidebarLayout = ({ navItems, children, sidebarTitle = "NAVIGATION", darkMo
   const [collapsed, setCollapsed] = useState(false);
   // 현재 활성화된 탭 이름 찾기
   const activeNav = navItems.find(item => item.id === activeSection);
-  const displayTitle = activeNav ? activeNav.label : sidebarTitle;
+  const displayTitle = sidebarTitle;
   return (
     <div className="flex">
       {/* Sidebar Navigation */}
@@ -69,15 +69,19 @@ const SidebarLayout = ({ navItems, children, sidebarTitle = "NAVIGATION", darkMo
                 {newsItems && newsItems.length > 0 && (
                   <div className="mt-8">
                     <h3 className={`text-md font-semibold mt-5 mb-6 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>News</h3>
-                    <ul className="space-y-3">
-                      {newsItems.slice(0, 6).map((news, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <span className={`font-bold pt-0.5 text-[10px] min-w-[36px] text-left ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>{news.date}</span>
-                          <span className="tossface text-base text-[12px] text-left">{news.icon.props.children}</span>
-                          <span className={`text-[14.5px] flex-1 text-left ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>{news.title}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div
+                      className={`max-h-[480px] overflow-y-auto sidebar-news-scroll`}
+                    >
+                      <ul className="space-y-3 pr-2">
+                        {newsItems.map((news, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <span className={`font-bold pt-0.5 text-[10px] min-w-[36px] text-left ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>{news.date}</span>
+                            <span className="tossface text-base text-[12px] text-left">{news.icon.props.children}</span>
+                            <span className={`text-[14.5px] flex-1 text-left ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>{news.title}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 )}
               </>

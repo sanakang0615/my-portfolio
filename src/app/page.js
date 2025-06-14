@@ -35,6 +35,7 @@ import {
 import Link from 'next/link';
 import SidebarLayout from './SidebarLayout';
 import Header from '../components/Header';
+import newsItems from '../data/newsItems';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -102,39 +103,6 @@ const Portfolio = () => {
       excerpt: 'How I use music to enhance my coding sessions and research thinking. Plus, my latest digital art experiments...',
       tags: ['Music', 'Art', 'Creativity', 'Productivity'],
       readTime: '4 min read'
-    }
-  ];
-
-  const newsItems = [
-    {
-      date: '2025.04',
-      icon: <span className="tossface">🎓</span>,
-      title: "Starting PhD at Princeton University",
-      description: "Excited to begin my PhD journey in Computer Science at Princeton University in Fall 2025!"
-    },
-    {
-      date: '2025.01',
-      icon: <span className="tossface">📄</span>,
-      title: "EMNLP 2025 Paper Submitted",
-      description: "First-authored paper on LLM-based Brand-Influencer Evaluation Framework submitted to EMNLP 2025."
-    },
-    {
-      date: '2024.12',
-      icon: <span className="tossface">🏆</span>,
-      title: "ICIS 2025 Paper Accepted",
-      description: "Our paper on Information Systems research has been accepted to ICIS 2025 as 2nd author."
-    },
-    {
-      date: '2024.11',
-      icon: <span className="tossface">📚</span>,
-      title: "Book Chapter Accepted",
-      description: "Collaborative research with Harvard Business School, Boston College, and UMich accepted for publication."
-    },
-    {
-      date: '2024.08',
-      icon: <span className="tossface">🇺🇸</span>,
-      title: "Started at CMU as Short-term Scholar",
-      description: "Beginning research collaboration at Carnegie Mellon University Tepper School of Business."
     }
   ];
 
@@ -587,17 +555,15 @@ const Portfolio = () => {
                   <h3 className="text-base font-bold text-purple-600 dark:text-purple-400 font-['Pretendard']">Fun Facts</h3>
                 </div>
                 <p className="text-sm leading-snug text-purple-700 dark:text-purple-400 font-['Pretendard']">
-                  I was deeply involved in <span className="font-semibold">Physics</span> from middle school (
-                  <a href="https://www.isabelle.ac.kr" target="_blank" rel="noopener noreferrer"
+                  I was deeply involved in <span className="font-semibold">Physics</span> from {' '}
+                  <a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%82%AC%EB%B2%A8%EC%A4%91%ED%95%99%EA%B5%90" target="_blank" rel="noopener noreferrer"
                     className="font-semibold decoration-2 hover:text-purple-800 dark:hover:text-purple-200 transition-colors font-['Pretendard']">
-                    ISabelle
-                  </a>
-                  ) through high school (
-                  <a href="https://www.kmla.hs.kr" target="_blank" rel="noopener noreferrer"
+                    Isabelle Junior High School
+                  </a>  (2012.03-2015.02) through {' '}
+                  <a href="http://english.minjok.hs.kr/contents/main.php" target="_blank" rel="noopener noreferrer"
                     className="font-semibold decoration-2 hover:text-purple-800 dark:hover:text-purple-200 transition-colors font-['Pretendard']">
-                    KMLA
-                  </a>
-                  ). My ideal type was Richard Feynman!
+                    Korean Minjok Leadership Academy
+                  </a> (2015.03-2018.02). My ideal type was Richard Feynman!
                 </p>
               </div>
               </div>

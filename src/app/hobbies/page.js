@@ -1,13 +1,16 @@
 "use client"
 import React from 'react';
 import Link from 'next/link';
-import { Palette, ExternalLink, Music, Play, Youtube, Apple } from 'lucide-react';
+import { Palette, ExternalLink, Music, Play, Youtube, Apple, Gamepad2, Map } from 'lucide-react';
 import AppLayout from '../AppLayout';
 import { Users, Calendar, Code, FileText } from 'lucide-react';
 
 const Hobbies = () => {
   const hobbiesNavItems = [
     { id: 'drawings', label: 'Drawings', icon: Palette },
+    { id: 'travel', label: 'Travel', icon: Map },
+    { id: 'music', label: 'Music', icon: Music },
+    { id: 'games', label: 'Games', icon: Gamepad2 },
   ];
 
   const aboutNavItems = [

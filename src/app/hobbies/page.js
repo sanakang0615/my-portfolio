@@ -4,17 +4,18 @@ import Link from 'next/link';
 import { Palette, ExternalLink, Music, Play, Youtube, Apple, Gamepad2, Map } from 'lucide-react';
 import AppLayout from '../AppLayout';
 import { Users, Calendar, Code, FileText } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
 
 const Hobbies = () => {
   const hobbiesNavItems = [
     { id: 'drawings', label: 'Drawings', icon: Palette },
     { id: 'travel', label: 'Travel', icon: Map },
     { id: 'music', label: 'Music', icon: Music },
-    { id: 'games', label: 'Games', icon: Gamepad2 },
+    { id: 'games', label: 'Nintendo', icon: Gamepad2 },
   ];
 
   const aboutNavItems = [
-    { id: 'about', label: 'About Me', icon: Users },
+    { id: 'about', label: 'Works', icon: Users },
     { id: 'news', label: 'News', icon: Calendar },
     { id: 'projects', label: 'Projects', icon: Code },
     { id: 'publications', label: 'Publications', icon: FileText },
@@ -147,7 +148,7 @@ const Hobbies = () => {
                         : 'bg-gray-900 text-white hover:`bg-gray-800'
                     }`}
                   >
-                    <span className="font-pretendard">Visit the website</span>
+                    <span className="font-pretendard">Visit my website</span>
                     <ExternalLink className="w-4 h-4 mb-1.5 pr-0.5" />
                   </a>
                 </div>
@@ -287,6 +288,14 @@ const Hobbies = () => {
               </div>
             </section>
 
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className={`p-2 pr-1 md:pr-4 rounded-md transition-colors ${
+                darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
+              }`}
+            >
+              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
 
           </>
         );

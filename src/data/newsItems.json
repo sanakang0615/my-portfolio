@@ -1,11 +1,6 @@
 {
   "newsItems": [
     {
-      "date": "2025.07",
-      "icon": "🇰🇷",
-      "title": "Going back to Korea"
-    },
-    {
         "date": "2025.07",
         "icon": "🎓",
         "title": "Completed the CMU Short-term Scholar!"
@@ -39,6 +34,11 @@
         "date": "2025.01",
         "icon": "🇺🇸",
         "title": "Started at CMU as Short-term Scholar"
+    },
+    {
+        "date": "2024.12",
+        "icon": "🏆",
+        "title": "Earned the Academic Excellence Award @ KAIST Business School. Thank you!"
     }
   ]
 } 

@@ -36,6 +36,9 @@ import Link from 'next/link';
 import SidebarLayout from './SidebarLayout';
 import Header from '../components/Header';
 import newsItems from '../data/newsItems';
+import projectsData from '../data/projects.json';
+import publicationsData from '../data/publications.json';
+import CollaborationRatioBar from '../components/CollaborationRatioBar';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -48,7 +51,7 @@ const Portfolio = () => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const navigationItems = [
-    { id: 'about', label: 'About Me', icon: Users },
+    { id: 'about', label: 'Works', icon: Users },
     { id: 'projects', label: 'Projects', icon: Code },
     { id: 'publications', label: 'Publications', icon: FileText },
     { id: 'blog', label: 'Blog', icon: MessageCircle },
@@ -77,14 +80,14 @@ const Portfolio = () => {
       title: 'My Gaming Setup for Research Breaks',
       category: 'Personal',
       excerpt: 'How I balance intense research with gaming sessions. Currently obsessed with puzzle games that help with logical thinking...',
-      tags: ['Gaming', 'Work-Life Balance', 'Personal'],
+      tags: ['Gaming', 'Works-Life Balance', 'Personal'],
       readTime: '3 min read'
     },
     {
       date: '2025-01-05',
       title: 'From Seoul to Pittsburgh: Cultural Observations',
       category: 'Travel',
-      excerpt: 'Interesting cultural differences I\'ve noticed while doing research at CMU. Food, work culture, and academic life...',
+      excerpt: 'Interesting cultural differences I\'ve noticed while doing research at CMU. Food, Works culture, and academic life...',
       tags: ['Culture', 'Travel', 'Academia'],
       readTime: '7 min read'
     },
@@ -106,102 +109,16 @@ const Portfolio = () => {
     }
   ];
 
-  const publications = [
-    {
-      title: "LLM-based Brand-Influencer Evaluation Framework",
-      authors: "Sana Kang, Prof. A, Prof. B, Dr. C",
-      venue: "EMNLP 2025",
-      status: "Under Review",
-      type: "Conference",
-      tags: ["AI/ML", "NLP", "Marketing"],
-      links: { arxiv: "#", code: "#" },
-      description: "Novel evaluation methods for brand-influencer selection using large language models with applications in digital marketing."
-    },
-    {
-      title: "Healthcare Predictive Models: A Comprehensive Survey",
-      authors: "Sana Kang, Sung-Hyuk Park, Firenze Inc. Team",
-      venue: "Healthcare Analytics Journal",
-      status: "In Preparation",
-      type: "Survey",
-      tags: ["Healthcare", "ML", "Survey"],
-      links: { paper: "#" },
-      description: "Comprehensive survey of cardiovascular disease prediction models with industry application focus."
-    },
-    {
-      title: "Causal Inference in Information Systems",
-      authors: "Prof. X, Sana Kang, Prof. Y",
-      venue: "ICIS 2025",
-      status: "Under Review",
-      type: "Conference",
-      tags: ["IS", "Causal Inference"],
-      links: { paper: "#" },
-      description: "Exploring causal relationships in information systems and business analytics applications."
-    },
-    {
-      title: "Strategic Business Analysis in Digital Era",
-      authors: "Harvard Team, Boston College Team, UMich Team, Sana Kang",
-      venue: "Strategic Management Book Chapter",
-      status: "Accepted",
-      type: "Book Chapter",
-      tags: ["Strategy", "Business"],
-      links: { publisher: "#" },
-      description: "Collaborative research on business strategy with leading academic institutions."
-    }
-  ];
-
-  const projects = [
-    {
-      title: "ExploreSelf: AI-driven Personal Reflection System",
-      description: "Led development of adaptive guidance system using Large Language Models for fostering user-driven exploration and reflection on personal challenges.",
-      role: "Project Lead & Full-stack Developer",
-      tags: ["System Building", "AI/ML", "HCI"],
-      period: "2024 - Present",
-      links: { github: "#", demo: "#", paper: "#" },
-      image: "🤖",
-      status: "CHI 2025 Submission"
-    },
-    {
-      title: "Location-Based Sales Prediction Model",
-      description: "Developed GraphSAGE-based model for FnB franchise sales prediction, reducing RMSE by 10.6% compared to manual expert predictions.",
-      role: "ML Team Lead",
-      tags: ["Deep Learning", "Data Analysis"],
-      period: "2023 - 2024",
-      links: { github: "#", report: "#" },
-      image: "📊",
-      status: "Industry Collaboration"
-    },
-    {
-      title: "VENETA Multi-Issuer Blockchain System",
-      description: "Designed and developed MVP for blockchain-based P2P trading system. Selected for government-sponsored Financial Regulatory Sandbox.",
-      role: "Blockchain Developer",
-      tags: ["System Building", "Blockchain"],
-      period: "2022",
-      links: { github: "#", patent: "#" },
-      image: "⛓️",
-      status: "Patent Filed"
-    },
-    {
-      title: "DEATH's WORD CHAIN Game",
-      description: "Interactive vocabulary learning game developed while studying GRE words. Combines educational content with engaging gameplay mechanics.",
-      role: "Game Developer",
-      tags: ["Others", "Game Development"],
-      period: "2024",
-      links: { github: "#", play: "#" },
-      image: "🎮",
-      status: "Personal Project"
-    }
-  ];
-
   const filterTags = ['All', 'System Building', 'Deep Learning', 'Data Analysis', 'AI/ML', 'Others'];
 
   const filteredProjects = activeFilter === 'All' 
-    ? projects 
-    : projects.filter(project => project.tags.includes(activeFilter));
+    ? projectsData.projects 
+    : projectsData.projects.filter(project => project.tags.includes(activeFilter));
 
   // Search functionality
   const searchableContent = [
-    ...publications.map(pub => ({ ...pub, type: 'publication' })),
-    ...projects.map(proj => ({ ...proj, type: 'project' })),
+    ...publicationsData.publications.map(pub => ({ ...pub, type: 'publication' })),
+    ...projectsData.projects.map(proj => ({ ...proj, type: 'project' })),
     ...blogPosts.map(post => ({ ...post, type: 'blog' })),
     ...newsItems.map(news => ({ ...news, type: 'news' }))
   ];
@@ -234,7 +151,7 @@ const Portfolio = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerOffset = 80; // 실제 헤더 높이(px)로 맞춰주세요
+      const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - headerOffset;
       window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
@@ -264,8 +181,8 @@ const Portfolio = () => {
   const aboutNavItems = [
     { id: 'top', label: 'Introduction', icon: Users },
     { id: 'majors', label: 'Academic Journey', icon: GraduationCap },
-    { id: 'projects', label: 'Projects', icon: Code },
     { id: 'publications', label: 'Publications', icon: FileText },
+    { id: 'projects', label: 'Projects', icon: Code },
   ];
 
   if (!mounted) {
@@ -392,11 +309,11 @@ const Portfolio = () => {
         )}
       </AnimatePresence>
 
-      <SidebarLayout navItems={aboutNavItems} sidebarTitle="About Me" darkMode={darkMode} newsItems={newsItems} activeSection={activeSection}>
+      <SidebarLayout navItems={aboutNavItems} sidebarTitle="Works" darkMode={darkMode} newsItems={newsItems} activeSection={activeSection}>
         {/* Main Content (About, News, Projects, Publications 섹션만) */}
         {/* About Section */}
         <section id="top" className="mb-16">
-          <h2 className="text-2xl font-bold mb-4">Hello, I'm Sana!</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center md:text-left">Hello, I'm Sana!</h2>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
             {/* Profile Image */}
             <div className="flex-shrink-0">
@@ -410,7 +327,7 @@ const Portfolio = () => {
             </div>
             {/* Info + 소개문단 */}
             <div className="flex-1 flex flex-col justify-center h-full min-w-0">
-              <div className="prose max-w-none" style={{color: darkMode ? '#cbd5e1' : '#374151'}}>
+              <div className="prose max-w-none text-center md:text-left" style={{color: darkMode ? '#cbd5e1' : '#374151'}}>
                 <p className="text-lg leading-relaxed mb-4">
                   I am a second-year Master's student in Management Engineering at{' '}
                   <span className="tossface mr-1">🇰🇷</span><a className="text-blue-600 font-semibold" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer">KAIST</a>, specializing in Information Systems. 
@@ -438,7 +355,7 @@ const Portfolio = () => {
           <div className="mb-8">  
             <h2 className="text-2xl font-bold mb-4">Academic Journey</h2>
             {/* <p className="text-gray-600 dark:text-gray-400 mb-6">
-              A selection of previous projects that I have either led or co-led, for research, coursework, and of course, for fun!
+              A selection of previous projects that I have either led or co-led, for research, courseWorks, and of course, for fun!
             </p> */}
           
           <div className="relative">
@@ -535,7 +452,7 @@ const Portfolio = () => {
                     </a>
                   </h3>
                   <p className="text-xs opacity-70 font-['Pretendard']">
-                    Double major combining technical computer science with business management
+                    Double major in CS and BTM (Business Technology & Management)
                   </p>
                 </div>
               </div>
@@ -571,12 +488,172 @@ const Portfolio = () => {
           </div>
         </section>
 
+        {/* Publications Section */}
+        <section id="publications" className="mb-16">
+          <h2 className="text-2xl font-bold mb-2">Publications & Presentations</h2>
+          {/* <p className="text-gray-600 dark:text-gray-400 mb-6">Please see my CV for more details.</p> */}
+          
+          <CollaborationRatioBar darkMode={darkMode} />
+
+          <div className="space-y-6">
+            {publicationsData.publications.map((pub, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`p-6 rounded-lg border transition-colors ${
+                  darkMode ? 'bg-gray-800 border-gray-700 hover:bg-gray-750' : 'bg-white border-gray-200 hover:bg-gray-50'
+                }`}
+              >
+                {pub.image ? (
+                  <div className="flex flex-row gap-6 items-start">
+                    <img
+                      src={pub.image}
+                      alt={pub.title + ' image'}
+                      className="mt-1 w-55 h-55 object-cover rounded-lg flex-shrink-0 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900"
+                    />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex justify-between items-start mb-3">
+                        <h3 className="text-lg font-semibold flex-1 mr-4">{pub.title}</h3>
+                        <div className="flex flex-col items-end gap-2">
+                          <div className="flex items-center gap-2">
+                            <span className={`px-3 py-1 text-xs rounded-full ${
+                              darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-700'
+                            }`}>
+                              {pub.type}
+                            </span>
+                            <span className={`px-3 py-1 text-xs rounded-full ${
+                              pub.status === 'Accepted' 
+                                ? darkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-700'
+                                : pub.status === 'Under Review'
+                                ? darkMode ? 'bg-yellow-900 text-yellow-200' : 'bg-yellow-100 text-yellow-700'
+                                : darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-700'
+                            }`}>
+                              {pub.status}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-gray-700 dark:text-gray-300 mb-2" dangerouslySetInnerHTML={{ __html: pub.authors }}></p>
+                      <p className="text-blue-500 font-medium mb-3" dangerouslySetInnerHTML={{ __html: pub.venue }}></p>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{pub.description}</p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex flex-wrap gap-2">
+                          {pub.tags.map((tag, tagIndex) => (
+                            <span
+                              key={tagIndex}
+                              className={`px-2 py-1 text-xs rounded ${
+                                darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700'
+                              }`}
+                            >
+                              #{tag.toLowerCase().replace(/\s+/g, '-')}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          {pub.links.paper && (
+                            <a href={pub.links.paper} className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 text-sm">
+                              <FileText size={14} className="mr-1 mb-0.5" />
+                              PDF
+                            </a>
+                          )}
+                          {pub.links.code && (
+                            <a href={pub.links.code} className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 text-sm">
+                              <Github size={14} className="mr-1 mb-0.5" />
+                              Code
+                            </a>
+                          )}
+                          {pub.links.ssrn && (
+                            <a href={pub.links.ssrn} className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 text-sm">
+                              <FileText size={14} className="mr-1 mb-0.5" />
+                              SSRN
+                            </a>
+                          )}
+                          {!pub.links.paper && !pub.links.code && !pub.links.ssrn && (
+                            <span className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 text-sm tossface"> </span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <div className="flex justify-between items-start mb-3">
+                      <h3 className="text-lg font-semibold flex-1 mr-4">{pub.title}</h3>
+                      <div className="flex flex-col items-end gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className={`px-3 py-1 text-xs rounded-full ${
+                            darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-700'
+                          }`}>
+                            {pub.type}
+                          </span>
+                          <span className={`px-3 py-1 text-xs rounded-full ${
+                            pub.status === 'Accepted' 
+                              ? darkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-700'
+                              : pub.status === 'Under Review'
+                              ? darkMode ? 'bg-yellow-900 text-yellow-200' : 'bg-yellow-100 text-yellow-700'
+                              : darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-700'
+                          }`}>
+                            {pub.status}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2" dangerouslySetInnerHTML={{ __html: pub.authors }}></p>
+                    <p className="text-blue-500 font-medium mb-3" dangerouslySetInnerHTML={{ __html: pub.venue }}></p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{pub.description}</p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex flex-wrap gap-2">
+                        {pub.tags.map((tag, tagIndex) => (
+                          <span
+                            key={tagIndex}
+                            className={`px-2 py-1 text-xs rounded ${
+                              darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700'
+                            }`}
+                          >
+                            #{tag.toLowerCase().replace(/\s+/g, '-')}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        {pub.links.paper && (
+                          <a href={pub.links.paper} className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 text-sm">
+                            <FileText size={14} className="mr-1" />
+                            PDF
+                          </a>
+                        )}
+                        {pub.links.code && (
+                          <a href={pub.links.code} className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 text-sm">
+                            <Github size={14} className="mr-1" />
+                            Code
+                          </a>
+                        )}
+                        {pub.links.ssrn && (
+                          <a href={pub.links.ssrn} className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 text-sm">
+                            <FileText size={14} className="mr-1" />
+                            SSRN
+                          </a>
+                        )}
+                        {!pub.links.paper && !pub.links.code && !pub.links.ssrn && (
+                          <span className="text-gray-500">Coming Soon!</span>
+                        )}
+                      </div>
+                    </div>
+                  </>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
         {/* Projects Section */}
         <section id="projects" className="mb-16">
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4">Projects</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              A selection of previous projects that I have either led or co-led, for research, coursework, and of course, for fun!
+              A selection of previous projects that I have either led or co-led, for research, courseWorks, and of course, for fun!
             </p>
             
             <div className="flex flex-wrap gap-2">
@@ -665,76 +742,6 @@ const Portfolio = () => {
             </AnimatePresence>
           </div>
         </section>
-
-        {/* Publications Section */}
-        <section id="publications" className="mb-16">
-          <h2 className="text-2xl font-bold mb-8">Publications</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">Please see my CV for more details.</p>
-          
-          <div className="space-y-6">
-            {publications.map((pub, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`p-6 rounded-lg border transition-colors ${
-                  darkMode ? 'bg-gray-800 border-gray-700 hover:bg-gray-750' : 'bg-white border-gray-200 hover:bg-gray-50'
-                }`}
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-lg font-semibold flex-1 mr-4">{pub.title}</h3>
-                  <div className="flex flex-col items-end gap-2">
-                    <span className={`px-3 py-1 text-xs rounded-full ${
-                      pub.status === 'Accepted' 
-                        ? darkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-700'
-                        : pub.status === 'Under Review'
-                        ? darkMode ? 'bg-yellow-900 text-yellow-200' : 'bg-yellow-100 text-yellow-700'
-                        : darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-700'
-                    }`}>
-                      {pub.status}
-                    </span>
-                  </div>
-                </div>
-                
-                <p className="text-gray-700 dark:text-gray-300 mb-2">{pub.authors}</p>
-                <p className="text-blue-500 font-medium mb-3">{pub.venue}</p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{pub.description}</p>
-                
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-wrap gap-2">
-                    {pub.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className={`px-2 py-1 text-xs rounded ${
-                          darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700'
-                        }`}
-                      >
-                        #{tag.toLowerCase().replace(/\s+/g, '-')}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    {pub.links.paper && (
-                      <a href={pub.links.paper} className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 text-sm">
-                        <FileText size={14} className="mr-1" />
-                        PDF
-                      </a>
-                    )}
-                    {pub.links.code && (
-                      <a href={pub.links.code} className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 text-sm">
-                        <Github size={14} className="mr-1" />
-                        Code
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
       </SidebarLayout>
 
       {/* Footer */}
@@ -742,8 +749,8 @@ const Portfolio = () => {
         darkMode ? 'border-gray-800 bg-gray-900' : 'border-gray-200 bg-white'
       }`}>
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-gray-600 dark:text-gray-400">
-            © 2025 Sana Kang. Built with curiosity and caffeine ☕
+          <p className="text-gray-600 dark:text-gray-400 font-pretendard">
+            © 2025 Sana Kang. Built with curiosity and caffeine <span className="tossface">☕</span>
           </p>
         </div>
       </footer>

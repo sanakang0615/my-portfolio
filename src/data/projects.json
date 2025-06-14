@@ -1,0 +1,44 @@
+{
+  "projects": [
+    {
+      "title": "ExploreSelf: AI-driven Personal Reflection System",
+      "description": "Led development of adaptive guidance system using Large Language Models for fostering user-driven exploration and reflection on personal challenges.",
+      "role": "Project Lead & Full-stack Developer",
+      "tags": ["System Building", "AI/ML", "HCI"],
+      "period": "2024 - Present",
+      "links": { "github": "#", "demo": "#", "paper": "#" },
+      "image": "🤖",
+      "status": "CHI 2025 Submission"
+    },
+    {
+      "title": "Location-Based Sales Prediction Model",
+      "description": "Developed GraphSAGE-based model for FnB franchise sales prediction, reducing RMSE by 10.6% compared to manual expert predictions.",
+      "role": "ML Team Lead",
+      "tags": ["Deep Learning", "Data Analysis"],
+      "period": "2023 - 2024",
+      "links": { "github": "#", "report": "#" },
+      "image": "📊",
+      "status": "Industry Collaboration"
+    },
+    {
+      "title": "VENETA Multi-Issuer Blockchain System",
+      "description": "Designed and developed MVP for blockchain-based P2P trading system. Selected for government-sponsored Financial Regulatory Sandbox.",
+      "role": "Blockchain Developer",
+      "tags": ["System Building", "Blockchain"],
+      "period": "2022",
+      "links": { "github": "#", "patent": "#" },
+      "image": "⛓️",
+      "status": "Patent Filed"
+    },
+    {
+      "title": "DEATH's WORD CHAIN Game",
+      "description": "Interactive vocabulary learning game developed while studying GRE words. Combines educational content with engaging gameplay mechanics.",
+      "role": "Game Developer",
+      "tags": ["Others", "Game Development"],
+      "period": "2024",
+      "links": { "github": "#", "play": "#" },
+      "image": "🎮",
+      "status": "Personal Project"
+    }
+  ]
+} 

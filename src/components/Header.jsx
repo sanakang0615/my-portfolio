@@ -39,7 +39,7 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
                     : 'hover:text-blue-400'
                 }`}
               >
-                About Me
+                Works
               </Link>
               <Link 
                 href="/hobbies" 
@@ -96,32 +96,33 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
             
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className={`p-2 rounded-md transition-colors ${
+              className={`p-2 pr-1 md:pr-4 rounded-md transition-colors ${
                 darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
               }`}
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            
-            <button
-              onClick={() => setShowSearch(!showSearch)}
-              className={`flex items-center space-x-2 px-3 py-2 rounded-md border transition-colors ${
-                darkMode 
-                  ? 'border-gray-700 bg-gray-800 hover:bg-gray-700' 
-                  : 'border-gray-300 bg-white hover:bg-gray-50'
-              }`}
-            >
-              <Search size={16} />
-              <span className="text-sm">Search</span>
-              <div className="hidden sm:flex items-center space-x-1">
-                <kbd className={`px-1 py-0.5 text-xs rounded ${
-                  darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
-                }`}>⌘</kbd>
-                <kbd className={`px-1 py-0.5 text-xs rounded ${
-                  darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
-                }`}>K</kbd>
-              </div>
-            </button>
+            <div className="hidden md:flex">
+              <button
+                onClick={() => setShowSearch(!showSearch)}
+                className={`flex items-center space-x-2 px-3 py-2 rounded-md border transition-colors ${
+                  darkMode 
+                    ? 'border-gray-700 bg-gray-800 hover:bg-gray-700' 
+                    : 'border-gray-300 bg-white hover:bg-gray-50'
+                }`}
+              >
+                <Search size={16} />
+                <span className="text-sm">Search</span>
+                <div className="hidden sm:flex items-center space-x-1">
+                  <kbd className={`px-1 py-0.5 text-xs rounded ${
+                    darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
+                  }`}>⌘</kbd>
+                  <kbd className={`px-1 py-0.5 text-xs rounded ${
+                    darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
+                  }`}>K</kbd>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>

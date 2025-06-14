@@ -34,17 +34,13 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import SidebarLayout from './SidebarLayout';
+import Header from '../components/Header';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [activeSection, setActiveSection] = useState('about');
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const savedMode = localStorage.getItem('darkMode');
-      return savedMode ? JSON.parse(savedMode) : true;
-    }
-    return true;
-  });
+  const [darkMode, setDarkMode] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [showSearch, setShowSearch] = useState(false);
@@ -243,6 +239,14 @@ const Portfolio = () => {
   ];
 
   useEffect(() => {
+    setMounted(true);
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode !== null) {
+      setDarkMode(JSON.parse(savedMode));
+    }
+  }, []);
+
+  useEffect(() => {
     if (searchQuery.length > 0) {
       const results = searchableContent.filter(item =>
         item.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -271,7 +275,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'projects', 'publications', 'blog', 'cv'];
+      const sections = ['about', 'majors', 'projects', 'publications', 'blog', 'cv'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -290,77 +294,21 @@ const Portfolio = () => {
   }, []);
 
   const aboutNavItems = [
-    { id: 'about', label: 'About Me', icon: Users },
+    { id: 'top', label: 'Introduction', icon: Users },
+    { id: 'majors', label: 'Academic Journey', icon: GraduationCap },
     { id: 'projects', label: 'Projects', icon: Code },
     { id: 'publications', label: 'Publications', icon: FileText },
   ];
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${
       darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'
     }`}>
-      {/* Header */}
-      <header className={`sticky top-0 z-50 border-b backdrop-blur-md transition-colors duration-300 ${
-        darkMode ? 'bg-gray-900/80 border-gray-800' : 'bg-white/80 border-gray-200'
-      }`}>
-        <div className="w-full px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-3">
-                <h1 className="text-xl font-semibold tossface">⛰️ Sana Kang</h1>
-              </div>
-              
-              <nav className="hidden md:flex space-x-6 ml-8">
-                <Link href="/" className="text-sm hover:text-blue-400 transition-colors">About Me</Link>
-                <Link href="/hobbies" className="text-sm hover:text-blue-400 transition-colors">Hobbies</Link>
-                <Link href="/blog" className="text-sm hover:text-blue-400 transition-colors">Blog</Link>
-                <Link href="/cv" className="text-sm hover:text-blue-400 transition-colors">CV</Link>
-                <Link href="/aboutsite" className="text-sm hover:text-blue-400 transition-colors">What&apos;s This?</Link>
-              </nav>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-3">
-                <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                  <Github size={20} />
-                </a>
-                <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                  <Linkedin size={20} />
-                </a>
-              </div>
-              
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className={`p-2 rounded-md transition-colors ${
-                  darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
-                }`}
-              >
-                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
-              
-              <button
-                onClick={() => setShowSearch(!showSearch)}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-md border transition-colors ${
-                  darkMode 
-                    ? 'border-gray-700 bg-gray-800 hover:bg-gray-700' 
-                    : 'border-gray-300 bg-white hover:bg-gray-50'
-                }`}
-              >
-                <Search size={16} />
-                <span className="text-sm">Search</span>
-                <div className="hidden sm:flex items-center space-x-1">
-                  <kbd className={`px-1 py-0.5 text-xs rounded ${
-                    darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
-                  }`}>⌘</kbd>
-                  <kbd className={`px-1 py-0.5 text-xs rounded ${
-                    darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
-                  }`}>K</kbd>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} setShowSearch={setShowSearch} />
 
       {/* Search Modal */}
       <AnimatePresence>
@@ -476,16 +424,17 @@ const Portfolio = () => {
         )}
       </AnimatePresence>
 
-      <SidebarLayout navItems={aboutNavItems} sidebarTitle="NAVIGATION" darkMode={darkMode} newsItems={newsItems} activeSection={activeSection}>
+      <SidebarLayout navItems={aboutNavItems} sidebarTitle="About Me" darkMode={darkMode} newsItems={newsItems} activeSection={activeSection}>
         {/* Main Content (About, News, Projects, Publications 섹션만) */}
         {/* About Section */}
-        <section id="about" className="mb-16">
+        <section id="top" className="mb-16">
+          <h2 className="text-2xl font-bold mb-4">Hello, I'm Sana!</h2>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
             {/* Profile Image */}
             <div className="flex-shrink-0">
               <div className={`w-55 mt-0 rounded-lg overflow-hidden border-4 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
                 <img
-                  src="/my_photo_2.jpeg"
+                  src="/my_photo.png"
                   alt="Profile Photo"
                   className="w-full h-full object-cover"
                 />
@@ -495,10 +444,10 @@ const Portfolio = () => {
             <div className="flex-1 flex flex-col justify-center h-full min-w-0">
               <div className="prose max-w-none" style={{color: darkMode ? '#cbd5e1' : '#374151'}}>
                 <p className="text-lg leading-relaxed mb-4">
-                  I am a second-year Master&apos;s student in Management Engineering at{' '}
-                  <span className="tossface mr-1">🇰🇷</span><span className="text-blue-600 font-semibold">KAIST</span>, specializing in Information Systems. 
+                  I am a second-year Master's student in Management Engineering at{' '}
+                  <span className="tossface mr-1">🇰🇷</span><a className="text-blue-600 font-semibold" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer">KAIST</a>, specializing in Information Systems. 
                   I am currently a Short-term Scholar at{' '}
-                  <span className="tossface mr-1">🇺🇸</span><span className="text-red-400 font-semibold">Carnegie Mellon University</span> (until July 2025).
+                  <span className="tossface mr-1">🇺🇸</span><a className="text-red-400 font-semibold" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a> (until July 2025).
 
                   My research interests lie at the intersection of AI/ML applications, 
                   quantitative marketing, and information systems. 
@@ -506,7 +455,7 @@ const Portfolio = () => {
                   to solve real-world business problems.
                   </p>
                   <p className="text-lg leading-relaxed mb-4">
-                  Beyond academia, I&apos;m a <span className="tossface mr-1">🎮</span>console gamer (currently obsessed with story-rich games), 
+                  Beyond academia, I'm a <span className="tossface mr-1">🎮</span>console gamer (currently obsessed with story-rich games), 
                   a <span className="tossface mr-1">🎨</span>digital artist who loves creating while listening to music, and someone who turned 
                   <span className="tossface mr-1">📚</span>GRE vocabulary study into a fun word game project. I believe the best ideas come from 
                   the intersection of different interests and experiences.
@@ -557,7 +506,7 @@ const Portfolio = () => {
                   </p>
                 </div>
               </div>
-
+              
               {/* Undergraduate - KAIST */}
               <div className="relative pl-16">
                 <div className={`absolute left-6 top-4 w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full ring-4 shadow-lg 
@@ -590,7 +539,7 @@ const Portfolio = () => {
                   </p>
                 </div>
               </div>
-
+              
               {/* CMU Affiliation */}
               <div className="relative pl-16">
                 <div className={`absolute left-6 top-4 w-4 h-4 bg-gradient-to-r from-pink-500 to-red-500 rounded-full ring-4 shadow-lg 
@@ -622,8 +571,8 @@ const Portfolio = () => {
                   </p>
                 </div>
               </div>
-            </div>
-
+              </div>
+              
             {/* Fun Facts Card */}
             <div className={`mt-4 relative overflow-hidden
               ${darkMode 
@@ -651,8 +600,8 @@ const Portfolio = () => {
                   ). My ideal type was Richard Feynman!
                 </p>
               </div>
+              </div>
             </div>
-          </div>
           </div>
         </section>
 

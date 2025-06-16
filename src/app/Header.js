@@ -30,7 +30,7 @@ const Header = ({ darkMode, setDarkMode, showSearch, setShowSearch, searchQuery,
               <Github size={20} />
             </a>
             <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-              <Linkedin size={20} />
+              <Linkedin size={20} href="https://www.linkedin.com/in/sana-kang-20a94528a/" />
             </a>
           </div>
           <button

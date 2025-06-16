@@ -6,7 +6,11 @@
       "role": "Project Lead & Full-stack Developer",
       "tags": ["System Building", "AI/ML", "HCI"],
       "period": "2024 - Present",
-      "links": { "github": "#", "demo": "#", "paper": "#" },
+      "links": { 
+        "github": "#", 
+        "demo": "#", 
+        "paper": "#" 
+      },
       "image": "🤖",
       "status": "CHI 2025 Submission"
     },
@@ -16,7 +20,10 @@
       "role": "ML Team Lead",
       "tags": ["Deep Learning", "Data Analysis"],
       "period": "2023 - 2024",
-      "links": { "github": "#", "report": "#" },
+      "links": { 
+        "github": "#", 
+        "report": "#" 
+      },
       "image": "📊",
       "status": "Industry Collaboration"
     },
@@ -26,7 +33,10 @@
       "role": "Blockchain Developer",
       "tags": ["System Building", "Blockchain"],
       "period": "2022",
-      "links": { "github": "#", "patent": "#" },
+      "links": { 
+        "github": "#", 
+        "patent": "#" 
+      },
       "image": "⛓️",
       "status": "Patent Filed"
     },
@@ -36,9 +46,12 @@
       "role": "Game Developer",
       "tags": ["Others", "Game Development"],
       "period": "2024",
-      "links": { "github": "#", "play": "#" },
+      "links": { 
+        "github": "#", 
+        "play": "#" 
+      },
       "image": "🎮",
       "status": "Personal Project"
     }
   ]
-} 
+}

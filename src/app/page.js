@@ -25,6 +25,7 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   Coffee,
   Gamepad2,
   Music,
@@ -49,6 +50,7 @@ const Portfolio = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [showSearch, setShowSearch] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [openProjectIndex, setOpenProjectIndex] = useState(null);
 
   const navigationItems = [
     { id: 'about', label: 'Works', icon: Users },
@@ -180,7 +182,7 @@ const Portfolio = () => {
 
   const aboutNavItems = [
     { id: 'top', label: 'Introduction', icon: Users },
-    { id: 'majors', label: 'Academic Journey', icon: GraduationCap },
+    { id: 'majors', label: 'Education', icon: GraduationCap },
     { id: 'publications', label: 'Publications', icon: FileText },
     { id: 'projects', label: 'Projects', icon: Code },
   ];
@@ -353,7 +355,7 @@ const Portfolio = () => {
         {/* Majors Section */}
         <section id="majors" className="mb-16">
           <div className="mb-8">  
-            <h2 className="text-2xl font-bold mb-4">Academic Journey</h2>
+            <h2 className="text-2xl font-bold mb-4">Education</h2>
             {/* <p className="text-gray-600 dark:text-gray-400 mb-6">
               A selection of previous projects that I have either led or co-led, for research, courseWorks, and of course, for fun!
             </p> */}
@@ -652,16 +654,13 @@ const Portfolio = () => {
         <section id="projects" className="mb-16">
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4">Projects</h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
-              A selection of previous projects that I have either led or co-led, for research, courseWorks, and of course, for fun!
-            </p>
             
             <div className="flex flex-wrap gap-2">
               {filterTags.map((tag) => (
                 <button
                   key={tag}
                   onClick={() => setActiveFilter(tag)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                     activeFilter === tag
                       ? darkMode 
                         ? 'bg-blue-900 text-blue-200 border border-blue-700'
@@ -677,68 +676,159 @@ const Portfolio = () => {
             </div>
           </div>
 
-          <div className="grid gap-6">
+          <div className="space-y-4">
             <AnimatePresence>
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className={`p-6 rounded-lg border transition-colors ${
-                    darkMode ? 'bg-gray-800 border-gray-700 hover:bg-gray-750' : 'bg-white border-gray-200 hover:bg-gray-50'
-                  }`}
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-start space-x-4">
-                      <div className="text-3xl">{project.image}</div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                        <p className="text-gray-600 dark:text-gray-400 mb-3">{project.description}</p>
+              {filteredProjects.map((project, index) => {
+                const isOpen = openProjectIndex === index;
+                return (
+                  <motion.div
+                    key={project.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    className={`group rounded-xl border transition-all duration-200 ${
+                      darkMode 
+                        ? 'bg-gray-800/50 border-gray-700/50 hover:bg-gray-800/80 hover:border-gray-600' 
+                        : 'bg-white/70 border-gray-200/60 hover:bg-white hover:border-gray-300'
+                    } backdrop-blur-sm shadow-sm hover:shadow-md`}
+                  >
+                    {/* Project Header - Always Visible */}
+                    <button
+                      className="w-full p-6 focus:outline-none text-left"
+                      onClick={() => setOpenProjectIndex(isOpen ? null : index)}
+                      aria-expanded={isOpen}
+                    >
+                      <div className="flex items-start gap-4">
+                        {/* Project Emoji */}
+                        <div className="flex-shrink-0">
+                          <span 
+                            className="tossface text-3xl"
+                            dangerouslySetInnerHTML={{ __html: project.image }}
+                          />
+                        </div>
                         
-                        <div className="mb-3">
-                          <span className="text-sm text-blue-500 font-medium">Role: </span>
-                          <span className="text-sm">{project.role}</span>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.tags.map((tag, tagIndex) => (
-                            <span
-                              key={tagIndex}
-                              className={`px-2 py-1 text-xs rounded ${
-                                darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700' 
-                              }`}
-                            >
-                              #{tag.toLowerCase().replace(/\s+/g, '-')}
-                            </span>
-                          ))}
-                        </div>
-
-                        <div className="flex items-center space-x-4">
-                          {project.links.github && (
-                            <a href={project.links.github} className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 text-sm">
-                              <Github size={16} className="mr-1" />
-                              code
-                            </a>
-                          )}
-                          {project.links.paper && (
-                            <a href={project.links.paper} className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 text-sm">
-                              <FileText size={16} className="mr-1" />
-                              paper
-                            </a>
-                          )}
+                        {/* Project Info */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-start justify-between mb-3">
+                            <h3 className={`text-xl font-bold transition-colors ${
+                                darkMode 
+                                  ? 'text-gray-300 group-hover:text-blue-400' 
+                                  : 'text-gray-700 group-hover:text-blue-600'
+                              }`}>
+                              {project.title}
+                            </h3>
+                            <div className="flex items-center gap-2 ml-4">
+                              <div className="flex items-center gap-2">
+                                <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                                  {project.role}
+                                </span>
+                                {project.period && (
+                                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                                    • {project.period}
+                                  </span>
+                                )}
+                              </div>
+                              <ChevronDown
+                                size={20}
+                                className={`transition-transform duration-200 text-gray-400 ${isOpen ? 'rotate-180' : ''}`}
+                              />
+                            </div>
+                          </div>
+                          
+                          <div className="flex flex-wrap gap-2">
+                            {project.tags.map((tag, tagIndex) => (
+                              <span
+                                key={tagIndex}
+                                className={`px-2 py-1 text-xs rounded-md ${
+                                  darkMode ? 'bg-gray-700/50 text-gray-300 border border-gray-600' : 'bg-gray-100 text-gray-600 border border-gray-200'
+                                }`}
+                              >
+                                #{tag.toLowerCase().replace(/\s+/g, '-')}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <span className={`px-3 py-1 text-xs rounded-full ${
-                      darkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-700'
-                    }`}>
-                      {project.status}
-                    </span>
-                  </div>
-                </motion.div>
-              ))}
+                    </button>
+
+                    {/* Expanded Content */}
+                    <motion.div
+                      initial={false}
+                      animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                      transition={{ duration: 0.25, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      {isOpen && (
+                        <div className={`px-6 pb-6 border-t ${darkMode ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+                          <div className="pt-4">
+                            <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">
+                              {project.description}
+                            </p>
+                            
+                            <div className="flex items-center gap-4">
+                              {project.links.github && (
+                                <a 
+                                  href={project.links.github} 
+                                  className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                >
+                                  <Github size={16} />
+                                  Code
+                                </a>
+                              )}
+                              {project.links.paper && (
+                                <a 
+                                  href={project.links.paper} 
+                                  className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                >
+                                  <FileText size={16} />
+                                  Paper
+                                </a>
+                              )}
+                              {project.links.demo && (
+                                <a 
+                                  href={project.links.demo} 
+                                  className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                >
+                                  <ExternalLink size={16} />
+                                  Demo
+                                </a>
+                              )}
+                              {project.links.play && (
+                                <a 
+                                  href={project.links.play} 
+                                  className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                >
+                                  <ExternalLink size={16} />
+                                  Play
+                                </a>
+                              )}
+                              {project.links.patent && (
+                                <a 
+                                  href={project.links.patent} 
+                                  className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                >
+                                  <Award size={16} />
+                                  Patent
+                                </a>
+                              )}
+                              {project.links.report && (
+                                <a 
+                                  href={project.links.report} 
+                                  className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                >
+                                  <FileText size={16} />
+                                  Report
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </motion.div>
+                  </motion.div>
+                );
+              })}
             </AnimatePresence>
           </div>
         </section>

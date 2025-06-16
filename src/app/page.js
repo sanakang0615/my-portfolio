@@ -40,6 +40,7 @@ import newsItems from '../data/newsItems';
 import projectsData from '../data/projects.json';
 import publicationsData from '../data/publications.json';
 import CollaborationRatioBar from '../components/CollaborationRatioBar';
+import ReactMarkdown from 'react-markdown';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -704,7 +705,7 @@ const Portfolio = () => {
                         <div className="flex-shrink-0">
                           <span 
                             className="tossface text-3xl"
-                            dangerouslySetInnerHTML={{ __html: project.image }}
+                            dangerouslySetInnerHTML={{ __html: project.emoji }}
                           />
                         </div>
                         
@@ -762,65 +763,117 @@ const Portfolio = () => {
                       {isOpen && (
                         <div className={`px-6 pb-6 border-t ${darkMode ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
                           <div className="pt-4">
-                            <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">
-                              {project.description}
-                            </p>
-                            
-                            <div className="flex items-center gap-4">
-                              {project.links.github && (
-                                <a 
-                                  href={project.links.github} 
-                                  className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                            {/* Project Images */}
+                            {project.images && project.images.length > 0 && (
+                              <div className={`mb-6 ${project.images.length === 1 ? 'flex gap-6' : 'flex justify-center'}`}>
+                                {project.images.length === 1 ? (
+                                  // Single image layout
+                                  <div className="flex-shrink-0 w-48">
+                                    <img
+                                      src={project.images[0]}
+                                      alt={project.title}
+                                      className="w-full h-48 object-cover rounded-lg border border-gray-200 dark:border-gray-700"
+                                    />
+                                  </div>
+                                ) : (
+                                  // Multiple images layout
+                                  <div className="grid grid-cols-3 gap-4 mb-6 max-w-3xl mx-auto">
+                                    {project.images.map((image, idx) => (
+                                      <img
+                                        key={idx}
+                                        src={image}
+                                        alt={`${project.title} - Image ${idx + 1}`}
+                                        className="w-full h-48 object-cover rounded-lg border border-gray-200 dark:border-gray-700"
+                                      />
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            )}
+
+                            {/* Project Details */}
+                            <div className={`${project.images && project.images.length === 1 ? 'flex-1 min-w-0' : ''}`}>
+                              <div className="prose dark:prose-invert max-w-none">
+                                <ReactMarkdown
+                                  components={{
+                                    p: ({node, ...props}) => <p className="font-['Pretendard']" {...props} />,
+                                    strong: ({node, ...props}) => <strong className="font-['Pretendard']" {...props} />,
+                                    em: ({node, ...props}) => <em className="font-['Pretendard']" {...props} />,
+                                    h1: ({node, ...props}) => <h1 className="font-['Pretendard']" {...props} />,
+                                    h2: ({node, ...props}) => <h2 className="font-['Pretendard']" {...props} />,
+                                    h3: ({node, ...props}) => <h3 className="font-['Pretendard']" {...props} />,
+                                    h4: ({node, ...props}) => <h4 className="font-['Pretendard']" {...props} />,
+                                    h5: ({node, ...props}) => <h5 className="font-['Pretendard']" {...props} />,
+                                    h6: ({node, ...props}) => <h6 className="font-['Pretendard']" {...props} />,
+                                    li: ({node, ...props}) => <li className="font-['Pretendard']" {...props} />,
+                                    a: ({node, ...props}) => <a className="font-['Pretendard']" {...props} />,
+                                    blockquote: ({node, ...props}) => <blockquote className="font-['Pretendard']" {...props} />,
+                                    code: ({node, ...props}) => <code className="font-['Pretendard']" {...props} />,
+                                    pre: ({node, ...props}) => <pre className="font-['Pretendard']" {...props} />,
+                                    ul: ({node, ...props}) => <ul className="font-['Pretendard']" {...props} />,
+                                    ol: ({node, ...props}) => <ol className="font-['Pretendard']" {...props} />,
+                                  }}
                                 >
-                                  <Github size={16} />
-                                  Code
-                                </a>
-                              )}
-                              {project.links.paper && (
-                                <a 
-                                  href={project.links.paper} 
-                                  className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
-                                >
-                                  <FileText size={16} />
-                                  Paper
-                                </a>
-                              )}
-                              {project.links.demo && (
-                                <a 
-                                  href={project.links.demo} 
-                                  className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
-                                >
-                                  <ExternalLink size={16} />
-                                  Demo
-                                </a>
-                              )}
-                              {project.links.play && (
-                                <a 
-                                  href={project.links.play} 
-                                  className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
-                                >
-                                  <ExternalLink size={16} />
-                                  Play
-                                </a>
-                              )}
-                              {project.links.patent && (
-                                <a 
-                                  href={project.links.patent} 
-                                  className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
-                                >
-                                  <Award size={16} />
-                                  Patent
-                                </a>
-                              )}
-                              {project.links.report && (
-                                <a 
-                                  href={project.links.report} 
-                                  className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
-                                >
-                                  <FileText size={16} />
-                                  Report
-                                </a>
-                              )}
+                                  {project.description}
+                                </ReactMarkdown>
+                              </div>
+                              
+                              <div className="flex items-center gap-4 mt-4">
+                                {project.links.github && (
+                                  <a 
+                                    href={project.links.github} 
+                                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                  >
+                                    <Github size={16} />
+                                    Code
+                                  </a>
+                                )}
+                                {project.links.paper && (
+                                  <a 
+                                    href={project.links.paper} 
+                                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                  >
+                                    <FileText size={16} />
+                                    Paper
+                                  </a>
+                                )}
+                                {project.links.demo && (
+                                  <a 
+                                    href={project.links.demo} 
+                                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                  >
+                                    <ExternalLink size={16} />
+                                    Demo
+                                  </a>
+                                )}
+                                {project.links.play && (
+                                  <a 
+                                    href={project.links.play} 
+                                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                  >
+                                    <ExternalLink size={16} />
+                                    Play
+                                  </a>
+                                )}
+                                {project.links.patent && (
+                                  <a 
+                                    href={project.links.patent} 
+                                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                  >
+                                    <Award size={16} />
+                                    Patent
+                                  </a>
+                                )}
+                                {project.links.report && (
+                                  <a 
+                                    href={project.links.report} 
+                                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                  >
+                                    <FileText size={16} />
+                                    Report
+                                  </a>
+                                )}
+                              </div>
                             </div>
                           </div>
                         </div>

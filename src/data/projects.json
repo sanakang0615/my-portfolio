@@ -1,35 +1,63 @@
 {
   "projects": [
     {
-      "title": "ExploreSelf: AI-driven Personal Reflection System",
-      "description": "Led development of adaptive guidance system using Large Language Models for fostering user-driven exploration and reflection on personal challenges.",
-      "role": "Project Lead & Full-stack Developer",
-      "tags": ["System Building", "AI/ML", "HCI"],
-      "period": "2024 - Present",
+      "title": "Redfin",
+      "description": "Developed a **GraphSAGE-based** sales prediction model for F&B franchises, reducing RMSE by 10.6% compared to manual expert predictions.\n\n- Implemented graph neural networks for spatial data analysis\n- Achieved 10.6% improvement in prediction accuracy\n- Published in CHI 2025",
+      "role": "Research Assistant (CMU Tepper)",
+      "tags": ["Graph-based ML", "Prediction Model"],
+      "period": "2025",
       "links": { 
         "github": "#", 
         "demo": "#", 
         "paper": "#" 
       },
-      "image": "🤖",
-      "status": "CHI 2025 Submission"
+      "emoji": "🍴",
+      "images": ["/projects/graphsage.png"]
     },
     {
-      "title": "Location-Based Sales Prediction Model",
-      "description": "Developed GraphSAGE-based model for FnB franchise sales prediction, reducing RMSE by 10.6% compared to manual expert predictions.",
-      "role": "ML Team Lead",
-      "tags": ["Deep Learning", "Data Analysis"],
-      "period": "2023 - 2024",
+      "title": "Leveraging GraphSAGE for Location-Based Sales Analysis in F&B Franchises",
+      "description": "Developed a **GraphSAGE-based** sales prediction model for F&B franchises, reducing RMSE by 10.6% compared to manual expert predictions.\n\n- Implemented graph neural networks for spatial data analysis\n- Achieved 10.6% improvement in prediction accuracy\n- Published in CHI 2025",
+      "role": "Research Project",
+      "tags": ["Graph-based ML", "Prediction Model"],
+      "period": "2024",
+      "links": { 
+        "github": "#", 
+        "demo": "#", 
+        "paper": "#" 
+      },
+      "emoji": "🍴",
+      "images": ["/projects/graphsage.png"]
+    },
+    {
+      "title": "Comparative Topic Network Analysis: Pre-GPT Era vs. GPT Era Prompts",
+      "description": "<h1>Analyzed the evolution of topic networks in AI research before and after GPT's emergence.</h1><h2>Built network analysis pipeline using Python</h2><h2>Visualized topic clusters and their evolution</h2><h2>Identified key shifts in research focus</h2>",
+      "role": "Project",
+      "tags": ["Network Analysis", "NLP", "Data Analysis"],
+      "period": "2024",
+      "links": { 
+        "github": "#", 
+        "demo": "#", 
+        "paper": "#" 
+      },
+      "emoji": "📊",
+      "images": ["/projects/topic-network-1.png", "/projects/topic-network-2.png"]
+    },
+    {
+      "title": "Sweet Tenant Recommender",
+      "description": "Developed a tenant recommendation system for commercial real estate.\n\n- Built ML pipeline for tenant matching\n- Implemented full-stack web application\n- Achieved 85% recommendation accuracy",
+      "role": "ML Team Intern (SweetSpot Inc.)",
+      "tags": ["Machine Learning", "Recommendation System", "Full-stack Development"],
+      "period": "2023",
       "links": { 
         "github": "#", 
         "report": "#" 
       },
-      "image": "📊",
-      "status": "Industry Collaboration"
+      "emoji": "🏢",
+      "images": []
     },
     {
       "title": "VENETA Multi-Issuer Blockchain System",
-      "description": "Designed and developed MVP for blockchain-based P2P trading system. Selected for government-sponsored Financial Regulatory Sandbox.",
+      "description": "Designed and developed MVP for blockchain-based P2P trading system.\n\n- Selected for government-sponsored Financial Regulatory Sandbox\n- Implemented smart contracts for P2P trading\n- Filed patent for novel consensus mechanism",
       "role": "Blockchain Developer",
       "tags": ["System Building", "Blockchain"],
       "period": "2022",
@@ -37,12 +65,12 @@
         "github": "#", 
         "patent": "#" 
       },
-      "image": "⛓️",
-      "status": "Patent Filed"
+      "emoji": "⛓️",
+      "images": ["/projects/veneta.png"]
     },
     {
       "title": "DEATH's WORD CHAIN Game",
-      "description": "Interactive vocabulary learning game developed while studying GRE words. Combines educational content with engaging gameplay mechanics.",
+      "description": "Interactive vocabulary learning game developed while studying GRE words.\n\n- Built with React and TypeScript\n- Features 5000+ GRE vocabulary words\n- Includes spaced repetition algorithm",
       "role": "Game Developer",
       "tags": ["Others", "Game Development"],
       "period": "2024",
@@ -50,8 +78,8 @@
         "github": "#", 
         "play": "#" 
       },
-      "image": "🎮",
-      "status": "Personal Project"
+      "emoji": "🎮",
+      "images": ["/projects/word-chain-1.png", "/projects/word-chain-2.png", "/projects/word-chain-3.png"]
     }
   ]
 }

@@ -1,28 +1,19 @@
 [
   {
     "title": "Prof. Minkyung Kim (CMU Tepper) & Prof. Meng Liu (WashU Olin)",
-    "period": "2025",
+    "period": "2025.05 - Present",
     "emoji": "🧪",
     "description": "Analyzing large-scale housing transaction data from a digital real estate platform using causal inference to study policy-driven consumer behavior. Working paper in preparation.",
-    "tags": ["Causal Inference", "Real Estate", "Consumer Behavior", "Policy Analysis"],
+    "tags": ["Causal Inference", "Real Estate", "Policy Analysis"],
     "type": "Research Assistant",
     "status": "In Progress"
-  },
-  {
-    "title": "Prof. Sung-Hyuk Park (KAIST) & Firenze Inc.",
-    "period": "2024–2025",
-    "emoji": "🧪",
-    "description": "Surveying ML models and biobank datasets (UK Biobank, KoGES) for CVD prediction and fairness. Emphasis on clinical impact and generalization across populations.",
-    "tags": ["Machine Learning", "Healthcare", "CVD Prediction", "Fairness", "Biobank"],
-    "type": "Research Lead (Industry-Academic Collaboration)",
-    "status": "Ongoing"
   },
   {
     "title": "KAIST MIKES Lab",
     "period": "2022.01 – 2023.03",
     "emoji": "🧪",
     "description": "Co-authored a paper on fractional NFTs based on Ethereum ERC-1155. Focused on blockchain-based ownership design in a national research project.",
-    "tags": ["Blockchain", "NFT", "Ethereum", "Smart Contracts", "Research"],
+    "tags": ["Blockchain", "Fractional NFT", "Smart Contracts"],
     "type": "Programming Intern",
     "status": "Completed"
   }

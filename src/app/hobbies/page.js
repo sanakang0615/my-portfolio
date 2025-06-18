@@ -123,8 +123,8 @@ const Hobbies = () => {
                   }`}>
                     <p className="font-pretendard">
                       This is a collection of drawings inspired by music. The project is called 
-                      <span className="font-medium"> "Music to be drawn by"</span>, a small reference 
-                      to Alfred Hitchcock's <span className="font-medium">"Music to be murdered by"</span>.
+                      <span className="font-medium"> &ldquo;Music to be drawn by&rdquo;</span>, a small reference 
+                      to Alfred Hitchcock&apos;s <span className="font-medium">&ldquo;Music to be murdered by&rdquo;</span>.
                     </p>
                     <p className="font-pretendard">
                       I started drawing during the COVID-19 pandemic. I&apos;ve never learned it professionally, 

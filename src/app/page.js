@@ -1,6 +1,7 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { 
   Mail, 
   Phone, 
@@ -43,6 +44,15 @@ import publicationsData from '../data/publications.json';
 import CollaborationRatioBar from '../components/CollaborationRatioBar';
 import ReactMarkdown from 'react-markdown';
 import researchExperience from '../data/research_experience.json';
+
+// Search functionality - moved outside component to prevent recreation on every render
+const createSearchableContent = (publicationsData, projectsData, researchExperience, blogPosts, newsItems) => [
+  ...publicationsData.publications.map(pub => ({ ...pub, type: 'publication' })),
+  ...projectsData.projects.map(proj => ({ ...proj, type: 'project' })),
+  ...researchExperience.map(research => ({ ...research, type: 'research' })),
+  ...blogPosts.map(post => ({ ...post, type: 'blog' })),
+  ...newsItems.map(news => ({ ...news, type: 'news' }))
+];
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -99,7 +109,7 @@ const Portfolio = () => {
     },
     {
       date: '2024-12-20',
-      title: 'Building DEATH\'s WORD CHAIN: A Developer\'s Journey',
+      title: 'Building DEATH&apos;s WORD CHAIN: A Developer&apos;s Journey',
       category: 'Development',
       excerpt: 'The story behind my vocabulary game project. How procrastinating GRE prep led to an unexpected coding adventure...',
       tags: ['Game Development', 'JavaScript', 'Personal Project'],
@@ -122,13 +132,7 @@ const Portfolio = () => {
     : projectsData.projects.filter(project => project.tags.includes(activeFilter));
 
   // Search functionality
-  const searchableContent = [
-    ...publicationsData.publications.map(pub => ({ ...pub, type: 'publication' })),
-    ...projectsData.projects.map(proj => ({ ...proj, type: 'project' })),
-    ...researchExperience.map(research => ({ ...research, type: 'research' })),
-    ...blogPosts.map(post => ({ ...post, type: 'blog' })),
-    ...newsItems.map(news => ({ ...news, type: 'news' }))
-  ];
+  const searchableContent = useMemo(() => createSearchableContent(publicationsData, projectsData, researchExperience, blogPosts, newsItems), [publicationsData, projectsData, researchExperience, blogPosts, newsItems]);
 
   useEffect(() => {
     setMounted(true);
@@ -322,14 +326,16 @@ const Portfolio = () => {
         {/* Main Content (About, News, Projects, Publications 섹션만) */}
         {/* About Section */}
         <section id="top" className="mb-16">
-          <h2 className="text-2xl font-bold mb-4 text-center md:text-left">Hello, I'm Sana!</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center md:text-left">Hello, I&apos;m Sana!</h2>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
             {/* Profile Image */}
             <div className="flex-shrink-0">
               <div className={`w-55 mt-0 rounded-lg overflow-hidden border-4 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
-                <img
+                <Image
                   src="/my_photo.png"
                   alt="Profile Photo"
+                  width={220}
+                  height={220}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -338,7 +344,7 @@ const Portfolio = () => {
             <div className="flex-1 flex flex-col justify-center h-full min-w-0">
             <div className="prose max-w-none text-center md:text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
   <p className="text-lg leading-relaxed mb-4">
-    I am a second-year Master's student in Management Engineering at{' '}
+    I am a second-year Master&apos;s student in Management Engineering at{' '}
     <span className="tossface mr-1">🇰🇷</span>
     <a className="text-blue-600 font-semibold" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer">
       KAIST
@@ -532,9 +538,11 @@ const Portfolio = () => {
               >
                 {pub.image ? (
                   <div className="flex flex-row gap-6 items-start">
-                    <img
+                    <Image
                       src={pub.image}
                       alt={pub.title + ' image'}
+                      width={220}
+                      height={220}
                       className="mt-1 w-55 h-55 object-cover rounded-lg flex-shrink-0 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900"
                     />
                     <div className="flex-1 min-w-0">

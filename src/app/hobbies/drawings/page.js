@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Palette, ExternalLink, Music, Play, Youtube, Apple, Gamepad2, Map } from 'lucide-react';
 import AppLayout from '../../AppLayout';
 import { Users, Calendar, Code, FileText } from 'lucide-react';
@@ -127,13 +128,13 @@ const Hobbies = () => {
                       to Alfred Hitchcock's <span className="font-medium">"Music to be murdered by"</span>.
                     </p>
                     <p className="font-pretendard">
-                      I started drawing during the COVID-19 pandemic. I've never learned it professionally, 
+                      I started drawing during the COVID-19 pandemic. I&apos;ve never learned it professionally, 
                       but it became something I really enjoyed. I usually draw while listening to one song on repeat. 
                       The drawing shows how that song makes me feel that day.
                     </p>
                     <p className="font-pretendard">
                       One of the best things about this hobby is that it helped me appreciate all kinds of emotions — 
-                      not just joy or excitement, but also calmness and even sadness. Whatever I'm feeling that day 
+                      not just joy or excitement, but also calmness and even sadness. Whatever I&apos;m feeling that day 
                       becomes a valuable ingredient for capturing the mood in my drawing.
                     </p>
                   </div>
@@ -157,9 +158,11 @@ const Hobbies = () => {
                   <div className={`p-1 rounded-2xl mt-30 ${
                     darkMode ? 'bg-gray-800' : 'bg-white'
                   }`}>
-                    <img 
+                    <Image 
                       src="/my_photo_7.png" 
                       alt="Sana Kang" 
+                      width={288}
+                      height={384}
                       className="w-72 h-96 object-cover rounded-xl"
                     />
                   </div>
@@ -180,10 +183,12 @@ const Hobbies = () => {
                   <div key={drawing.id} className="group">
                     {/* 이미지 */}
                     <div className="relative mb-4 overflow-hidden rounded-xl">
-                      <img 
+                      <Image 
                         src={drawing.image} 
                         alt={drawing.title} 
-                        className="w-full h-72 object-cover transition-transform duration-300 group-hover:`scale-105"
+                        width={400}
+                        height={288}
+                        className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                       
                       {/* 호버 시 스포티파이 버튼 */}
@@ -207,7 +212,7 @@ const Hobbies = () => {
                               rel="noopener noreferrer"
                               aria-label="Apple Music"
                             >
-                              <img src="/apple_music_logo.png" alt="Apple Music" width="20" height="20" style={{ borderRadius: '5px' }} />
+                              <Image src="/apple_music_logo.png" alt="Apple Music" width={16} height={16} style={{ borderRadius: '3px' }} />
                             </a>
                           )}
                           {drawing.youtubeLink && (
@@ -265,7 +270,7 @@ const Hobbies = () => {
                               rel="noopener noreferrer"
                               aria-label="Apple Music"
                             >
-                              <img src="/apple_music_logo.png" alt="Apple Music" width="16" height="16" style={{ borderRadius: '3px' }} />
+                              <Image src="/apple_music_logo.png" alt="Apple Music" width={16} height={16} style={{ borderRadius: '3px' }} />
                             </a>
                           )}
                         </div>
@@ -287,15 +292,6 @@ const Hobbies = () => {
                 ))}
               </div>
             </section>
-
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className={`p-2 pr-1 md:pr-4 rounded-md transition-colors ${
-                darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
-              }`}
-            >
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
 
           </>
         );

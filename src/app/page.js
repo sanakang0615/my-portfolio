@@ -31,7 +31,8 @@ import {
   Music,
   Palette,
   MessageCircle,
-  ArrowUp
+  ArrowUp,
+  FlaskConical
 } from 'lucide-react';
 import Link from 'next/link';
 import SidebarLayout from './SidebarLayout';
@@ -41,6 +42,7 @@ import projectsData from '../data/projects.json';
 import publicationsData from '../data/publications.json';
 import CollaborationRatioBar from '../components/CollaborationRatioBar';
 import ReactMarkdown from 'react-markdown';
+import researchExperience from '../data/research_experience.json';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -56,7 +58,8 @@ const Portfolio = () => {
   const navigationItems = [
     { id: 'about', label: 'Works', icon: Users },
     { id: 'projects', label: 'Projects', icon: Code },
-    { id: 'publications', label: 'Publications', icon: FileText },
+    { id: 'publications', label: 'Research Publications', icon: FileText },
+    { id: 'research', label: 'Research Experience', icon: FlaskConical },
     { id: 'blog', label: 'Blog', icon: MessageCircle },
     { id: 'drawings', label: 'Drawings', icon: Palette },
     { id: 'cv', label: 'CV', icon: Download }
@@ -122,6 +125,7 @@ const Portfolio = () => {
   const searchableContent = [
     ...publicationsData.publications.map(pub => ({ ...pub, type: 'publication' })),
     ...projectsData.projects.map(proj => ({ ...proj, type: 'project' })),
+    ...researchExperience.map(research => ({ ...research, type: 'research' })),
     ...blogPosts.map(post => ({ ...post, type: 'blog' })),
     ...newsItems.map(news => ({ ...news, type: 'news' }))
   ];
@@ -163,7 +167,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'majors', 'projects', 'publications', 'blog', 'cv'];
+      const sections = ['about', 'majors', 'projects', 'publications', 'research', 'blog', 'cv'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -185,6 +189,7 @@ const Portfolio = () => {
     { id: 'top', label: 'Introduction', icon: Users },
     { id: 'majors', label: 'Education', icon: GraduationCap },
     { id: 'publications', label: 'Publications', icon: FileText },
+    { id: 'research', label: 'Research Experience', icon: FlaskConical },
     { id: 'projects', label: 'Projects', icon: Code },
   ];
 
@@ -265,7 +270,8 @@ const Portfolio = () => {
                           <span className={`text-xs px-2 py-1 rounded ${
                             result.type === 'publication' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200' :
                             result.type === 'project' ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200' :
-                            result.type === 'blog' ? 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200' :
+                            result.type === 'research' ? 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200' :
+                            result.type === 'blog' ? 'bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-200' :
                             'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
                           }`}>
                             {result.type}
@@ -330,25 +336,39 @@ const Portfolio = () => {
             </div>
             {/* Info + 소개문단 */}
             <div className="flex-1 flex flex-col justify-center h-full min-w-0">
-              <div className="prose max-w-none text-center md:text-left" style={{color: darkMode ? '#cbd5e1' : '#374151'}}>
-                <p className="text-lg leading-relaxed mb-4">
-                  I am a second-year Master's student in Management Engineering at{' '}
-                  <span className="tossface mr-1">🇰🇷</span><a className="text-blue-600 font-semibold" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer">KAIST</a>, specializing in Information Systems. 
-                  I am currently a Short-term Scholar at{' '}
-                  <span className="tossface mr-1">🇺🇸</span><a className="text-red-400 font-semibold" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a> (until July 2025).
+            <div className="prose max-w-none text-center md:text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
+  <p className="text-lg leading-relaxed mb-4">
+    I am a second-year Master's student in Management Engineering at{' '}
+    <span className="tossface mr-1">🇰🇷</span>
+    <a className="text-blue-600 font-semibold" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer">
+      KAIST
+    </a>, specializing in Information Systems. 
+    I am currently a Short-term Scholar at{' '}
+    <span className="tossface mr-1">🇺🇸</span>
+    <a className="text-red-400 font-semibold" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">
+      Carnegie Mellon University
+    </a> (until July 2025).
+    I work at the intersection of AI/ML, marketing, and information systems, bridging real-world problems with academic research. 
+  </p>
 
-                  My research interests lie at the intersection of AI/ML applications, 
-                  quantitative marketing, and information systems. 
-                  I am passionate about leveraging advanced analytics and machine learning techniques 
-                  to solve real-world business problems.
-                  </p>
-                  <p className="text-lg leading-relaxed mb-4">
-                  Beyond academia, I'm a <span className="tossface mr-1">🎮</span>console gamer (currently obsessed with story-rich games), 
-                  a <span className="tossface mr-1">🎨</span>digital artist who loves creating while listening to music, and someone who turned 
-                  <span className="tossface mr-1">📚</span>GRE vocabulary study into a fun word game project. I believe the best ideas come from 
-                  the intersection of different interests and experiences.
-                </p>
-              </div>
+
+  <p className="text-lg leading-relaxed mb-4">
+  Outside of research, I have a few hobbies.  
+  Feel free to check them out in the <a href="/hobbies/drawings" className="text-gray-600 font-semibold">Hobbies</a> tab above.  
+  I enjoy <span className="tossface mr-1">🎨</span>drawing inspired by music,  
+  and also work on small side projects, like <span className="tossface mr-1">🎮</span> 
+  <a 
+    className="text-gray-600 font-semibold" 
+    href="https://wordchain.sanakang.xyz" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    a vocabulary game
+  </a> I built during GRE prep.
+</p>
+
+</div>
+
             </div>
           </div>
         </section>
@@ -386,8 +406,8 @@ const Portfolio = () => {
                     <span className="text-xs opacity-60">2024.04 - Current</span>
                   </div>
                   
-                  <h3 className="text-base mb-1 text-blue-600 dark:text-blue-400 font-['Pretendard']">
-                    Information Systems @ <a href="https://business.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 decoration-2 font-['Pretendard'] font-semibold">KAIST Business School</a>
+                  <h3 className="font-semibold text-base mb-1 text-blue-600 dark:text-blue-400 font-['Pretendard']">
+                    Information Systems @ <a href="https://business.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 decoration-2 font-['Pretendard']">KAIST Business School</a>
                   </h3>
                   <p className="text-xs opacity-70 font-['Pretendard']">
                     AI/ML applications, quantitative marketing, and information systems
@@ -416,9 +436,9 @@ const Portfolio = () => {
                   </div>
                   
 
-                  <h3 className="text-base mb-1 text-purple-600 dark:text-purple-400 font-['Pretendard']">
+                  <h3 className="font-semibold text-base mb-1 text-purple-600 dark:text-purple-400 font-['Pretendard']">
                     Computer Science @ {' '}
-                    <a href="https://www.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 decoration-2 font-['Pretendard'] font-semibold">
+                    <a href="https://www.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="font-bold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 decoration-2 font-['Pretendard']">
                       Carnegie Mellon University
                     </a>
                   </h3>
@@ -448,9 +468,9 @@ const Portfolio = () => {
                     <span className="text-xs opacity-60">2019.03 - 2025.02</span>
                   </div>
                   
-                    <h3 className="text-base mb-1 text-purple-600 dark:text-purple-400 font-['Pretendard']">
-                    Computer Science and Business Technology & Management @ {' '}
-                    <a href="https://www.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 decoration-2 font-['Pretendard'] font-semibold">
+                    <h3 className="font-semibold text-base mb-1 text-purple-600 dark:text-purple-400 font-['Pretendard']">
+                    Computer Science and Business Technology Management @ {' '}
+                    <a href="https://www.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="font-bold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 decoration-2 font-['Pretendard']">
                       KAIST
                     </a>
                   </h3>
@@ -493,7 +513,7 @@ const Portfolio = () => {
 
         {/* Publications Section */}
         <section id="publications" className="mb-16">
-          <h2 className="text-2xl font-bold mb-2">Publications & Presentations</h2>
+          <h2 className="text-2xl font-bold mb-2">Research Publications</h2>
           {/* <p className="text-gray-600 dark:text-gray-400 mb-6">Please see my CV for more details.</p> */}
           
           <CollaborationRatioBar darkMode={darkMode} />
@@ -651,6 +671,121 @@ const Portfolio = () => {
           </div>
         </section>
 
+        {/* Research Experience Section */}
+        <section id="research" className="mb-16">
+          <h2 className="text-2xl font-bold mb-2">Research Experience</h2>
+          <div className="space-y-4">
+            <AnimatePresence>
+              {researchExperience.map((research, index) => {
+                const isOpen = openProjectIndex === `research-${index}`;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    className={`group rounded-xl border transition-all duration-200 ${
+                      darkMode 
+                        ? 'bg-gray-800/50 border-gray-700/50 hover:bg-gray-800/80 hover:border-gray-600' 
+                        : 'bg-white/70 border-gray-200/60 hover:bg-white hover:border-gray-300'
+                    } backdrop-blur-sm shadow-sm hover:shadow-md`}
+                  >
+                    {/* Research Header - Always Visible */}
+                    <button
+                      className="w-full p-6 focus:outline-none text-left"
+                      onClick={() => setOpenProjectIndex(isOpen ? null : `research-${index}`)}
+                      aria-expanded={isOpen}
+                    >
+                      <div className="flex items-start gap-4">
+                        {/* Emoji */}
+                        <div className="flex-shrink-0">
+                          {research.emoji && (
+                            <span className="tossface text-3xl" dangerouslySetInnerHTML={{ __html: research.emoji }} />
+                          )}
+                        </div>
+                        {/* Info */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-start justify-between mb-3">
+                            <h3 className={`text-xl font-bold transition-colors ${
+                                darkMode 
+                                  ? 'text-gray-300 group-hover:text-blue-400' 
+                                  : 'text-gray-700 group-hover:text-blue-600'
+                              }`}>
+                              {research.title}
+                            </h3>
+                            <div className="flex items-center gap-2 ml-4">
+                              <div className="flex items-center gap-2">
+                                <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                                  {research.type}
+                                </span>
+                                {research.period && (
+                                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                                    • {research.period}
+                                  </span>
+                                )}
+                              </div>
+                              <ChevronDown
+                                size={20}
+                                className={`transition-transform duration-200 text-gray-400 ${isOpen ? 'rotate-180' : ''}`}
+                              />
+                            </div>
+                          </div>
+                          <div className="flex flex-wrap items-center justify-between w-full">
+                            <div className="flex flex-wrap gap-2">
+                              {research.tags && research.tags.map((tag, tagIndex) => (
+                                <span
+                                  key={tagIndex}
+                                  className={`px-2 py-1 text-xs rounded-md ${
+                                    darkMode ? 'bg-gray-700/50 text-gray-300 border border-gray-600' : 'bg-gray-100 text-gray-600 border border-gray-200'
+                                  }`}
+                                >
+                                  #{tag.toLowerCase().replace(/\s+/g, '-')}
+                                </span>
+                              ))}
+                            </div>
+                            {research.stack && research.stack.length > 0 && (
+                              <div className="flex flex-wrap gap-2 ml-auto">
+                                {research.stack.map((stackItem, stackIdx) => (
+                                  <span
+                                    key={stackIdx}
+                                    className={`px-2 py-0.5 text-xs rounded-md font-semibold border ${
+                                      darkMode ? 'bg-blue-900/10 text-blue-300 border-blue-900/20' : 'bg-blue-50 text-blue-500 border-blue-100'
+                                    }`}
+                                  >
+                                    {stackItem}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                    {/* Expanded Content */}
+                    <motion.div
+                      initial={false}
+                      animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                      transition={{ duration: 0.25, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      {isOpen && (
+                        <div className={`px-6 pb-6 border-t ${darkMode ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+                          <div className="pt-4">
+                            <div className="prose dark:prose-invert max-w-none">
+                              <p className="font-['Pretendard'] text-gray-600 dark:text-gray-400 text-sm mb-4">{research.description}</p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </motion.div>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+        </section>
+
         {/* Projects Section */}
         <section id="projects" className="mb-16">
           <div className="mb-8">
@@ -737,17 +872,33 @@ const Portfolio = () => {
                             </div>
                           </div>
                           
-                          <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tag, tagIndex) => (
-                              <span
-                                key={tagIndex}
-                                className={`px-2 py-1 text-xs rounded-md ${
-                                  darkMode ? 'bg-gray-700/50 text-gray-300 border border-gray-600' : 'bg-gray-100 text-gray-600 border border-gray-200'
-                                }`}
-                              >
-                                #{tag.toLowerCase().replace(/\s+/g, '-')}
-                              </span>
-                            ))}
+                          <div className="flex flex-wrap items-center justify-between w-full">
+                            <div className="flex flex-wrap gap-2">
+                              {project.tags.map((tag, tagIndex) => (
+                                <span
+                                  key={tagIndex}
+                                  className={`px-2 py-1 text-xs rounded-md ${
+                                    darkMode ? 'bg-gray-700/50 text-gray-300 border border-gray-600' : 'bg-gray-100 text-gray-600 border border-gray-200'
+                                  }`}
+                                >
+                                  #{tag.toLowerCase().replace(/\s+/g, '-')}
+                                </span>
+                              ))}
+                            </div>
+                            {project.stack && project.stack.length > 0 && (
+                              <div className="flex flex-wrap gap-2 ml-auto">
+                                {project.stack.map((stackItem, stackIdx) => (
+                                  <span
+                                    key={stackIdx}
+                                    className={`px-2 py-0.5 text-xs rounded-md font-semibold border ${
+                                      darkMode ? 'bg-blue-900/10 text-blue-300 border-blue-900/20' : 'bg-blue-50 text-blue-500 border-blue-100'
+                                    }`}
+                                  >
+                                    {stackItem}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>

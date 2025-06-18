@@ -1,31 +1,19 @@
 {
   "projects": [
-    {
-      "title": "Redfin",
-      "description": "Developed a **GraphSAGE-based** sales prediction model for F&B franchises, reducing RMSE by 10.6% compared to manual expert predictions.\n\n- Implemented graph neural networks for spatial data analysis\n- Achieved 10.6% improvement in prediction accuracy\n- Published in CHI 2025",
-      "role": "Research Assistant (CMU Tepper)",
-      "tags": ["Graph-based ML", "Prediction Model"],
-      "period": "2025",
-      "links": { 
-        "github": "#", 
-        "demo": "#", 
-        "paper": "#" 
-      },
-      "emoji": "🍴",
-      "images": ["/projects/graphsage.png"]
-    },
+
     {
       "title": "Leveraging GraphSAGE for Location-Based Sales Analysis in F&B Franchises",
-      "description": "Developed a **GraphSAGE-based** sales prediction model for F&B franchises, reducing RMSE by 10.6% compared to manual expert predictions.\n\n- Implemented graph neural networks for spatial data analysis\n- Achieved 10.6% improvement in prediction accuracy\n- Published in CHI 2025",
-      "role": "Research Project",
-      "tags": ["Graph-based ML", "Prediction Model"],
+      "description": "Developed a GraphSAGE-based sales prediction model for F&B franchises, reducing RMSE by 10.6% compared to manual expert predictions. To operationalize the model, I built a full-stack web service using React and FastAPI, allowing internal experts to easily access and interact with the results. I was responsible for both the machine learning pipeline and the frontend interface, ensuring seamless integration between prediction logic and user experience.",
+      "role": "ML Team Head (SweetSpot Inc.)",
+      "tags": ["Machine Learning", "Prediction Model", "Full-stack Development"],
+      "stack": ["Python", "JavaScript", "PyTorch", "React", "FastAPI"],
       "period": "2024",
+      "emoji": "🏢",
       "links": { 
         "github": "#", 
         "demo": "#", 
         "paper": "#" 
       },
-      "emoji": "🍴",
       "images": ["/projects/graphsage.png"]
     },
     {
@@ -33,6 +21,7 @@
       "description": "<h1>Analyzed the evolution of topic networks in AI research before and after GPT's emergence.</h1><h2>Built network analysis pipeline using Python</h2><h2>Visualized topic clusters and their evolution</h2><h2>Identified key shifts in research focus</h2>",
       "role": "Project",
       "tags": ["Network Analysis", "NLP", "Data Analysis"],
+      "stack": ["Python", "Pandas", "Matplotlib", "Seaborn"],
       "period": "2024",
       "links": { 
         "github": "#", 
@@ -43,23 +32,11 @@
       "images": ["/projects/topic-network-1.png", "/projects/topic-network-2.png"]
     },
     {
-      "title": "Sweet Tenant Recommender",
-      "description": "Developed a tenant recommendation system for commercial real estate.\n\n- Built ML pipeline for tenant matching\n- Implemented full-stack web application\n- Achieved 85% recommendation accuracy",
-      "role": "ML Team Intern (SweetSpot Inc.)",
-      "tags": ["Machine Learning", "Recommendation System", "Full-stack Development"],
-      "period": "2023",
-      "links": { 
-        "github": "#", 
-        "report": "#" 
-      },
-      "emoji": "🏢",
-      "images": []
-    },
-    {
       "title": "VENETA Multi-Issuer Blockchain System",
       "description": "Designed and developed MVP for blockchain-based P2P trading system.\n\n- Selected for government-sponsored Financial Regulatory Sandbox\n- Implemented smart contracts for P2P trading\n- Filed patent for novel consensus mechanism",
       "role": "Blockchain Developer",
       "tags": ["System Building", "Blockchain"],
+      "stack": ["Python", "Pandas", "Matplotlib", "Seaborn"],
       "period": "2022",
       "links": { 
         "github": "#", 
@@ -73,6 +50,7 @@
       "description": "Interactive vocabulary learning game developed while studying GRE words.\n\n- Built with React and TypeScript\n- Features 5000+ GRE vocabulary words\n- Includes spaced repetition algorithm",
       "role": "Game Developer",
       "tags": ["Others", "Game Development"],
+      "stack": ["Python", "Pandas", "Matplotlib", "Seaborn"],
       "period": "2024",
       "links": { 
         "github": "#", 

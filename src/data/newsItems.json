@@ -1,11 +1,6 @@
 {
   "newsItems": [
     {
-        "date": "2025.07",
-        "icon": "🎓",
-        "title": "Completed the CMU Short-term Scholar!"
-    },
-    {
         "date": "2025.06",
         "icon": "📚",
         "title": "Book Chapter Accepted in \"Handbook on Artificial Intelligence and Strategy\" @UMich Ross"

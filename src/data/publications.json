@@ -3,34 +3,34 @@
     {
         "title": "PHONITALE: Phonologically Grounded Mnemonic Generation for Typologically Distant Language Pairs",
         "authors": "<span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Myeongseok Gwon, Suyeong Kwon, Jaewook Lee, Andrew Lan, Bhiksha Raj, Rita Singh",
-        "venue": "EMNLP 2025",
+        "venue": "Under review at ACL Rolling Review (2025)",
         "status": "Under Review",
         "type": "Conference",
         "tags": ["CS", "NLP", "Deep Learning", "Phonology", "Low Resource Language"],
         "links": { },
-        "description": "A phonology-aware system that generates effective cross-lingual mnemonics for second-language learners using LLMs and IPA-based keyword retrieval. Built a scalable mnemonic generation pipeline that bridges phonological gaps between typologically distant languages like Korean and English.",
+        "description": "A phonology-aware cross-lingual mnemonic generator combining IPA-based keyword retrieval and LLM cue generation, tailored for typologically distant languages; validated via user study with L2 learners.",
         "image": "/publications/phonitale.png"
     },
     {
       "title": "LLMs Meet Match-Up Theory: A New Frontier in Influencer Recommendation",
       "authors": "Myeongseok Gwon, <span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang </span>, Minhyeong Lee, Sung-hyuk Park",
-      "venue": "ICIS 2025",
-      "status": "Under Review",
+      "venue": "Under review at ICIS (2025)",
       "type": "Conference",
+      "status": "Under Review",
       "tags": ["IS", "Multimodal Learning", "LLM", "Recommender System", "Influencer Marketing"],
       "links": { },
-      "description": "An interpretable influencer recommendation system that leverages LLMs to assess brand-influencer fit via semantic alignment across captions, hashtags, and images. A prompt-engineered GPT-4o pipeline generates content-based fitness scores from multimodal Instagram data, and econometric validation shows strong performance even under severe label sparsity, especially with text-only inputs.",
+      "description": "An interpretable influencer recommendation framework integrating match-up theory with LLM-based multimodal alignment. The system employs GPT-4o to generate brand-influencer fitness scores from Instagram captions, hashtags, and images, and demonstrates robust predictive power via econometric validation under label sparsity.",
       "image": "/publications/llm-match-up.png"
     },
     {
         "title": "Beyond English-Centric AI: Strategic FrameWorkss for Developing Low-Resource Language Models",
         "authors": "Prithwiraj Choudhury, Do Yoon Kim, <span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>",
-        "venue": "<a href='https://rossweb.bus.umich.edu/ai-handbook/'>Handbook on Artificial Intelligence and Strategy </a>",
+        "venue": "<a href='https://rossweb.bus.umich.edu/ai-handbook/'>Handbook on Artificial Intelligence and Strategy </a>, UMich Ross (Forthcoming 2026)",
         "status": "Accepted",
         "type": "Book Chapter",
         "tags": ["Strategy", "IS", "LLM", "Innovation", "Low Resource Language"],
         "links": { "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5285155" },
-        "description": "A critical examination of how language ideologies embedded in NLP systems marginalize non-English users and languages. Through case studies and design reflections, we explore how multilingual technologies can be reimagined to center equity, local relevance, and user participation in low-resource settings. (Expected Publication: 2026)",
+        "description": "An investigation into how English-centric NLP design marginalizes users of low-resource languages. The chapter proposes innovation frameworks, such as frugal and disruptive innovation, for equitable AI development, supported by case studies and platform-level design reflections.",
         "image": "/publications/beyond-english.png"
     },
     {

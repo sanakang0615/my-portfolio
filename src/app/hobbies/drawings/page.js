@@ -140,7 +140,7 @@ const Hobbies = () => {
                   </div>
 
                   <a
-                    href="https://musicdrawnby.vercel.app/"
+                    href="https://musicdrawnby.sanakang.xyz"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`inline-flex items-center gap-3 px-3 py-1.5 pt-2 font-pretendard rounded-xl font-sm transition-all duration-200 ${

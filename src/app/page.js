@@ -600,10 +600,10 @@ const Portfolio = () => {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex justify-between items-start mb-3">
-                        <h3 className="text-lg font-semibold flex-1 mr-4">{pub.title}</h3>
-                        <div className="flex flex-col items-end gap-2">
-                          <div className="flex items-center gap-2">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
+                        <h3 className="text-lg font-semibold flex-1 mb-2 sm:mb-0 sm:mr-4">{pub.title}</h3>
+                        <div className="flex flex-col items-start sm:items-end gap-2">
+                          <div className="flex items-center flex-wrap gap-2">
                             <span className={`px-3 py-1 text-xs rounded-full ${
                               darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-700'
                             }`}>
@@ -665,10 +665,10 @@ const Portfolio = () => {
                   </div>
                 ) : (
                   <>
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-lg font-semibold flex-1 mr-4">{pub.title}</h3>
-                      <div className="flex flex-col items-end gap-2">
-                        <div className="flex items-center gap-2">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
+                      <h3 className="text-lg font-semibold flex-1 mb-2 sm:mb-0 sm:mr-4">{pub.title}</h3>
+                      <div className="flex flex-col items-start sm:items-end gap-2">
+                        <div className="flex items-center flex-wrap gap-2">
                           <span className={`px-3 py-1 text-xs rounded-full ${
                             darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-700'
                           }`}>

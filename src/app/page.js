@@ -330,7 +330,7 @@ const Portfolio = () => {
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
             {/* Profile Image */}
             <div className="flex-shrink-0">
-              <div className={`w-55 mt-0 rounded-lg overflow-hidden border-4 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
+              <div className={`w-55 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
                 <Image
                   src="/my_photo.png"
                   alt="Profile Photo"
@@ -538,13 +538,15 @@ const Portfolio = () => {
               >
                 {pub.image ? (
                   <div className="flex flex-row gap-6 items-start">
-                    <Image
-                      src={pub.image}
-                      alt={pub.title + ' image'}
-                      width={220}
-                      height={220}
-                      className="mt-1 w-55 h-55 object-cover rounded-lg flex-shrink-0 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900"
-                    />
+                    <div className={`mt-1 w-55 h-55 rounded-lg overflow-hidden border-2 flex-shrink-0 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'}`}>
+                      <Image
+                        src={pub.image}
+                        alt={pub.title + ' image'}
+                        width={220}
+                        height={220}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between items-start mb-3">
                         <h3 className="text-lg font-semibold flex-1 mr-4">{pub.title}</h3>
@@ -781,6 +783,23 @@ const Portfolio = () => {
                       {isOpen && (
                         <div className={`px-6 pb-6 border-t ${darkMode ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
                           <div className="pt-4">
+                            {/* Research Images */}
+                            {research.images && research.images.length > 0 && (
+                              <div className="mb-6 flex justify-center">
+                                <div className="flex gap-4">
+                                  {research.images.map((image, idx) => (
+                                    <div key={idx} className={`w-64 h-64 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'}`}>
+                                      <img
+                                        src={image}
+                                        alt={`${research.title} - Image ${idx + 1}`}
+                                        className="w-full h-full object-cover"
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+
                             <div className="prose dark:prose-invert max-w-none">
                               <p className="font-pretendard text-gray-600 dark:text-gray-400 text-sm mb-4">{research.description}</p>
                             </div>
@@ -927,16 +946,29 @@ const Portfolio = () => {
                             {/* Project Images */}
                             {project.images && project.images.length > 0 && (
                               <div className="mb-6 flex justify-center">
-                                <div className="flex gap-4">
-                                  {project.images.map((image, idx) => (
+                                {project.images.length === 1 ? (
+                                  // Single image: fixed height, auto width to maintain aspect ratio
+                                  <div className={`inline-block rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'}`}>
                                     <img
-                                      key={idx}
-                                      src={image}
-                                      alt={`${project.title} - Image ${idx + 1}`}
-                                      className="w-48 h-48 object-cover rounded-lg border border-gray-200 dark:border-gray-700"
+                                      src={project.images[0]}
+                                      alt={`${project.title} - Image`}
+                                      className="h-64 w-auto block"
                                     />
-                                  ))}
-                                </div>
+                                  </div>
+                                ) : (
+                                  // Multiple images: grid layout
+                                  <div className="flex gap-4">
+                                    {project.images.map((image, idx) => (
+                                      <div key={idx} className={`w-64 h-64 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'}`}>
+                                        <img
+                                          src={image}
+                                          alt={`${project.title} - Image ${idx + 1}`}
+                                          className="w-full h-full object-cover"
+                                        />
+                                      </div>
+                                    ))}
+                                  </div>
+                                )}
                               </div>
                             )}
 

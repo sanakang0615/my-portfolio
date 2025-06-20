@@ -11,6 +11,7 @@ html, body {
   background-color: var(--background);
   overscroll-behavior: none;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 * {

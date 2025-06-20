@@ -25,6 +25,30 @@ const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children }) => {
     }
   }, [darkMode, mounted]);
 
+  // Keyboard shortcut for search (Cmd+K on Mac, Ctrl+K on Windows/Linux)
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      // Check if Cmd (Mac) or Ctrl (Windows/Linux) + K is pressed
+      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+        event.preventDefault(); // Prevent default browser behavior
+        setShowSearch(true);
+      }
+      
+      // Close search with Escape key
+      if (event.key === 'Escape' && showSearch) {
+        setShowSearch(false);
+      }
+    };
+
+    // Add event listener
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [showSearch]);
+
   if (!mounted) {
     return null;
   }
@@ -56,6 +80,24 @@ const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children }) => {
               />
             </div>
             <div className="px-4 pb-4 text-gray-400 text-sm">(Search functionality coming soon)</div>
+            <div className={`px-4 py-3 border-t text-xs text-gray-500 ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-4">
+                  <span className="flex items-center space-x-1">
+                    <kbd className={`px-1 py-0.5 rounded ${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>
+                      {typeof window !== 'undefined' && /Mac|iPhone|iPad|iPod/.test(navigator.platform) ? '⌘' : 'Ctrl'}
+                    </kbd>
+                    <kbd className={`px-1 py-0.5 rounded ${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>K</kbd>
+                    <span>to search</span>
+                  </span>
+                  <span className="flex items-center space-x-1">
+                    <span>esc</span>
+                    <span>to close</span>
+                  </span>
+                </div>
+                <span className="text-blue-500">Search by Sana</span>
+              </div>
+            </div>
           </div>
         </div>
       )}

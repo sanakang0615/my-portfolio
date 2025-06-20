@@ -125,11 +125,28 @@ const Portfolio = () => {
     }
   ];
 
-  const filterTags = ['All', 'System Building', 'Deep Learning', 'Data Analysis', 'AI/ML', 'Others'];
+  // Dynamically generate filter tags from actual project data
+  const filterTags = useMemo(() => {
+    const allTags = new Set();
+    projectsData.projects.forEach(project => {
+      project.tags.forEach(tag => allTags.add(tag));
+    });
+    return ['All', ...Array.from(allTags).sort()];
+  }, [projectsData.projects]);
 
-  const filteredProjects = activeFilter === 'All' 
-    ? projectsData.projects 
-    : projectsData.projects.filter(project => project.tags.includes(activeFilter));
+  const filteredProjects = useMemo(() => {
+    // First sort all projects by period in descending order (newest first)
+    const sortedProjects = [...projectsData.projects].sort((a, b) => {
+      const yearA = parseInt(a.period);
+      const yearB = parseInt(b.period);
+      return yearB - yearA; // Descending order (newest first)
+    });
+    
+    // Then apply the filter
+    return activeFilter === 'All' 
+      ? sortedProjects 
+      : sortedProjects.filter(project => project.tags.includes(activeFilter));
+  }, [projectsData.projects, activeFilter]);
 
   // Search functionality
   const searchableContent = useMemo(() => createSearchableContent(publicationsData, projectsData, researchExperience, blogPosts, newsItems), [publicationsData, projectsData, researchExperience, blogPosts, newsItems]);
@@ -158,6 +175,30 @@ const Portfolio = () => {
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
   }, [darkMode]);
+
+  // Keyboard shortcut for search (Cmd+K on Mac, Ctrl+K on Windows/Linux)
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      // Check if Cmd (Mac) or Ctrl (Windows/Linux) + K is pressed
+      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+        event.preventDefault(); // Prevent default browser behavior
+        setShowSearch(true);
+      }
+      
+      // Close search with Escape key
+      if (event.key === 'Escape' && showSearch) {
+        setShowSearch(false);
+      }
+    };
+
+    // Add event listener
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [showSearch]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -301,6 +342,17 @@ const Portfolio = () => {
               }`}>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
+                    <span className="flex items-center space-x-1">
+                      <kbd className={`px-1 py-0.5 rounded ${
+                        darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
+                      }`}>
+                        {typeof window !== 'undefined' && /Mac|iPhone|iPad|iPod/.test(navigator.platform) ? '⌘' : 'Ctrl'}
+                      </kbd>
+                      <kbd className={`px-1 py-0.5 rounded ${
+                        darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
+                      }`}>K</kbd>
+                      <span>to search</span>
+                    </span>
                     <span className="flex items-center space-x-1">
                       <ArrowUp size={12} />
                       <span>to select</span>
@@ -885,12 +937,12 @@ const Portfolio = () => {
                             </h3>
                             <div className="flex items-center gap-2 ml-4">
                               <div className="flex items-center gap-2">
-                                <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                                {/* <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">
                                   {project.role}
-                                </span>
+                                </span> */}
                                 {project.period && (
-                                  <span className="text-sm text-gray-500 dark:text-gray-400">
-                                    • {project.period}
+                                  <span className="text-sm font-bold text-gray-500 dark:text-gray-400">
+                                    {project.period}
                                   </span>
                                 )}
                               </div>
@@ -906,7 +958,7 @@ const Portfolio = () => {
                               {project.tags.map((tag, tagIndex) => (
                                 <span
                                   key={tagIndex}
-                                  className={`px-2 py-1 text-xs rounded-md ${
+                                  className={`px-2 py-0.5 text-xs rounded-md ${
                                     darkMode ? 'bg-gray-700/50 text-gray-300 border border-gray-600' : 'bg-gray-100 text-gray-600 border border-gray-200'
                                   }`}
                                 >
@@ -920,7 +972,7 @@ const Portfolio = () => {
                                   <span
                                     key={stackIdx}
                                     className={`px-2 py-0.5 text-xs rounded-md font-semibold border ${
-                                      darkMode ? 'bg-blue-900/10 text-blue-300 border-blue-900/20' : 'bg-blue-50 text-blue-500 border-blue-100'
+                                      darkMode ? 'bg-blue-900/10 text-blue-200 border-blue-900/20' : 'bg-blue-50 text-blue-400 border-blue-100'
                                     }`}
                                   >
                                     {stackItem}

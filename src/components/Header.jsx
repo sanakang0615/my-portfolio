@@ -116,7 +116,9 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
                 <div className="hidden sm:flex items-center space-x-1">
                   <kbd className={`px-1 py-0.5 text-xs rounded ${
                     darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
-                  }`}>⌘</kbd>
+                  }`}>
+                    {typeof window !== 'undefined' && /Mac|iPhone|iPad|iPod/.test(navigator.platform) ? '⌘' : 'Ctrl'}
+                  </kbd>
                   <kbd className={`px-1 py-0.5 text-xs rounded ${
                     darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
                   }`}>K</kbd>

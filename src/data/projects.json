@@ -1,5 +1,16 @@
 {
   "projects": [
+    {
+      "title": "HDMedi MedExtractor",
+      "description": "# Overview\n\nHDMedi MedExtractor is designed to extract medication names from prescription and medicine bag images, mapping them to unique names registered with the Ministry of Food and Drug Safety, even if different names are used by different pharmacies.\n\n## Why HDMedi Extractor?\n\nExtracting Korean medication names from prescriptions or medicine bag images presents two challenges. First, identifying which text represents a medication name is difficult when reading image data through OCR. For instance, without training, can a computer recognize '마이암부톨제피정이' as a medication name? This issue arises due to the lack of a NER model specialized for Korean medication names. Second, different pharmacies may use different names for the same medication, necessitating standardization. Our team developed HDMedi Extractor to address these challenges.\n\n## Key Processes\n\n1. **Image Preprocessing**: Convert input images to text using Naver OCR, merging lines into sentences based on y-values.\n2. **Preprocessing and Line Removal**: Filter out lines unlikely to contain medication names from OCR-processed text.\n3. **Name Extraction and Alignment**: Extract medication names by comparing text with a medication name database, aligning different names for the same medication.\n\n## Requirements\n\n### Package Installation\n\nTo run this project, install the following packages: RxBagExtractor, numpy, pandas.\n\n```bash\npip install RxBagExtractor numpy pandas\n```\n\nRxBagExtractor is a preprocessing Python package developed by our team, available on PyPI.\n\n### Medication Name Database\n\nTo ensure consistency, we built a medication name database based on the Ministry of Food and Drug Safety's product approval information, accounting for different names used by pharmacies.\n\n## Function Call Order\n\n1. `get_ocr_image_to_element(image_path)`\n   - Calls `extractor(text)` from RxBagExtractor for text preprocessing and filtering.\n2. `process_text(text)`\n   - Calls `process_line(query)`\n   - Calls `preprocess_query(query)`\n     - Calls `extract_unit(query)`\n     - Calls `store_leftovers(match)` internally\n     - Calls `extract_chojungsung(c)` for Hangul decomposition\n   - Calls `find_best_match(line, medication_db, query_unit)`\n     - Calls `generate_ngrams(text, n=3)`\n     - Calls `hangul_edit_distance(word1, word2)`\n       - Calls `phoneme_distance(a, b, phoneme_groups)`\n         - Calls `get_phoneme_group(phoneme, phoneme_groups)`\n     - Calls `extract_unit(med)` again\n   - Reuses `extract_chojungsung(c)`\n\n## Key Function Descriptions\n\n### `extract_unit(text)`\n\nExtracts medication units from text with typos.\n\n**Return**: Tuple (result, leftovers)\n\n- `result`: Standardized unit string\n- `leftovers`: List of strings recognized as units\n\n### `generate_ngrams(text, n=3)`\n\nGenerates a list of n-gram substrings from input text.\n\n**Return**: List of substrings\n\n### `phoneme_distance(a, b, phoneme_groups)`\n\nCalculates distance between two phonemes considering phoneme groups.\n\n**Return**: Integer distance\n\n### `hangul_edit_distance(word1, word2)`\n\nCalculates similarity score between two words based on phoneme distance.\n\n**Return**: Integer distance\n\n### `find_best_match(line, medication_db, query_unit, threshold=4)`\n\nFinds the most similar medication name in the database to the given text.\n\n**Return**: Tuple (med_match, best_score)\n\n### `process_line(query)`\n\nPrepares input line and filters medication_db before calling `find_best_match`.\n\n### `process_text(text)`\n\nProcesses multiple text lines to return matched medication names.\n\n## Performance\n\nTested on approximately 60 medicine bag data, achieving:\n\n- Overall Precision: 0.655\n- Overall Recall: 0.728\n- Overall F1 Score: 0.690",
+      "role": "Project",
+      "tags": ["Image Processing", "Machine Learning", "Computer Vision"],
+      "stack": ["Python", "OpenCV", "OCR"],
+      "period": "2025",
+      "emoji": "💊",
+      "links": {},
+      "images": ["/projects/RXExtractor.png"]
+    },
 
     {
       "title": "Leveraging GraphSAGE for Location-Based Sales Analysis in F&B Franchises",
@@ -10,9 +21,7 @@
       "period": "2024",
       "emoji": "🏢",
       "links": { 
-        "github": "#", 
-        "demo": "#", 
-        "paper": "#" 
+
       },
       "images": []
     },
@@ -24,9 +33,7 @@
       "stack": ["Python", "Gephi", "BERTopic"],
       "period": "2024",
       "links": { 
-        "github": "#", 
-        "demo": "#", 
-        "paper": "#" 
+
       },
       "emoji": "📊",
       "images": []
@@ -39,9 +46,7 @@
       "stack": ["Next.js", "Express.js", "WalletConnect", "Hardhat", "Alchemy", "Sismo"],
       "period": "2023",
       "links": { 
-        "github": "#", 
-        "demo": "#", 
-        "paper": "#" 
+
       },
       "emoji": "🌐",
       "images": ["/projects/Blockchain-1.png", "/projects/Blockchain-2.png"]
@@ -54,9 +59,7 @@
       "stack": ["Dart", "Flutter", "Spring Boot"],
       "period": "2021",
       "links": { 
-        "github": "#", 
-        "demo": "#", 
-        "paper": "#" 
+
       },
       "emoji": "☑️",
       "images": ["/projects/UniTasker_3.png","/projects/UniTasker_1.png", "/projects/UniTasker_2.png"]
@@ -69,9 +72,6 @@
       "stack": ["Flutter", "Figma"],
       "period": "2022",
       "links": { 
-        "github": "#", 
-        "demo": "#", 
-        "paper": "#" 
       },
       "emoji": "☑️",
       "images": ["/projects/AIDMS.png"]
@@ -84,53 +84,46 @@
       "stack": [ "Java", "JavaScript", "Solidity", "React", "Spring Boot","Smart Contract"],
       "period": "2022",
       "links": { 
-        "github": "#", 
-        "patent": "#" 
       },
       "emoji": "⛓️",
       "images": ["/projects/Veneta.png"]
     },
     {
       "title": "DEATH's WORD CHAIN Game",
-      "description": "Interactive vocabulary learning game developed while studying GRE words.\n\n- Built with React and TypeScript\n- Features 5000+ GRE vocabulary words\n- Includes spaced repetition algorithm",
-      "role": "Game Developer",
-      "tags": ["Others", "Game Development"],
-      "stack": ["Python", "Pandas", "Matplotlib", "Seaborn"],
-      "period": "2024",
+      "description": "Interactive vocabulary learning game developed while studying GRE words.",
+      "role": "Others",
+      "tags": ["Web Development"],
+      "stack": ["JavaScript", "Next"],
+      "period": "2025",
       "links": { 
-        "github": "#", 
-        "play": "#" 
+        "play": "wordchain.sanakang.xyz" 
       },
       "emoji": "🎮",
-      "images": ["/projects/word-chain-1.png", "/projects/word-chain-2.png", "/projects/word-chain-3.png"]
+      "images": ["/projects/word-chain-1.png", "/projects/word-chain-2.png"]
     },
     {
       "title": "Detective Cell for #POTD",
-      "description": "**Detective Cell for #POTD Service** offers an innovative way to engage users by simulating interactions with characters from the popular webtoon \"Yumi's Cells.\"\n\nThis web service uses a dynamic chat-based interface to collect users’ **facial and voice** inputs to recommend **locations** that suit their mood and personality for the picture of the day.",
+      "description": "**Detective Cell for #POTD Service** offers an innovative way to engage users by simulating interactions with characters from the popular webtoon \"Yumi's Cells.\"\n\nThis web service uses a dynamic chat-based interface to collect users' **facial and voice** inputs to recommend **locations** that suit their mood and personality for the picture of the day.",
       "role": "Game Developer",
       "tags": ["Web Development", "Machine Learning"],
       "stack": ["JavaScript", "Python", "Flask", "React", "Face shape classifier", "Voice analyzer"],
       "period": "2024",
       "links": { 
-        "github": "#", 
-        "play": "#" 
       },
       "emoji": "🔍",
       "images": ["/projects/OOPD.png"]
     },
     {
       "title": "Offline Shopping Aid Gloves for the Visually Impaired",
-      "description": "**Offline Shopping Aid Gloves for the Visually Impaired** Project addresses the significant challenges visually impaired people face during offline shopping due to the information accessibility gap. By focusing on sensory information processing, particularly visual cues which constitute 90% of the brain's input, our project aims to enhance shopping independence for visually impaired individuals.\n\n- The key innovation lies in specially designed gloves that assist with product recognition and navigation in stores. The gloves use built-in technology to provide auditory feedback about products, helping users identify items through barcode and color recognition features.\n- Addressing the lack of useful Braille on products, the gloves also aim to replace standard barcodes with Braille voice conversion codes, thus providing a practical solution to the real-world needs of the visually impaired.\n\n## Technical Specifications\n\n### 1. Right-Hand Glove Development for Color Identification and Product Classification\n\n#### 1.1 Implementation Goals and Components Used\n\nThe right-hand glove focuses on aiding visually impaired users by **providing color information of products**, which can be crucial for product differentiation. This glove utilizes an **RGB sensor** to detect the color of the item in hand and communicates this information through an auditory system powered by the **Arduino library Talkie**, converting color data into spoken words. This feature aims to assist in identifying and distinguishing products based on their color characteristics.\n\n#### 1.2 Construction and Functionality\n\nSimilar to the left-hand glove, the right-hand glove features tactile switches that trigger operations such as identifying and vocalizing colors. The glove was designed to perform under practical conditions, successfully identifying primary colors of widely known products. The glove’s exterior was also crafted using AUTOCAD and printed via 3D printing technology at Idea Factory, ensuring that the design is both functional and accessible for users.\n\n### 2. Left-Hand Glove Development\n\n#### 2.1 Implementation Goals and Components Used\n\nThe left-hand glove is engineered to assist visually impaired individuals by enabling them to identify products through **barcode scanning**. The glove integrates a barcode reader to scan and decode product barcodes, which are prevalent on product displays and packaging. This technology helps in determining what product it is by reading the barcode assigned to each product. Initially, the product utilized speakers for audio feedback; however, due to limitations, buzzers were used as substitutes to convey the product information audibly.\n\n#### 2.2 Construction and Functionality\n\nUpon pressing a button on the barcode reader, the device **activates and emits light** to facilitate barcode recognition. The glove was **tested** in a controlled environment, distinguishing canned beverages like Coca-Cola, Pepsi, and Mountain Dew based on their barcodes, which had been pre-registered in our database. Future developments could see the system connecting to a server for real-time data updates, expanding its utility.\n\nThe glove's cover was **designed using AUTOCAD** and **produced with a 3D printer** from KAIST Idea Factory. Specific features of the glove include holes for scanner button access, sound emission, and velcro attachments for easy detachment and reattachment of the device.",
+      "description": "**Offline Shopping Aid Gloves for the Visually Impaired** Project addresses the significant challenges visually impaired people face during offline shopping due to the information accessibility gap. By focusing on sensory information processing, particularly visual cues which constitute 90% of the brain's input, our project aims to enhance shopping independence for visually impaired individuals.\n\n- The key innovation lies in specially designed gloves that assist with product recognition and navigation in stores. The gloves use built-in technology to provide auditory feedback about products, helping users identify items through barcode and color recognition features.\n- Addressing the lack of useful Braille on products, the gloves also aim to replace standard barcodes with Braille voice conversion codes, thus providing a practical solution to the real-world needs of the visually impaired.\n\n## Technical Specifications\n\n### 1. Right-Hand Glove Development for Color Identification and Product Classification\n\n#### 1.1 Implementation Goals and Components Used\n\nThe right-hand glove focuses on aiding visually impaired users by **providing color information of products**, which can be crucial for product differentiation. This glove utilizes an **RGB sensor** to detect the color of the item in hand and communicates this information through an auditory system powered by the **Arduino library Talkie**, converting color data into spoken words. This feature aims to assist in identifying and distinguishing products based on their color characteristics.\n\n#### 1.2 Construction and Functionality\n\nSimilar to the left-hand glove, the right-hand glove features tactile switches that trigger operations such as identifying and vocalizing colors. The glove was designed to perform under practical conditions, successfully identifying primary colors of widely known products. The glove's exterior was also crafted using AUTOCAD and printed via 3D printing technology at Idea Factory, ensuring that the design is both functional and accessible for users.\n\n### 2. Left-Hand Glove Development\n\n#### 2.1 Implementation Goals and Components Used\n\nThe left-hand glove is engineered to assist visually impaired individuals by enabling them to identify products through **barcode scanning**. The glove integrates a barcode reader to scan and decode product barcodes, which are prevalent on product displays and packaging. This technology helps in determining what product it is by reading the barcode assigned to each product. Initially, the product utilized speakers for audio feedback; however, due to limitations, buzzers were used as substitutes to convey the product information audibly.\n\n#### 2.2 Construction and Functionality\n\nUpon pressing a button on the barcode reader, the device **activates and emits light** to facilitate barcode recognition. The glove was **tested** in a controlled environment, distinguishing canned beverages like Coca-Cola, Pepsi, and Mountain Dew based on their barcodes, which had been pre-registered in our database. Future developments could see the system connecting to a server for real-time data updates, expanding its utility.\n\nThe glove's cover was **designed using AUTOCAD** and **produced with a 3D printer** from KAIST Idea Factory. Specific features of the glove include holes for scanner button access, sound emission, and velcro attachments for easy detachment and reattachment of the device.",
       "role": "Project",
       "tags": ["3D Printing", "Arduino Development"],
       "stack": ["Arduino", "AUTOCAD"],
       "period": "2022",
       "links": { 
-        "github": "#", 
-        "play": "#" 
       },
       "emoji": "🔍",
-      "images": ["/projects/ShoppingAID-1.png", "/projects/ShoppingAID-2.png", "/projects/ShoppingAID-3.png"]
+      "images": ["/projects/ShoppingAid-1.png", "/projects/ShoppingAid-2.png", "/projects/ShoppingAid-3.png"]
     },
     {
       "title": "Fractional NFT Service",
@@ -140,8 +133,6 @@
       "stack": ["Solidity", "JavaScript", "Next"],
       "period": "2022",
       "links": { 
-        "github": "#", 
-        "play": "#" 
       },
       "emoji": "🔍",
       "images": ["/projects/FNFT.png"]
@@ -154,8 +145,6 @@
       "stack": ["Phython", "ML Model", "Streamlit"],
       "period": "2021",
       "links": { 
-        "github": "#", 
-        "play": "#" 
       },
       "emoji": "🔍",
       "images": ["/projects/LGHnH.png"]
@@ -168,11 +157,21 @@
       "stack": ["Phython", "Streamlit"],
       "period": "2021",
       "links": { 
-        "github": "#", 
-        "play": "#" 
       },
       "emoji": "🔍",
       "images": ["/projects/LGHnH.png"]
+    },
+    {
+      "title": "Shuffle & Discover",
+      "description": "",
+      "role": "",
+      "tags": ["Mobile App"],
+      "stack": ["FlutterFlow"],
+      "period": "2023",
+      "links": { 
+      },
+      "emoji": "🔍",
+      "images": ["/projects/Shuffle-1.png", "/projects/Shuffle-2.png", "/projects/Shuffle-3.png"]
     }
 
   ]

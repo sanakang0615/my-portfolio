@@ -6,7 +6,7 @@ export const metadata = {
   icons: {
     icon: [
       {
-        url: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="80" font-size="80" font-family="Tossface">⛰️</text></svg>',
+        url: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><style>@font-face{font-family:'Tossface';font-style:normal;font-weight:400;src:url('https://cdn.jsdelivr.net/gh/toss/tossface/dist/tossface.woff2') format('woff2');}</style><text y=%22.9em%22 font-size=%2290%22 font-family=%22Tossface%22>⛰️</text></svg>",
         type: 'image/svg+xml',
       }
     ]

@@ -39,7 +39,7 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
                     : 'hover:text-blue-400'
                 }`}
               >
-                Works
+                Work
               </Link>
               <Link 
                 href="/hobbies/drawings" 
@@ -51,7 +51,7 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
               >
                 Hobbies
               </Link>
-              <Link 
+              {/* <Link 
                 href="/blog" 
                 className={`text-sm transition-colors ${
                   isActive('/blog') 
@@ -60,7 +60,7 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
                 }`}
               >
                 Blog
-              </Link>
+              </Link> */}
               <Link 
                 href="/cv" 
                 className={`text-sm transition-colors ${
@@ -71,7 +71,7 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
               >
                 CV
               </Link>
-              <Link 
+              {/* <Link 
                 href="/aboutsite" 
                 className={`text-sm transition-colors ${
                   isActive('/aboutsite') 
@@ -80,16 +80,16 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
                 }`}
               >
                 What&apos;s This?
-              </Link>
+              </Link> */}
             </nav>
           </div>
 
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-3">
-              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
+              <a href="https://github.com/sanakang0615" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
                 <Github size={20} />
               </a>
-              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
+              <a href="https://www.linkedin.com/in/sana-kang-20a94528a" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
                 <Linkedin size={20} />
               </a>
             </div>

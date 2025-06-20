@@ -66,7 +66,7 @@ const Portfolio = () => {
   const [openProjectIndex, setOpenProjectIndex] = useState(null);
 
   const navigationItems = [
-    { id: 'about', label: 'Works', icon: Users },
+    { id: 'about', label: 'Work', icon: Users },
     { id: 'projects', label: 'Projects', icon: Code },
     { id: 'publications', label: 'Research Publications', icon: FileText },
     { id: 'research', label: 'Research Experience', icon: FlaskConical },
@@ -374,7 +374,7 @@ const Portfolio = () => {
         )}
       </AnimatePresence>
 
-      <SidebarLayout navItems={aboutNavItems} sidebarTitle="Works" darkMode={darkMode} newsItems={newsItems} activeSection={activeSection}>
+      <SidebarLayout navItems={aboutNavItems} sidebarTitle="Work" darkMode={darkMode} newsItems={newsItems} activeSection={activeSection}>
         {/* Main Content (About, News, Projects, Publications 섹션만) */}
         {/* About Section */}
         <section id="top" className="mb-16">
@@ -384,7 +384,7 @@ const Portfolio = () => {
             <div className="flex-shrink-0">
               <div className={`w-55 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
                 <Image
-                  src="/my_photo.png"
+                  src="/my_photo/my_photo.png"
                   alt="Profile Photo"
                   width={220}
                   height={220}
@@ -590,7 +590,7 @@ const Portfolio = () => {
               >
                 {pub.image ? (
                   <div className="flex flex-row gap-6 items-start">
-                    <div className={`mt-1 w-55 h-55 rounded-lg overflow-hidden border-2 flex-shrink-0 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'}`}>
+                    <div className={`hidden md:block mt-1 w-55 h-55 rounded-lg overflow-hidden border-2 flex-shrink-0 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'}`}>
                       <Image
                         src={pub.image}
                         alt={pub.title + ' image'}

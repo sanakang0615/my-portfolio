@@ -118,6 +118,11 @@ const SidebarLayout = ({ navItems, children, sidebarTitle = "NAVIGATION", darkMo
                           ${darkMode ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-gray-700 hover:bg-gray-100 hover:text-black'}`}
                         onClick={e => {
                           e.preventDefault();
+                          // Drawings를 클릭했을 때는 페이지 최상단으로 스크롤
+                          if (item.id === 'drawings') {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            return;
+                          }
                           const el = document.getElementById(item.id);
                           if (el) {
                             const headerOffset = 80;

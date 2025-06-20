@@ -16,7 +16,7 @@ const Hobbies = () => {
   ];
 
   const aboutNavItems = [
-    { id: 'about', label: 'Works', icon: Users },
+    { id: 'about', label: 'Work', icon: Users },
     { id: 'news', label: 'News', icon: Calendar },
     { id: 'projects', label: 'Projects', icon: Code },
     { id: 'publications', label: 'Publications', icon: FileText },
@@ -28,7 +28,7 @@ const Hobbies = () => {
         const drawings = [
           {
             id: 1,
-            image: "/drawing-3.jpg",
+            image: "/drawings/drawing-3.jpg",
             title: "Jigsaw Falling Into Place (2025)",
             artist: "Radiohead",
             album: "In Rainbows (2007)",
@@ -40,7 +40,7 @@ const Hobbies = () => {
           },
           {
             id: 2,
-            image: "/drawing-7.png",
+            image: "/drawings/drawing-7.png",
             title: "February (2022)",
             artist: "Thornapple",
             album: "Enlightenment (2019)",
@@ -53,7 +53,7 @@ const Hobbies = () => {
           },
           {
             id: 3,
-            image: "/drawing-4.jpg",
+            image: "/drawings/drawing-4.jpg",
             title: "Powder Blue (2023)",
             artist: "The Black Skirts",
             album: "Teen Troubles (2022)",
@@ -66,7 +66,7 @@ const Hobbies = () => {
           },
           {
             id: 4,
-            image: "/drawing-1.jpg",
+            image: "/drawings/drawing-1.jpg",
             title: "Chlorine (2022)",
             artist: "Twenty One Pilots",
             album: "Trench (2018)",
@@ -78,7 +78,7 @@ const Hobbies = () => {
           },
           {
             id: 5,
-            image: "/drawing-5.jpg",
+            image: "/drawings/drawing-5.jpg",
             title: "Supermassive Black Hole (2022)",
             artist: "Muse",
             album: "Black Holes and Revelations (2006)",
@@ -90,7 +90,7 @@ const Hobbies = () => {
           },
           {
             id: 6,
-            image: "/drawing-6.jpg",
+            image: "/drawings/drawing-6.jpg",
             title: "The Less I Know the Better (2023)",
             artist: "Tame Impala",
             album: "Currents (2015)",
@@ -159,7 +159,7 @@ const Hobbies = () => {
                     darkMode ? 'bg-gray-800' : 'bg-white'
                   }`}>
                     <Image 
-                      src="/my_photo_7.png" 
+                      src="/my_photo/my_photo_7.png" 
                       alt="Sana Kang" 
                       width={288}
                       height={384}
@@ -237,7 +237,7 @@ const Hobbies = () => {
                         }`}>
                           {drawing.title}
                         </h3>
-                        <div className="flex items-center gap-2 pb-1">
+                        <div className="flex items-center gap-2 pb-1 flex-shrink-0">
                           {drawing.spotifyLink && (
                             <a
                               href={drawing.spotifyLink}

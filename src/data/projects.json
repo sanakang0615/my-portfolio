@@ -3,10 +3,10 @@
 
     {
       "title": "Leveraging GraphSAGE for Location-Based Sales Analysis in F&B Franchises",
-      "description": "Developed a GraphSAGE-based sales prediction model for F&B franchises, reducing RMSE by 10.6% compared to manual expert predictions. To operationalize the model, I built a full-stack web service using React and FastAPI, allowing internal experts to easily access and interact with the results. I was responsible for both the machine learning pipeline and the frontend interface, ensuring seamless integration between prediction logic and user experience.",
-      "role": "ML Team Head (SweetSpot Inc.)",
+      "description": "# Project Overview\n\nDeveloped a GraphSAGE-based sales prediction model for F&B franchises, reducing RMSE by 10.6% compared to manual expert predictions.\n\n# Implementation Details\n\nTo operationalize the model, I built a full-stack web service using React and FastAPI, allowing internal experts to easily access and interact with the results.\n\n# Responsibilities\n\nI was responsible for both the machine learning pipeline and the frontend interface, ensuring seamless integration between prediction logic and user experience.",
+      "role": "ML Team Intern (SweetSpot Inc.)",
       "tags": ["Machine Learning", "Prediction Model", "Full-stack Development"],
-      "stack": ["Python", "JavaScript", "PyTorch", "React", "FastAPI"],
+      "stack": ["Python", "JavaScript", "React", "FastAPI"],
       "period": "2024",
       "emoji": "🏢",
       "links": { 
@@ -14,14 +14,14 @@
         "demo": "#", 
         "paper": "#" 
       },
-      "images": ["/projects/graphsage.png"]
+      "images": []
     },
     {
       "title": "Comparative Topic Network Analysis: Pre-GPT Era vs. GPT Era Prompts",
-      "description": "<h1>Analyzed the evolution of topic networks in AI research before and after GPT's emergence.</h1><h2>Built network analysis pipeline using Python</h2><h2>Visualized topic clusters and their evolution</h2><h2>Identified key shifts in research focus</h2>",
+      "description": "",
       "role": "Project",
-      "tags": ["Network Analysis", "NLP", "Data Analysis"],
-      "stack": ["Python", "Pandas", "Matplotlib", "Seaborn"],
+      "tags": ["Network Analysis", "NLP"],
+      "stack": ["Python", "Gephi"],
       "period": "2024",
       "links": { 
         "github": "#", 
@@ -29,21 +29,51 @@
         "paper": "#" 
       },
       "emoji": "📊",
-      "images": ["/projects/topic-network-1.png", "/projects/topic-network-2.png"]
+      "images": []
+    },
+    {
+      "title": "TransWeb3 Wiki Project",
+      "description": "# Award Recognition\n\n🏆 Received the Sponsor Prize by Polygon in **Ethcon 2023**, hosted by Ethereum Foundation.\n\n# Project Explanation\n\n**TransWeb3 Wiki Project** addresses a significant challenge within the web3 ecosystem — the language barrier faced by approximately 95% of the global population who do not use English as their primary language.\n\n- Our solution leverages the power of community-driven translations to enhance accessibility and foster broader adoption of web3 technologies.\n- Contributors can participate by translating content, improving existing translations, and earning NFTs as a form of recognition and potential career advancement within the web3 space.\n\n# Built with\n\n[Next.js](https://nextjs.org/), [Express.js](https://expressjs.com/ko/), [WalletConnect](https://walletconnect.com/), [Ant Design](https://ant.design/), [Hardhat](https://hardhat.org/), [Alchemy](https://www.alchemy.com/), [Sismo](https://www.sismo.io/)\n\n# Connectable Wallet\n\n- [MetaMask](https://metamask.io/)\n- [Rainbow](https://rainbow.me/)\n- [Coinbase Wallet](https://www.coinbase.com/wallet)\n\n# Deployed Network\n\n- Ethereum\n- Polygon\n- Linea Goerli Testnet\n- Sepolia Testnet\n- Polygon Mumbai Testnet\n- Polygon zkEVM Testnet\n- Taiko Grimsvotn L2\n- Taiko Eldfell L3",
+      "role": "Project",
+      "tags": ["Web3", "Translation", "Community-driven"],
+      "stack": ["Next.js", "Express.js", "WalletConnect", "Ant Design", "Hardhat", "Alchemy", "Sismo"],
+      "period": "2023",
+      "links": { 
+        "github": "#", 
+        "demo": "#", 
+        "paper": "#" 
+      },
+      "emoji": "🌐",
+      "images": ["/projects/Blockchain-1.png", "/projects/Blockchain-2.png"]
+    },
+    {
+      "title": "UniTasker for Remote Study",
+      "description": "# Project Description\n\n**UniTasker** was developed to assist university students studying remotely during online classes. By entering their university, students can add courses offered, create task lists under those courses, and share progress checks with followers.\n\n# Service Features\n\n## 1. Login\n\nLogin through Kakao ID or sign up directly in the app. Accounts created with Kakao ID use Kakao tokens to generate a new encrypted JSON Web Token.\n\n## 2. Home Screen\n\nDisplays trending courses and users based on follower counts.\n\n## 3. Course Search\n\nSearch by course title or number. Top-followed courses appear on the home screen regardless of the school.\n\n## 4. View Tasks\n\nView and react to tasks posted by others enrolled in the same courses.\n\n## 5. Add and Review Tasks\n\nOrganize and manage tasks by course and date. Interact with tasks followed by users or those in the same courses.\n\n## 6. User Profile\n\nView follower count, number of followings, affiliated school, etc. Usernames and profile pictures are generated randomly.\n\n# Dependencies\n\n- Spring Boot, MyBatis, Spring Security, Validation, JWT for authentication and security\n- Redis for data management and caching\n- Webflux and Reactor for reactive programming\n- Swagger for API documentation\n- Gson for JSON processing\n- Lombok for boilerplate code reduction",
+      "role": "Project",
+      "tags": ["Mobile App"],
+      "stack": ["Dart", "Java","Flutter", "Spring Boot"],
+      "period": "2021",
+      "links": { 
+        "github": "#", 
+        "demo": "#", 
+        "paper": "#" 
+      },
+      "emoji": "☑️",
+      "images": ["/projects/UniTasker_3.png","/projects/UniTasker_1.png", "/projects/UniTasker_2.png"]
     },
     {
       "title": "VENETA Multi-Issuer Blockchain System",
       "description": "Designed and developed MVP for blockchain-based P2P trading system.\n\n- Selected for government-sponsored Financial Regulatory Sandbox\n- Implemented smart contracts for P2P trading\n- Filed patent for novel consensus mechanism",
-      "role": "Blockchain Developer",
+      "role": "Intern (UWS Blockchain R&D Center)",
       "tags": ["System Building", "Blockchain"],
-      "stack": ["Python", "Pandas", "Matplotlib", "Seaborn"],
+      "stack": [ "Java", "JavaScript", "Solidity", "React", "Spring Boot","Smart Contract"],
       "period": "2022",
       "links": { 
         "github": "#", 
         "patent": "#" 
       },
       "emoji": "⛓️",
-      "images": ["/projects/veneta.png"]
+      "images": ["/projects/Veneta.png"]
     },
     {
       "title": "DEATH's WORD CHAIN Game",

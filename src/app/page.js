@@ -400,22 +400,22 @@ const Portfolio = () => {
                   ${darkMode 
                     ? 'bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50' 
                     : 'bg-gradient-to-br from-white/90 to-gray-50/90 backdrop-blur-sm border border-gray-200/50'}
-                  rounded-xl p-3 shadow-md font-['Pretendard']`}>
+                  rounded-xl p-3 shadow-md font-pretendard`}>
                   
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <span className="text-xl tossface">🎓</span>
-                      <span className="px-2 pt-1 text-xs bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-semibold rounded-full font-['Pretendard']">
+                      <span className="px-2 pt-1 text-xs bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-semibold rounded-full font-pretendard">
                         Graduate
                       </span>
                     </div>
                     <span className="text-xs opacity-60">2024.04 - Current</span>
                   </div>
                   
-                  <h3 className="font-semibold text-base mb-1 text-blue-600 dark:text-blue-400 font-['Pretendard']">
-                    Information Systems @ <a href="https://business.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 decoration-2 font-['Pretendard']">KAIST Business School</a>
+                  <h3 className="font-semibold text-base mb-1 text-blue-600 dark:text-blue-400 font-pretendard">
+                    Information Systems @ <a href="https://business.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 decoration-2 font-pretendard">KAIST Business School</a>
                   </h3>
-                  <p className="text-xs opacity-70 font-['Pretendard']">
+                  <p className="text-xs opacity-70 font-pretendard">
                     AI/ML applications, quantitative marketing, and information systems
                   </p>
                 </div>
@@ -429,12 +429,12 @@ const Portfolio = () => {
                   ${darkMode 
                     ? 'bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50' 
                     : 'bg-gradient-to-br from-white/90 to-gray-50/90 backdrop-blur-sm border border-gray-200/50'}
-                  rounded-xl p-3 shadow-md font-['Pretendard']`}>
+                  rounded-xl p-3 shadow-md font-pretendard`}>
                   
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <span className="text-xl tossface">🏛️</span>
-                      <span className="px-2 pt-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-semibold rounded-full font-['Pretendard']">
+                      <span className="px-2 pt-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-semibold rounded-full font-pretendard">
                         Visiting Scholar
                       </span>
                     </div>
@@ -442,13 +442,13 @@ const Portfolio = () => {
                   </div>
                   
 
-                  <h3 className="font-semibold text-base mb-1 text-purple-600 dark:text-purple-400 font-['Pretendard']">
+                  <h3 className="font-semibold text-base mb-1 text-purple-600 dark:text-purple-400 font-pretendard">
                     Computer Science @ {' '}
-                    <a href="https://www.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="font-bold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 decoration-2 font-['Pretendard']">
+                    <a href="https://www.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="font-bold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 decoration-2 font-pretendard">
                       Carnegie Mellon University
                     </a>
                   </h3>
-                  <p className="text-xs opacity-70 font-['Pretendard']">
+                  <p className="text-xs opacity-70 font-pretendard">
                     Software and Societal Systems Department under School of Computer Science
                   </p>
                 </div>
@@ -462,25 +462,25 @@ const Portfolio = () => {
                   ${darkMode 
                     ? 'bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50' 
                     : 'bg-gradient-to-br from-white/90 to-gray-50/90 backdrop-blur-sm border border-gray-200/50'}
-                  rounded-xl p-3 shadow-md font-['Pretendard']`}>
+                  rounded-xl p-3 shadow-md font-pretendard`}>
                   
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <span className="text-xl tossface">💻</span>
-                      <span className="px-2 pt-1 text-xs bg-gradient-to-r from-pink-500 to-red-500 text-white text-xs font-semibold rounded-full font-['Pretendard']">
+                      <span className="px-2 pt-1 text-xs bg-gradient-to-r from-pink-500 to-red-500 text-white text-xs font-semibold rounded-full font-pretendard">
                         Undergraduate
                       </span>
                     </div>
                     <span className="text-xs opacity-60">2019.03 - 2025.02</span>
                   </div>
                   
-                    <h3 className="font-semibold text-base mb-1 text-purple-600 dark:text-purple-400 font-['Pretendard']">
+                    <h3 className="font-semibold text-base mb-1 text-purple-600 dark:text-purple-400 font-pretendard">
                     Computer Science and Business Technology Management @ {' '}
-                    <a href="https://www.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="font-bold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 decoration-2 font-['Pretendard']">
+                    <a href="https://www.kaist.ac.kr" target="_blank" rel="noopener noreferrer" className="font-bold text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 decoration-2 font-pretendard">
                       KAIST
                     </a>
                   </h3>
-                  <p className="text-xs opacity-70 font-['Pretendard']">
+                  <p className="text-xs opacity-70 font-pretendard">
                     Double major in CS and BTM (Business Technology & Management)
                   </p>
                 </div>
@@ -492,22 +492,22 @@ const Portfolio = () => {
               ${darkMode 
                 ? 'bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-sm border border-purple-500/30' 
                 : 'bg-gradient-to-br from-purple-50/80 to-pink-50/80 backdrop-blur-sm border border-purple-200/50'}
-              rounded-xl p-3 shadow-md font-['Pretendard']`}>
+              rounded-xl p-3 shadow-md font-pretendard`}>
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full -translate-y-10 translate-x-10"></div>
               <div className="absolute bottom-0 left-0 w-14 h-14 bg-gradient-to-tr from-blue-400/10 to-purple-400/10 rounded-full translate-y-6 -translate-x-6"></div>
               <div className="relative">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-xl tossface">🔬</span>
-                  <h3 className="text-base font-bold text-purple-600 dark:text-purple-400 font-['Pretendard']">Fun Facts</h3>
+                  <h3 className="text-base font-bold text-purple-600 dark:text-purple-400 font-pretendard">Fun Facts</h3>
                 </div>
-                <p className="text-sm leading-snug text-purple-700 dark:text-purple-400 font-['Pretendard']">
+                <p className="text-sm leading-snug text-purple-700 dark:text-purple-400 font-pretendard">
                   I was deeply involved in <span className="font-semibold">Physics</span> from {' '}
                   <a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%82%AC%EB%B2%A8%EC%A4%91%ED%95%99%EA%B5%90" target="_blank" rel="noopener noreferrer"
-                    className="font-semibold decoration-2 hover:text-purple-800 dark:hover:text-purple-200 transition-colors font-['Pretendard']">
+                    className="font-semibold decoration-2 hover:text-purple-800 dark:hover:text-purple-200 transition-colors font-pretendard">
                     Isabelle Junior High School
                   </a>  (2012.03-2015.02) through {' '}
                   <a href="http://english.minjok.hs.kr/contents/main.php" target="_blank" rel="noopener noreferrer"
-                    className="font-semibold decoration-2 hover:text-purple-800 dark:hover:text-purple-200 transition-colors font-['Pretendard']">
+                    className="font-semibold decoration-2 hover:text-purple-800 dark:hover:text-purple-200 transition-colors font-pretendard">
                     Korean Minjok Leadership Academy
                   </a> (2015.03-2018.02). My ideal type was Richard Feynman!
                 </p>
@@ -707,20 +707,21 @@ const Portfolio = () => {
                     >
                       <div className="flex items-start gap-4">
                         {/* Emoji */}
-                        <div className="flex-shrink-0">
+                        {/* <div className="flex-shrink-0">
                           {research.emoji && (
                             <span className="tossface text-3xl" dangerouslySetInnerHTML={{ __html: research.emoji }} />
                           )}
-                        </div>
+                        </div> */}
                         {/* Info */}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between mb-3">
-                            <h3 className={`text-xl font-bold transition-colors ${
+                            <h3 className={`text-base font-bold transition-colors ${
                                 darkMode 
                                   ? 'text-gray-300 group-hover:text-blue-400' 
                                   : 'text-gray-700 group-hover:text-blue-600'
-                              }`}>
-                              {research.title}
+                              }`}
+                              dangerouslySetInnerHTML={{ __html: research.title }}
+                            >
                             </h3>
                             <div className="flex items-center gap-2 ml-4">
                               <div className="flex items-center gap-2">
@@ -781,7 +782,7 @@ const Portfolio = () => {
                         <div className={`px-6 pb-6 border-t ${darkMode ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
                           <div className="pt-4">
                             <div className="prose dark:prose-invert max-w-none">
-                              <p className="font-['Pretendard'] text-gray-600 dark:text-gray-400 text-sm mb-4">{research.description}</p>
+                              <p className="font-pretendard text-gray-600 dark:text-gray-400 text-sm mb-4">{research.description}</p>
                             </div>
                           </div>
                         </div>
@@ -845,22 +846,23 @@ const Portfolio = () => {
                     >
                       <div className="flex items-start gap-4">
                         {/* Project Emoji */}
-                        <div className="flex-shrink-0">
+                        {/* <div className="flex-shrink-0">
                           <span 
                             className="tossface text-3xl"
                             dangerouslySetInnerHTML={{ __html: project.emoji }}
                           />
-                        </div>
+                        </div> */}
                         
                         {/* Project Info */}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between mb-3">
-                            <h3 className={`text-xl font-bold transition-colors ${
+                            <h3 className={`text-base font-bold transition-colors ${
                                 darkMode 
                                   ? 'text-gray-300 group-hover:text-blue-400' 
                                   : 'text-gray-700 group-hover:text-blue-600'
-                              }`}>
-                              {project.title}
+                              }`}
+                              dangerouslySetInnerHTML={{ __html: project.title }}
+                            >
                             </h3>
                             <div className="flex items-center gap-2 ml-4">
                               <div className="flex items-center gap-2">
@@ -924,53 +926,41 @@ const Portfolio = () => {
                           <div className="pt-4">
                             {/* Project Images */}
                             {project.images && project.images.length > 0 && (
-                              <div className={`mb-6 ${project.images.length === 1 ? 'flex gap-6' : 'flex justify-center'}`}>
-                                {project.images.length === 1 ? (
-                                  // Single image layout
-                                  <div className="flex-shrink-0 w-48">
+                              <div className="mb-6 flex justify-center">
+                                <div className="flex gap-4">
+                                  {project.images.map((image, idx) => (
                                     <img
-                                      src={project.images[0]}
-                                      alt={project.title}
-                                      className="w-full h-48 object-cover rounded-lg border border-gray-200 dark:border-gray-700"
+                                      key={idx}
+                                      src={image}
+                                      alt={`${project.title} - Image ${idx + 1}`}
+                                      className="w-48 h-48 object-cover rounded-lg border border-gray-200 dark:border-gray-700"
                                     />
-                                  </div>
-                                ) : (
-                                  // Multiple images layout
-                                  <div className="grid grid-cols-3 gap-4 mb-6 max-w-3xl mx-auto">
-                                    {project.images.map((image, idx) => (
-                                      <img
-                                        key={idx}
-                                        src={image}
-                                        alt={`${project.title} - Image ${idx + 1}`}
-                                        className="w-full h-48 object-cover rounded-lg border border-gray-200 dark:border-gray-700"
-                                      />
-                                    ))}
-                                  </div>
-                                )}
+                                  ))}
+                                </div>
                               </div>
                             )}
 
                             {/* Project Details */}
                             <div className={`${project.images && project.images.length === 1 ? 'flex-1 min-w-0' : ''}`}>
-                              <div className="prose dark:prose-invert max-w-none">
+                              <div className="prose dark:prose-invert">
                                 <ReactMarkdown
                                   components={{
-                                    p: ({node, ...props}) => <p className="font-['Pretendard']" {...props} />,
-                                    strong: ({node, ...props}) => <strong className="font-['Pretendard']" {...props} />,
-                                    em: ({node, ...props}) => <em className="font-['Pretendard']" {...props} />,
-                                    h1: ({node, ...props}) => <h1 className="font-['Pretendard']" {...props} />,
-                                    h2: ({node, ...props}) => <h2 className="font-['Pretendard']" {...props} />,
-                                    h3: ({node, ...props}) => <h3 className="font-['Pretendard']" {...props} />,
-                                    h4: ({node, ...props}) => <h4 className="font-['Pretendard']" {...props} />,
-                                    h5: ({node, ...props}) => <h5 className="font-['Pretendard']" {...props} />,
-                                    h6: ({node, ...props}) => <h6 className="font-['Pretendard']" {...props} />,
-                                    li: ({node, ...props}) => <li className="font-['Pretendard']" {...props} />,
-                                    a: ({node, ...props}) => <a className="font-['Pretendard']" {...props} />,
-                                    blockquote: ({node, ...props}) => <blockquote className="font-['Pretendard']" {...props} />,
-                                    code: ({node, ...props}) => <code className="font-['Pretendard']" {...props} />,
-                                    pre: ({node, ...props}) => <pre className="font-['Pretendard']" {...props} />,
-                                    ul: ({node, ...props}) => <ul className="font-['Pretendard']" {...props} />,
-                                    ol: ({node, ...props}) => <ol className="font-['Pretendard']" {...props} />,
+                                    p: ({node, ...props}) => <p className="font-pretendard !text-xs !leading-tight !mb-1" {...props} />,
+                                    strong: ({node, ...props}) => <strong className="font-pretendard !text-xs" {...props} />,
+                                    em: ({node, ...props}) => <em className="font-pretendard !text-xs" {...props} />,
+                                    h1: ({node, ...props}) => <h1 className="font-pretendard !text-lg !font-bold !mt-4 !mb-2" {...props} />,
+                                    h2: ({node, ...props}) => <h2 className="font-pretendard !text-base !font-bold !mt-3 !mb-2" {...props} />,
+                                    h3: ({node, ...props}) => <h3 className="font-pretendard !text-sm !font-semibold !mt-2 !mb-1" {...props} />,
+                                    h4: ({node, ...props}) => <h4 className="font-pretendard !text-xs !font-semibold !mt-2 !mb-1" {...props} />,
+                                    h5: ({node, ...props}) => <h5 className="font-pretendard !text-xs !font-semibold !mt-1 !mb-1" {...props} />,
+                                    h6: ({node, ...props}) => <h6 className="font-pretendard !text-xs !font-semibold !mt-1 !mb-1" {...props} />,
+                                    li: ({node, ...props}) => <li className="font-pretendard !text-xs !my-0" {...props} />,
+                                    ul: ({node, ...props}) => <ul className="font-pretendard !list-disc !pl-3 !my-1" {...props} />,
+                                    ol: ({node, ...props}) => <ol className="font-pretendard !list-decimal !pl-3 !my-1" {...props} />,
+                                    a: ({node, ...props}) => <a className="font-pretendard !text-xs" {...props} />,
+                                    blockquote: ({node, ...props}) => <blockquote className="font-pretendard !text-xs !my-1" {...props} />,
+                                    code: ({node, ...props}) => <code className="font-pretendard !text-xs" {...props} />,
+                                    pre: ({node, ...props}) => <pre className="font-pretendard !text-xs !my-1" {...props} />,
                                   }}
                                 >
                                   {project.description}

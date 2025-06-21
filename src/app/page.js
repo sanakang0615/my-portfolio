@@ -768,8 +768,8 @@ const Portfolio = () => {
                         </div> */}
                         {/* Info */}
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between mb-3">
-                            <h3 className={`text-base font-bold transition-colors ${
+                          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3">
+                            <h3 className={`text-base font-bold transition-colors mb-2 sm:mb-0 ${
                                 darkMode 
                                   ? 'text-gray-300 group-hover:text-blue-400' 
                                   : 'text-gray-700 group-hover:text-blue-600'
@@ -777,7 +777,7 @@ const Portfolio = () => {
                               dangerouslySetInnerHTML={{ __html: research.title }}
                             >
                             </h3>
-                            <div className="flex items-center gap-2 ml-4">
+                            <div className="flex items-center gap-2 sm:ml-4 flex-shrink-0">
                               <div className="flex items-center gap-2">
                                 <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">
                                   {research.type}
@@ -868,32 +868,41 @@ const Portfolio = () => {
 
         {/* Projects Section */}
         <section id="projects" className="mb-16">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">Projects</h2>
-            
-            <div className="flex flex-wrap gap-2">
-              {filterTags.map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() => setActiveFilter(tag)}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                    activeFilter === tag
-                      ? darkMode 
-                        ? 'bg-blue-900 text-blue-200 border border-blue-700'
-                        : 'bg-blue-100 text-blue-700 border border-blue-200'
-                      : darkMode
-                      ? 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
+          <h2 className="text-2xl font-bold mb-2">Projects</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            A selection of projects that I have either led or co-led, for research, courseWorks, and of course, for fun!
+          </p>
+
+          {/* Filter Tags */}
+          <div className="hidden sm:flex flex-wrap gap-2 mb-8">
+            {filterTags.map(tag => (
+              <button
+                key={tag}
+                onClick={() => setActiveFilter(tag)}
+                className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                  activeFilter === tag
+                    ? darkMode 
+                      ? 'bg-blue-900 text-blue-200 border border-blue-700'
+                      : 'bg-blue-100 text-blue-700 border border-blue-200'
+                    : darkMode
+                    ? 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {tag}
+              </button>
+            ))}
           </div>
 
-          <div className="space-y-4">
-            <AnimatePresence>
+          {/* Projects Grid */}
+          <AnimatePresence>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, delay: 0.05 }}
+              className="space-y-4"
+            >
               {filteredProjects.map((project, index) => {
                 const isOpen = openProjectIndex === index;
                 return (
@@ -953,8 +962,8 @@ const Portfolio = () => {
                             </div>
                           </div>
                           
-                          <div className="flex flex-wrap items-center justify-between w-full">
-                            <div className="flex flex-wrap gap-2">
+                          <div className="flex flex-wrap items-center justify-between w-full sm:justify-between">
+                            <div className="flex flex-wrap gap-2 w-full sm:w-auto">
                               {project.tags.map((tag, tagIndex) => (
                                 <span
                                   key={tagIndex}
@@ -965,12 +974,26 @@ const Portfolio = () => {
                                   #{tag.toLowerCase().replace(/\s+/g, '-')}
                                 </span>
                               ))}
+                              {project.stack && project.stack.length > 0 && (
+                                <>
+                                  {project.stack.map((stackItem, stackIdx) => (
+                                    <span
+                                      key={`mobile-${stackIdx}`}
+                                      className={`px-2 py-0.5 text-xs rounded-md font-semibold border sm:hidden ${
+                                        darkMode ? 'bg-blue-900/10 text-blue-200 border-blue-900/20' : 'bg-blue-50 text-blue-400 border-blue-100'
+                                      }`}
+                                    >
+                                      {stackItem}
+                                    </span>
+                                  ))}
+                                </>
+                              )}
                             </div>
                             {project.stack && project.stack.length > 0 && (
-                              <div className="flex flex-wrap gap-2 ml-auto">
+                              <div className="hidden sm:flex flex-wrap gap-2 ml-auto">
                                 {project.stack.map((stackItem, stackIdx) => (
                                   <span
-                                    key={stackIdx}
+                                    key={`desktop-${stackIdx}`}
                                     className={`px-2 py-0.5 text-xs rounded-md font-semibold border ${
                                       darkMode ? 'bg-blue-900/10 text-blue-200 border-blue-900/20' : 'bg-blue-50 text-blue-400 border-blue-100'
                                     }`}
@@ -1115,8 +1138,8 @@ const Portfolio = () => {
                   </motion.div>
                 );
               })}
-            </AnimatePresence>
-          </div>
+            </motion.div>
+          </AnimatePresence>
         </section>
       </SidebarLayout>
 

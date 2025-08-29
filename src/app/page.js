@@ -375,6 +375,10 @@ const Portfolio = () => {
     </p>
 
     <p className="text-md leading-normal mb-4">
+      I will be applying to PhD programs in the U.S. this fall, with plans to begin my studies in 2026.
+    </p>
+
+    <p className="text-md leading-normal mb-4">
       Outside of research, I enjoy exploring creative outlets and side projects. I like drawing while listening to music, and I also experiment with small coding projects, such as a vocabulary learning game I developed during my GRE preparation. You can find more about these interests in the Hobbies tab above.
     </p>
 

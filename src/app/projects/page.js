@@ -61,12 +61,27 @@ const Projects = () => {
           {/* Projects Section */}
           <section id="projects" className="mb-16">
             <h2 className="text-3xl font-bold mb-2">Projects</h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
-              A selection of projects that I have either led or co-led, for research, courseWorks, and of course, for fun!
+            <p className="text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'} mb-2">
+
+            I have hands-on experience in web and mobile development, along with full-stack engineering. 
+            My work spans AI/ML modeling, data analytics, and blockchain applications, and I have also led app design and project planning.
+            </p>
+
+            <p className="text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'} mb-6">
+                <strong>Tech Stack</strong>
+            <li className="pl-1.5">
+                Advanced: ReactJS, NextJS, Streamlit, Python, MongoDB, Express, FastAPI, HuggingFace, TensorFlow, PyTorch, Pandas, OpenAI
+            </li>
+            <li className="pl-1.5">
+                Moderate: MySQL, C, Java, Android Studio, Hardhat, Alchemy, SpringBoot, Solidity
+            </li>
+            <li className="pl-1.5">
+                Beginner: Scala, Flutter, AutoCAD, Dart
+            </li>
             </p>
 
           {/* Filter Tags */}
-          <div className="hidden sm:flex flex-wrap gap-2 mb-8">
+          {/* <div className="hidden sm:flex flex-wrap gap-2 mb-8">
             {filterTags.map(tag => (
               <button
                 key={tag}
@@ -84,254 +99,251 @@ const Projects = () => {
                 {tag}
               </button>
             ))}
-          </div>
+          </div> */}
 
-          {/* Projects Grid */}
-          <AnimatePresence>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, delay: 0.05 }}
-              className="space-y-4"
-            >
-              {filteredProjects.map((project, index) => {
-                const isOpen = openProjectIndex === index;
-                return (
-                  <motion.div
-                    key={project.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className={`group rounded-xl border transition-all duration-200 ${
-                      darkMode 
-                        ? 'bg-gray-800/50 border-gray-700/50 hover:bg-gray-800/80 hover:border-gray-600' 
-                        : 'bg-white/70 border-gray-200/60 hover:bg-white hover:border-gray-300'
-                    } backdrop-blur-sm shadow-sm hover:shadow-md`}
-                  >
-                    {/* Project Header - Always Visible */}
-                    <button
-                      className="w-full p-6 focus:outline-none text-left"
-                      onClick={() => setOpenProjectIndex(isOpen ? null : index)}
-                      aria-expanded={isOpen}
-                    >
-                      <div className="flex items-start gap-4">
-                        {/* Project Emoji */}
-                        {/* <div className="flex-shrink-0">
-                          <span 
-                            className="tossface text-3xl"
-                            dangerouslySetInnerHTML={{ __html: project.emoji }}
-                          />
-                        </div> */}
-                        
-                        {/* Project Info */}
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between mb-3">
-                            <h3 className={`text-base font-bold transition-colors ${
-                                darkMode 
-                                  ? 'text-gray-300 group-hover:text-blue-400' 
-                                  : 'text-gray-700 group-hover:text-blue-600'
-                              }`}
-                              dangerouslySetInnerHTML={{ __html: project.title }}
-                            >
-                            </h3>
-                            <div className="flex items-center gap-2 ml-4">
-                              <div className="flex items-center gap-2">
-                                {/* <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">
-                                  {project.role}
-                                </span> */}
-                                {project.period && (
-                                  <span className="text-sm font-bold text-gray-500 dark:text-gray-400">
-                                    {project.period}
-                                  </span>
-                                )}
-                              </div>
-                              <ChevronDown
-                                size={20}
-                                className={`transition-transform duration-200 text-gray-400 ${isOpen ? 'rotate-180' : ''}`}
-                              />
-                            </div>
+          {/* Projects List */}
+          <div className="space-y-0">
+            {(() => {
+              // Group projects by year
+              const groupedProjects = {};
+              filteredProjects.forEach(project => {
+                const year = project.period || '2025';
+                if (!groupedProjects[year]) {
+                  groupedProjects[year] = [];
+                }
+                groupedProjects[year].push(project);
+              });
+
+              // Sort years in descending order
+              const sortedYears = Object.keys(groupedProjects).sort((a, b) => parseInt(b) - parseInt(a));
+
+              return sortedYears.map((year, yearIndex) => (
+                <div key={year}>
+                  {/* Projects for this year */}
+                  {groupedProjects[year].map((project, projectIndex) => {
+                    const globalIndex = filteredProjects.findIndex(p => p.title === project.title);
+                    const isOpen = openProjectIndex === globalIndex;
+                    
+                    return (
+                      <motion.div
+                        key={`${year}-${projectIndex}`}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: projectIndex * 0.1 }}
+                        viewport={{ once: true }}
+                        className="relative"
+                      >
+                        <div className="flex flex-row gap-6 items-start py-6">
+                          {/* Category Tag */}
+                          <div className="flex-shrink-0">
+                            <span className={`px-3 py-0.5 text-xs font-medium uppercase tracking-wide rounded-xs ${
+                              darkMode ? 'bg-blue-600 text-white' : 'bg-blue-500 text-white'
+                            }`}>
+                              {project.type}
+                            </span>
                           </div>
-                          
-                          <div className="flex flex-wrap items-center justify-between w-full sm:justify-between">
-                            <div className="flex flex-wrap gap-2 w-full sm:w-auto">
-                              {project.tags.map((tag, tagIndex) => (
-                                <span
-                                  key={tagIndex}
-                                  className={`px-2 py-0.5 text-xs rounded-md ${
-                                    darkMode ? 'bg-gray-700/50 text-gray-300 border border-gray-600' : 'bg-gray-100 text-gray-600 border border-gray-200'
-                                  }`}
+
+                          {/* Project Content */}
+                          <div className="flex-1 min-w-0">
+                            <div className="flex flex-col">
+                              {/* Title */}
+                              <h3 className={`text-lg font-semibold mb-2 ${darkMode ? 'text-white' : 'text-black'}`}>
+                                <button
+                                  className="text-left focus:outline-none"
+                                  onClick={() => setOpenProjectIndex(isOpen ? null : globalIndex)}
+                                  aria-expanded={isOpen}
                                 >
-                                  #{tag.toLowerCase().replace(/\s+/g, '-')}
-                                </span>
-                              ))}
+                                  <div className="flex items-center gap-2">
+                                    <span dangerouslySetInnerHTML={{ __html: project.title }} />
+                                    <ChevronDown
+                                      size={16}
+                                      className={`transition-transform duration-200 text-gray-400 ${isOpen ? 'rotate-180' : ''}`}
+                                    />
+                                  </div>
+                                </button>
+                              </h3>
+                              
+                              {/* Tags */}
+                              <div className="flex flex-wrap gap-2 mb-3">
+                                {project.tags.map((tag, tagIndex) => (
+                                  <span
+                                    key={tagIndex}
+                                    className={`px-2 py-0.5 text-xs rounded-md ${
+                                      darkMode ? 'bg-gray-700/50 text-gray-300 border border-gray-600' : 'bg-gray-100 text-gray-600 border border-gray-200'
+                                    }`}
+                                  >
+                                    #{tag.toLowerCase().replace(/\s+/g, '-')}
+                                  </span>
+                                ))}
+                              </div>
+
+                              {/* Stack */}
                               {project.stack && project.stack.length > 0 && (
-                                <>
+                                <div className="flex flex-wrap gap-2 mb-3">
                                   {project.stack.map((stackItem, stackIdx) => (
                                     <span
-                                      key={`mobile-${stackIdx}`}
-                                      className={`px-2 py-0.5 text-xs rounded-md font-semibold border sm:hidden ${
+                                      key={stackIdx}
+                                      className={`px-2 py-0.5 text-xs rounded-md font-semibold border ${
                                         darkMode ? 'bg-blue-900/10 text-blue-200 border-blue-900/20' : 'bg-blue-50 text-blue-400 border-blue-100'
                                       }`}
                                     >
                                       {stackItem}
                                     </span>
                                   ))}
-                                </>
+                                </div>
                               )}
-                            </div>
-                            {project.stack && project.stack.length > 0 && (
-                              <div className="hidden sm:flex flex-wrap gap-2 ml-auto">
-                                {project.stack.map((stackItem, stackIdx) => (
-                                  <span
-                                    key={`desktop-${stackIdx}`}
-                                    className={`px-2 py-0.5 text-xs rounded-md font-semibold border ${
-                                      darkMode ? 'bg-blue-900/10 text-blue-200 border-blue-900/20' : 'bg-blue-50 text-blue-400 border-blue-100'
-                                    }`}
-                                  >
-                                    {stackItem}
-                                  </span>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </button>
 
-                    {/* Expanded Content */}
-                    <motion.div
-                      initial={false}
-                      animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
-                      transition={{ duration: 0.25, ease: 'easeInOut' }}
-                      className="overflow-hidden"
-                    >
-                      {isOpen && (
-                        <div className={`px-6 pb-6 border-t ${darkMode ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-                          <div className="pt-4">
-                            {/* Project Images */}
-                            {project.images && project.images.length > 0 && (
-                              <div className="mb-6 flex justify-center">
-                                {project.images.length === 1 ? (
-                                  // Single image: fixed height, auto width to maintain aspect ratio
-                                  <div className={`inline-block rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'}`}>
-                                    <img
-                                      src={project.images[0]}
-                                      alt={`${project.title} - Image`}
-                                      className="h-64 w-auto block"
-                                    />
-                                  </div>
-                                ) : (
-                                  // Multiple images: grid layout
-                                  <div className="flex gap-4">
-                                    {project.images.map((image, idx) => (
-                                      <div key={idx} className={`w-64 h-64 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'}`}>
-                                        <img
-                                          src={image}
-                                          alt={`${project.title} - Image ${idx + 1}`}
-                                          className="w-full h-full object-cover"
-                                        />
+                              {/* Expanded Content */}
+                              <AnimatePresence>
+                                {isOpen && (
+                                  <motion.div
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: 0.25, ease: 'easeInOut' }}
+                                    className="overflow-hidden"
+                                  >
+                                    <div className="pt-4">
+                                      {/* Project Images */}
+                                      {project.images && project.images.length > 0 && (
+                                        <div className="mb-6 flex justify-center">
+                                          {project.images.length === 1 ? (
+                                            // Single image: fixed height, auto width to maintain aspect ratio
+                                            <div className={`inline-block rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'}`}>
+                                              <img
+                                                src={project.images[0]}
+                                                alt={`${project.title} - Image`}
+                                                className="h-64 w-auto block"
+                                              />
+                                            </div>
+                                          ) : (
+                                            // Multiple images: grid layout
+                                            <div className="flex gap-4">
+                                              {project.images.map((image, idx) => (
+                                                <div key={idx} className={`w-64 h-64 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'}`}>
+                                                  <img
+                                                    src={image}
+                                                    alt={`${project.title} - Image ${idx + 1}`}
+                                                    className="w-full h-full object-cover"
+                                                  />
+                                                </div>
+                                              ))}
+                                            </div>
+                                          )}
+                                        </div>
+                                      )}
+
+                                      {/* Project Description */}
+                                      <div className="prose dark:prose-invert mb-4">
+                                        <ReactMarkdown
+                                          components={{
+                                            p: ({node, ...props}) => <p className="!text-xs !leading-tight !mb-1" {...props} />,
+                                            strong: ({node, ...props}) => <strong className="!text-xs" {...props} />,
+                                            em: ({node, ...props}) => <em className="!text-xs" {...props} />,
+                                            h1: ({node, ...props}) => <h1 className="!text-lg !font-bold !mt-4 !mb-2" {...props} />,
+                                            h2: ({node, ...props}) => <h2 className="!text-base !font-bold !mt-3 !mb-2" {...props} />,
+                                            h3: ({node, ...props}) => <h3 className="!text-sm !font-semibold !mt-2 !mb-1" {...props} />,
+                                            h4: ({node, ...props}) => <h4 className="!text-xs !font-semibold !mt-2 !mb-1" {...props} />,
+                                            h5: ({node, ...props}) => <h5 className="!text-xs !font-semibold !mt-1 !mb-1" {...props} />,
+                                            h6: ({node, ...props}) => <h6 className="!text-xs !font-semibold !mt-1 !mb-1" {...props} />,
+                                            li: ({node, ...props}) => <li className="!text-xs !my-0" {...props} />,
+                                            ul: ({node, ...props}) => <ul className="!list-disc !pl-3 !my-1" {...props} />,
+                                            ol: ({node, ...props}) => <ol className="!text-xs !list-decimal !pl-3 !my-1" {...props} />,
+                                            a: ({node, ...props}) => <a className="!text-xs" {...props} />,
+                                            blockquote: ({node, ...props}) => <blockquote className="!text-xs !my-1" {...props} />,
+                                            code: ({node, ...props}) => <code className="!text-xs" {...props} />,
+                                            pre: ({node, ...props}) => <pre className="!text-xs !my-1" {...props} />,
+                                          }}
+                                        >
+                                          {project.description}
+                                        </ReactMarkdown>
                                       </div>
-                                    ))}
-                                  </div>
+                                      
+                                      {/* Project Links */}
+                                      <div className="flex items-center gap-4">
+                                        {project.links.github && (
+                                          <a 
+                                            href={project.links.github} 
+                                            className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                          >
+                                            <Github size={16} />
+                                            Code
+                                          </a>
+                                        )}
+                                        {project.links.paper && (
+                                          <a 
+                                            href={project.links.paper} 
+                                            className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                          >
+                                            <FileText size={16} />
+                                            Paper
+                                          </a>
+                                        )}
+                                        {project.links.demo && (
+                                          <a 
+                                            href={project.links.demo} 
+                                            className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                          >
+                                            <ExternalLink size={16} />
+                                            Demo
+                                          </a>
+                                        )}
+                                        {project.links.play && (
+                                          <a 
+                                            href={project.links.play} 
+                                            className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                          >
+                                            <ExternalLink size={16} />
+                                            Play
+                                          </a>
+                                        )}
+                                        {project.links.patent && (
+                                          <a 
+                                            href={project.links.patent} 
+                                            className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                          >
+                                            <Award size={16} />
+                                            Patent
+                                          </a>
+                                        )}
+                                        {project.links.report && (
+                                          <a 
+                                            href={project.links.report} 
+                                            className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                                          >
+                                            <FileText size={16} />
+                                            Report
+                                          </a>
+                                        )}
+                                      </div>
+                                    </div>
+                                  </motion.div>
                                 )}
-                              </div>
-                            )}
-
-                            {/* Project Details */}
-                            <div className={`${project.images && project.images.length === 1 ? 'flex-1 min-w-0' : ''}`}>
-                              <div className="prose dark:prose-invert">
-                                <ReactMarkdown
-                                  components={{
-                                    p: ({node, ...props}) => <p className="!text-xs !leading-tight !mb-1" {...props} />,
-                                    strong: ({node, ...props}) => <strong className="!text-xs" {...props} />,
-                                    em: ({node, ...props}) => <em className="!text-xs" {...props} />,
-                                    h1: ({node, ...props}) => <h1 className="!text-lg !font-bold !mt-4 !mb-2" {...props} />,
-                                    h2: ({node, ...props}) => <h2 className="!text-base !font-bold !mt-3 !mb-2" {...props} />,
-                                    h3: ({node, ...props}) => <h3 className="!text-sm !font-semibold !mt-2 !mb-1" {...props} />,
-                                    h4: ({node, ...props}) => <h4 className="!text-xs !font-semibold !mt-2 !mb-1" {...props} />,
-                                    h5: ({node, ...props}) => <h5 className="!text-xs !font-semibold !mt-1 !mb-1" {...props} />,
-                                    h6: ({node, ...props}) => <h6 className="!text-xs !font-semibold !mt-1 !mb-1" {...props} />,
-                                    li: ({node, ...props}) => <li className="!text-xs !my-0" {...props} />,
-                                    ul: ({node, ...props}) => <ul className="!list-disc !pl-3 !my-1" {...props} />,
-                                    ol: ({node, ...props}) => <ol className="!text-xs !list-decimal !pl-3 !my-1" {...props} />,
-                                    a: ({node, ...props}) => <a className="!text-xs" {...props} />,
-                                    blockquote: ({node, ...props}) => <blockquote className="!text-xs !my-1" {...props} />,
-                                    code: ({node, ...props}) => <code className="!text-xs" {...props} />,
-                                    pre: ({node, ...props}) => <pre className="!text-xs !my-1" {...props} />,
-                                  }}
-                                >
-                                  {project.description}
-                                </ReactMarkdown>
-                              </div>
-                              
-                              <div className="flex items-center gap-4 mt-4">
-                                {project.links.github && (
-                                  <a 
-                                    href={project.links.github} 
-                                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
-                                  >
-                                    <Github size={16} />
-                                    Code
-                                  </a>
-                                )}
-                                {project.links.paper && (
-                                  <a 
-                                    href={project.links.paper} 
-                                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
-                                  >
-                                    <FileText size={16} />
-                                    Paper
-                                  </a>
-                                )}
-                                {project.links.demo && (
-                                  <a 
-                                    href={project.links.demo} 
-                                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
-                                  >
-                                    <ExternalLink size={16} />
-                                    Demo
-                                  </a>
-                                )}
-                                {project.links.play && (
-                                  <a 
-                                    href={project.links.play} 
-                                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
-                                  >
-                                    <ExternalLink size={16} />
-                                    Play
-                                  </a>
-                                )}
-                                {project.links.patent && (
-                                  <a 
-                                    href={project.links.patent} 
-                                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
-                                  >
-                                    <Award size={16} />
-                                    Patent
-                                  </a>
-                                )}
-                                {project.links.report && (
-                                  <a 
-                                    href={project.links.report} 
-                                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
-                                  >
-                                    <FileText size={16} />
-                                    Report
-                                  </a>
-                                )}
-                              </div>
+                              </AnimatePresence>
                             </div>
                           </div>
+
+                          {/* Large Faint Year (Right Aligned) - Only show for first project of each year */}
+                          {projectIndex === 0 && (
+                            <div className="flex-shrink-0">
+                              <span className={`text-6xl font-light ${darkMode ? 'text-gray-300 opacity-20' : 'text-gray-300 opacity-40'}`}>
+                                {year}
+                              </span>
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </motion.div>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </AnimatePresence>
+
+                        {/* Separator Line between year groups */}
+                        {yearIndex < sortedYears.length - 1 && projectIndex === groupedProjects[year].length - 1 && (
+                          <div className={`h-px ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}></div>
+                        )}
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              ));
+            })()}
+          </div>
         </section>
         </div>
       </main>

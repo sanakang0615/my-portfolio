@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
   Github, 
   Linkedin, 
-  Search,
   Moon,
   Sun,
 } from 'lucide-react';
@@ -19,18 +18,37 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
     return pathname.startsWith(path);
   };
 
+  // Initialize dark mode from localStorage on component mount
+  useEffect(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode !== null) {
+      setDarkMode(JSON.parse(savedMode));
+    }
+  }, [setDarkMode]);
+
+  // Save dark mode to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
+
   return (
     <header className={`sticky top-0 z-50 border-b backdrop-blur-md transition-colors duration-300 ${
       darkMode ? 'bg-gray-900/80 border-gray-800' : 'bg-white/80 border-gray-200'
     }`}>
-      <div className="w-full px-6 py-4">
+      <div className="w-full px-6 py-2">
         <div className="flex justify-between items-center">
+          <div className="flex items-center space-x-4 px-12">
+            {/* Left side - Sana Kang name (hidden on About page) */}
+            {pathname !== '/' && (
+              <div className="flex items-center space-x-3 ml-12">
+                <h1 className="text-xl font-semibold">Sana Kang</h1>
+              </div>
+            )}
+          </div>
+
           <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-3">
-              <h1 className="text-xl font-semibold tossface">⛰️ Sana Kang</h1>
-            </div>
-            
-            <nav className="hidden md:flex space-x-6 ml-8">
+            {/* Navigation tabs - right aligned */}
+            <nav className="hidden md:flex space-x-4">
               <Link 
                 href="/" 
                 className={`text-sm transition-colors ${
@@ -39,7 +57,27 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
                     : 'hover:text-blue-400'
                 }`}
               >
-                Work
+                About
+              </Link>
+              <Link 
+                href="/research" 
+                className={`text-sm transition-colors ${
+                  isActive('/research') 
+                    ? 'text-blue-500 font-medium' 
+                    : 'hover:text-blue-400'
+                }`}
+              >
+                Publications
+              </Link>
+              <Link 
+                href="/projects" 
+                className={`text-sm transition-colors ${
+                  isActive('/projects') 
+                    ? 'text-blue-500 font-medium' 
+                    : 'hover:text-blue-400'
+                }`}
+              >
+                Projects
               </Link>
               <Link 
                 href="/hobbies/drawings" 
@@ -51,16 +89,6 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
               >
                 Hobbies
               </Link>
-              {/* <Link 
-                href="/blog" 
-                className={`text-sm transition-colors ${
-                  isActive('/blog') 
-                    ? 'text-blue-500 font-medium' 
-                    : 'hover:text-blue-400'
-                }`}
-              >
-                Blog
-              </Link> */}
               <Link 
                 href="/cv" 
                 className={`text-sm transition-colors ${
@@ -71,29 +99,9 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
               >
                 CV
               </Link>
-              {/* <Link 
-                href="/aboutsite" 
-                className={`text-sm transition-colors ${
-                  isActive('/aboutsite') 
-                    ? 'text-blue-500 font-medium' 
-                    : 'hover:text-blue-400'
-                }`}
-              >
-                What&apos;s This?
-              </Link> */}
             </nav>
-          </div>
 
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-3">
-              <a href="https://github.com/sanakang0615" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                <Github size={20} />
-              </a>
-              <a href="https://www.linkedin.com/in/sana-kang-20a94528a" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                <Linkedin size={20} />
-              </a>
-            </div>
-            
+            {/* Dark mode toggle */}
             <button
               onClick={() => setDarkMode(!darkMode)}
               className={`p-2 pr-1 md:pr-4 rounded-md transition-colors ${
@@ -102,29 +110,6 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            <div className="hidden md:flex">
-              <button
-                onClick={() => setShowSearch(true)}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-md border transition-colors ${
-                  darkMode 
-                    ? 'border-gray-700 bg-gray-800 hover:bg-gray-700' 
-                    : 'border-gray-300 bg-white hover:bg-gray-50'
-                }`}
-              >
-                <Search size={16} />
-                <span className="text-sm">Search</span>
-                <div className="hidden sm:flex items-center space-x-1">
-                  <kbd className={`px-1 py-0.5 text-xs rounded ${
-                    darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
-                  }`}>
-                    {typeof window !== 'undefined' && /Mac|iPhone|iPad|iPod/.test(navigator.platform) ? '⌘' : 'Ctrl'}
-                  </kbd>
-                  <kbd className={`px-1 py-0.5 text-xs rounded ${
-                    darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
-                  }`}>K</kbd>
-                </div>
-              </button>
-            </div>
           </div>
         </div>
       </div>

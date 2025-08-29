@@ -1,14 +1,14 @@
 {
   "newsItems": [
     {
-        "date": "2025.06",
-        "icon": "📚",
-        "title": "Book Chapter Accepted in \"Handbook on Artificial Intelligence and Strategy\" @UMich Ross"
+        "date": "2025.08",
+        "icon": "📄",
+        "title": "PhoniTale Paper Accepted to EMNLP 2025 Main Conference."
     },
     {
-        "date": "2025.05",
-        "icon": "📄",
-        "title": "Submitted a paper to EMNLP 2025"
+        "date": "2025.06",
+        "icon": "📚",
+        "title": "Book Chapter Accepted in \"Handbook on Artificial Intelligence and Strategy\" @ UMich Ross"
     },
     {
         "date": "2025.05",
@@ -16,24 +16,9 @@
         "title": "Started RA with Prof. Minkyung Kim (CMU Tepper) and Prof. Meng Liu (WashU Olin)"
     },
     {
-        "date": "2025.05",
-        "icon": "📄",
-        "title": "Submitted a paper to ICIS 2025"
-    },
-    {
-        "date": "2025.02",
-        "icon": "💻",
-        "title": "Participated the Tartan Hackathon"
-    },
-    {
         "date": "2025.01",
         "icon": "🇺🇸",
-        "title": "Started at CMU as Short-term Scholar"
-    },
-    {
-        "date": "2024.12",
-        "icon": "🏆",
-        "title": "Earned the Academic Excellence Award @ KAIST Business School. Thank you!"
+        "title": "Started a Visiting Researcher at CMU"
     }
   ]
 } 

@@ -2,19 +2,32 @@
   "publications": [
     {
         "title": "PHONITALE: Phonologically Grounded Mnemonic Generation for Typologically Distant Language Pairs",
+        "year": "2025",
         "authors": "<span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Myeongseok Gwon, Suyeong Kwon, Jaewook Lee, Andrew Lan, Bhiksha Raj, Rita Singh",
-        "venue": "Under review at ACL Rolling Review (2025)",
+        "venue": "EMNLP Main Conference (2025)",
         "status": "Under Review",
         "type": "Conference",
         "tags": ["CS", "NLP", "Deep Learning", "Phonology", "Low Resource Language"],
-        "links": { },
+        "links": {"arxiv": "https://arxiv.org/abs/2507.05444"},
         "description": "A phonology-aware cross-lingual mnemonic generator combining IPA-based keyword retrieval and LLM cue generation, tailored for typologically distant languages; validated via user study with L2 learners.",
         "image": "/publications/phonitale.png"
     },
     {
+      "title": "When Hyperlocal Meets Algorithm: A Natural Experiment in Community-to-AI Pricing Transition",
+      "authors": "<span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Myeongseok Gwon, Sung-hyuk Park",
+      "year": "2025",
+      "venue": "Under review at WISE (2025)",
+      "type": "Conference",
+      "status": "Under Review",
+      "tags": ["Hyperlocal marketplace", "Algorithmic pricing", "Price dispersion", "Anchoring effect", "Platform competition", "Natural experiment"],
+      "links": { },
+      "image": ""
+    },
+    {
       "title": "LLMs Meet Match-Up Theory: A New Frontier in Influencer Recommendation",
-      "authors": "Myeongseok Gwon, <span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang </span>, Minhyeong Lee, Sung-hyuk Park",
-      "venue": "Under review at ICIS (2025)",
+      "authors": "Myeongseok Gwon, <span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Minhyeong Lee, Sung-hyuk Park",
+      "year": "2025",
+      "venue": "Under review at WITS (2025)",
       "type": "Conference",
       "status": "Under Review",
       "tags": ["IS", "Multimodal Learning", "LLM", "Recommender System", "Influencer Marketing"],
@@ -25,6 +38,7 @@
     {
         "title": "Beyond English-Centric AI: Strategic FrameWorkss for Developing Low-Resource Language Models",
         "authors": "Prithwiraj Choudhury, Do Yoon Kim, <span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>",
+        "year": "2025",
         "venue": "<a href='https://rossweb.bus.umich.edu/ai-handbook/'>Handbook on Artificial Intelligence and Strategy </a>, UMich Ross (Forthcoming 2026)",
         "status": "Accepted",
         "type": "Book Chapter",
@@ -36,8 +50,9 @@
     {
       "title": "Transforming Cardiology with AI: A Rigorous Review of Machine Learning Innovations and Implementation Pathways",
       "authors": "<span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Daesan-Oh, Sung-Hyuk Park, Firenze Inc. Team",
+      "year": "2025",
       "status": "In Preparation",
-      "type": "Survey Paper",
+      "type": "Survey",
       "tags": ["Healthcare", "Clinical AI", "ML Fairness"],
       "links": {  },
       "image": "/publications/healthcare-ai.png",

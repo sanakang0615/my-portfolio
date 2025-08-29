@@ -19,11 +19,7 @@ const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children }) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (mounted) {
-      localStorage.setItem('darkMode', JSON.stringify(darkMode));
-    }
-  }, [darkMode, mounted]);
+
 
   // Keyboard shortcut for search (Cmd+K on Mac, Ctrl+K on Windows/Linux)
   useEffect(() => {

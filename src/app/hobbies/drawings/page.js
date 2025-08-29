@@ -104,79 +104,29 @@ const Hobbies = () => {
 
         return (
           <>
-            {/* Hero Section - 심플하고 모던하게 */}
-            <div className={`relative rounded-2xl mb-16 p-6 md:p-12 max-w-5xl mx-auto ${
-              darkMode 
-                ? 'bg-gray-900/50 border border-gray-800' 
-                : 'bg-gray-50/80 border border-gray-100'
-            }`}>
-              <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16 justify-center">
-                <div className="max-w-lg">
-                  <h1 className={`text-5xl font-light mb-8 tracking-tight ${
-                    darkMode ? 'text-white' : 'text-gray-900'
-                  }`}>
-                    Music to be<br/>
-                    <span className="font-medium">Drawn by</span>
-                  </h1>
-                  
-                  <div className={`space-y-3 text-base leading-normal mb-8 ${
-                    darkMode ? 'text-gray-300' : 'text-gray-600'
-                  }`}>
-                    <p className="font-pretendard">
-                      This is a collection of drawings inspired by music. The project is called 
-                      <span className="font-medium"> &ldquo;Music to be drawn by&rdquo;</span>, a small reference 
-                      to Alfred Hitchcock&apos;s <span className="font-medium">&ldquo;Music to be murdered by&rdquo;</span>.
-                    </p>
-                    <p className="font-pretendard">
-                      I started drawing during the COVID-19 pandemic. I&apos;ve never learned it professionally, 
-                      but it became something I really enjoyed. I usually draw while listening to one song on repeat. 
-                      The drawing shows how that song makes me feel that day.
-                    </p>
-                    <p className="font-pretendard">
-                      One of the best things about this hobby is that it helped me appreciate all kinds of emotions — 
-                      not just joy or excitement, but also calmness and even sadness. Whatever I&apos;m feeling that day 
-                      becomes a valuable ingredient for capturing the mood in my drawing.
-                    </p>
-                  </div>
-
-                  <a
-                    href="https://musicdrawnby.sanakang.xyz"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-3 px-3 py-1.5 pt-2 font-pretendard rounded-xl font-sm transition-all duration-200 ${
-                      darkMode 
-                        ? 'bg-white text-gray-900 hover:`bg-gray-100' 
-                        : 'bg-gray-900 text-white hover:`bg-gray-800'
-                    }`}
-                  >
-                    <span className="font-pretendard">Visit my website</span>
-                    <ExternalLink className="w-4 h-4 mb-1.5 pr-0.5" />
-                  </a>
-                </div>
-                
-                <div className="flex-shrink-0 hidden lg:block">
-                  <div className={`p-1 rounded-2xl mt-30 ${
-                    darkMode ? 'bg-gray-800' : 'bg-white'
-                  }`}>
-                    <Image 
-                      src="/my_photo/my_photo_7.png" 
-                      alt="Sana Kang" 
-                      width={288}
-                      height={384}
-                      className="w-72 h-96 object-cover rounded-xl"
-                    />
-                  </div>
-                </div>
-              </div>
+            {/* Header Section */}
+            <div className="mb-8 mx-10">
+              <h2 className={`text-3xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-black'}`}>Music to Drawings</h2>
+              <p className={`text-lg leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                I love listening to a single piece of music on repeat and translating the emotions into paintings. Here are a few of my works. If you&apos;d like to see more, please visit my{' '}
+                <a
+                  href="https://musicdrawnby.sanakang.xyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`font-semibold hover:underline inline-flex items-center gap-1 ${
+                    darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
+                  }`}
+                >
+                  portfolio website
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+                .
+              </p>
             </div>
 
             {/* Drawings Gallery - 그리드 간소화 */}
             <section id="drawings" className="mt-8 mb-16">
-              <h2 className={`text-3xl font-light mb-12 font-pretendard text-center ${
-                darkMode ? 'text-white' : 'text-gray-900'
-              }`}>
-                Some of my drawings
-              </h2>
+              
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-10">
                 {drawings.map((drawing) => (
@@ -198,9 +148,9 @@ const Hobbies = () => {
                             href={drawing.spotifyLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-3 bg-green-500 text-white rounded-full hover:`bg-green-600 transition-colors"
+                            className="p-2 bg-green-500 text-white rounded-full hover:`bg-green-600 transition-colors"
                           >
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" fill="#fff"/>
                             </svg>
                           </a>
@@ -212,17 +162,7 @@ const Hobbies = () => {
                               rel="noopener noreferrer"
                               aria-label="Apple Music"
                             >
-                              <Image src="/apple_music_logo.png" alt="Apple Music" width={16} height={16} style={{ borderRadius: '3px' }} />
-                            </a>
-                          )}
-                          {drawing.youtubeLink && (
-                            <a
-                              href={drawing.youtubeLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="p-3 bg-red-500 text-white rounded-full hover:`bg-red-600 transition-colors"
-                            >
-                              <Youtube className="w-5 h-5" />
+                              <Image src="/apple_music_logo.png" alt="Apple Music" width={12} height={12} style={{ borderRadius: '3px' }} />
                             </a>
                           )}
                         </div>
@@ -232,7 +172,7 @@ const Hobbies = () => {
                     {/* 텍스트 내용 */}
                     <div>
                       <div className="flex justify-between items-center mb-2">
-                        <h3 className={`text-xl font-medium ${
+                        <h3 className={`text-lg font-medium ${
                           darkMode ? 'text-white' : 'text-gray-900'
                         }`}>
                           {drawing.title}
@@ -245,24 +185,12 @@ const Hobbies = () => {
                               rel="noopener noreferrer"
                               aria-label="Spotify"
                             >
-                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" fill="#22c55e"/>
                               </svg>
                             </a>
                           )}
-                          {drawing.youtubeLink && (
-                            <a
-                              href={drawing.youtubeLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              aria-label="YouTube"
-                            >
-                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.498 6.186a2.994 2.994 0 0 0-2.107-2.117C19.228 3.5 12 3.5 12 3.5s-7.228 0-9.391.569A2.994 2.994 0 0 0 .502 6.186C0 8.36 0 12 0 12s0 3.64.502 5.814a2.994 2.994 0 0 0 2.107 2.117C4.772 20.5 12 20.5 12 20.5s7.228 0 9.391-.569a2.994 2.994 0 0 0 2.107-2.117C24 15.64 24 12 24 12s0-3.64-.502-5.814z" fill="#ff0000"/>
-                                <path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/>
-                              </svg>
-                            </a>
-                          )}
+
                           {drawing.appleMusicLink && (
                             <a
                               href={drawing.appleMusicLink}
@@ -270,19 +198,19 @@ const Hobbies = () => {
                               rel="noopener noreferrer"
                               aria-label="Apple Music"
                             >
-                              <Image src="/apple_music_logo.png" alt="Apple Music" width={16} height={16} style={{ borderRadius: '3px' }} />
+                              <Image src="/apple_music_logo.png" alt="Apple Music" width={12} height={12} style={{ borderRadius: '3px' }} />
                             </a>
                           )}
                         </div>
                       </div>
                       
-                      <div className={`text-sm mb-3 ${
+                      <div className={`text-xs mb-3 ${
                         darkMode ? 'text-gray-400' : 'text-gray-500'
                       }`}>
                         {drawing.artist} • {drawing.album} • {drawing.how}
                       </div>
                       
-                      <p className={`text-sm leading-relaxed mb-2 ${
+                      <p className={`text-xs leading-relaxed mb-2 ${
                         darkMode ? 'text-gray-300' : 'text-gray-600'
                       }`}>
                         {drawing.description}

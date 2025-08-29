@@ -354,140 +354,142 @@ const Portfolio = () => {
         )}
       </AnimatePresence>
 
-      <SidebarLayout navItems={aboutNavItems} sidebarTitle="Work" darkMode={darkMode} newsItems={newsItems} activeSection={activeSection}>
-        {/* Main Content (About, News, Projects, Publications 섹션만) */}
-        {/* About Section */}
-        <section id="top" className="mb-16">
-          <h2 className="text-4xl font-semibold mb-4 mt-2 text-center md:text-left"> Sana Kang </h2>
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-            {/* Info + 소개문단 - 왼쪽으로 이동 */}
-            <div className="flex-1 flex flex-col justify-center h-full min-w-0">
-            <div className="prose max-w-3xl text-center md:text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
-  <p className="text-md leading-normal mb-4">
-    I am a second-year Master&apos;s student in Management Engineering at{' '}
-    <span className="tossface mr-1">🇰🇷</span>
-    <a className="text-blue-600 font-semibold" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer">
-      KAIST
-    </a>, specializing in Information Systems. 
-    I am currently a Short-term Scholar at{' '}
-    <span className="tossface mr-1">🇺🇸</span>
-    <a className="text-red-400 font-semibold" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">
-      Carnegie Mellon University
-    </a> (until July 2025).
-    I work at the intersection of AI/ML, marketing, and information systems, bridging real-world problems with academic research. 
+      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)]">
+        <div className="max-w-5xl mx-auto px-6 w-full pt-6">
+          {/* Main Content (About, News, Projects, Publications 섹션만) */}
+          {/* About Section */}
+          <section id="top" className="mb-16">
+            <h2 className="text-4xl font-semibold mb-4 mt-2 text-center md:text-left"> Sana Kang </h2>
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+              {/* Info + 소개문단 - 왼쪽으로 이동 */}
+              <div className="flex-1 flex flex-col justify-center h-full min-w-0">
+              <div className="prose max-w-3xl text-center md:text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
+    <p className="text-md leading-normal mb-4">
+      I am a second-year Master&apos;s student in Management Engineering at{' '}
+      <span className="tossface mr-1">🇰🇷</span>
+      <a className="text-blue-600 font-semibold" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer">
+        KAIST
+      </a>, specializing in Information Systems. 
+      I am currently a Short-term Scholar at{' '}
+      <span className="tossface mr-1">🇺🇸</span>
+      <a className="text-red-400 font-semibold" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">
+        Carnegie Mellon University
+      </a> (until July 2025).
+      I work at the intersection of AI/ML, marketing, and information systems, bridging real-world problems with academic research. 
+    </p>
+
+
+    <p className="text-md leading-normal mb-4">
+    Outside of research, I have a few hobbies.  
+    Feel free to check them out in the <a href="/hobbies/drawings" className="text-gray-600 font-semibold">Hobbies</a> tab above.  
+    I enjoy <span className="tossface mr-1">🎨</span>drawing inspired by music,  
+    and also work on small side projects, like <span className="tossface mr-1">🎮</span> 
+    <a 
+      className="text-gray-600 font-semibold" 
+      href="https://wordchain.sanakang.xyz" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      a vocabulary game
+    </a> I built during GRE prep.
   </p>
 
+  {/* Social Links */}
+  <div className="flex items-center space-x-6 mt-6">
+    <a 
+      href="https://github.com/sanakang0615" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+    >
+      <Github size={24} />
+    </a>
+    
+    <a 
+      href="https://www.linkedin.com/in/sana-kang-20a94528a" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+    >
+      <Linkedin size={24} />
+    </a>
+    
+    <a 
+      href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+    >
+      <FontAwesomeIcon icon={faGoogleScholar} size="lg" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" />
+    </a>
+    
+    <a 
+      href="https://x.com/sanakang0615" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+  </div>
 
-  <p className="text-md leading-normal mb-4">
-  Outside of research, I have a few hobbies.  
-  Feel free to check them out in the <a href="/hobbies/drawings" className="text-gray-600 font-semibold">Hobbies</a> tab above.  
-  I enjoy <span className="tossface mr-1">🎨</span>drawing inspired by music,  
-  and also work on small side projects, like <span className="tossface mr-1">🎮</span> 
-  <a 
-    className="text-gray-600 font-semibold" 
-    href="https://wordchain.sanakang.xyz" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    a vocabulary game
-  </a> I built during GRE prep.
-</p>
+  </div>
 
-{/* Social Links */}
-<div className="flex items-center space-x-6 mt-6">
-  <a 
-    href="https://github.com/sanakang0615" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-  >
-    <Github size={24} />
-  </a>
-  
-  <a 
-    href="https://www.linkedin.com/in/sana-kang-20a94528a" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-  >
-    <Linkedin size={24} />
-  </a>
-  
-  <a 
-    href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-  >
-    <FontAwesomeIcon icon={faGoogleScholar} size="lg" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" />
-  </a>
-  
-  <a 
-    href="https://x.com/sanakang0615" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-  >
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-    </svg>
-  </a>
-</div>
-
-</div>
-
-            </div>
-            {/* Profile Image - 오른쪽으로 이동 */}
-            <div className="flex-shrink-0">
-              <div className={`w-40 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
-                <Image
-                  src="/my_photo/my_photo.png"
-                  alt="Profile Photo"
-                  width={160}
-                  height={160}
-                  className="w-full h-full object-cover"
-                />
+              </div>
+              {/* Profile Image - 오른쪽으로 이동 */}
+              <div className="flex-shrink-0">
+                <div className={`w-40 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
+                  <Image
+                    src="/my_photo/my_photo.png"
+                    alt="Profile Photo"
+                    width={160}
+                    height={160}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* News Section */}
-        <section id="news" className="mb-16">
-          <h2 className="text-2xl font-bold mb-4">Latest News</h2>
-          <div className="space-y-1">
-            {newsItems.map((news, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-start space-x-3 py-1"
-              >
-                <span className="tossface text-lg flex-shrink-0">{news.icon.props.children}</span>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center space-x-3">
-                    <span className={`text-sm font-bold ${
-                      darkMode ? 'text-gray-400' : 'text-gray-600'
-                    }`}>
-                      {news.date}
-                    </span>
-                    <span className={`text-sm ${
-                      darkMode ? 'text-gray-300' : 'text-gray-700'
-                    }`}>
-                      {news.title}
-                    </span>
+          {/* News Section */}
+          <section id="news" className="mb-16">
+            <h2 className="text-2xl font-bold mb-4">Latest News</h2>
+            <div className="space-y-1">
+              {newsItems.map((news, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start space-x-3 py-1"
+                >
+                  <span className="tossface text-lg flex-shrink-0">{news.icon.props.children}</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center space-x-3">
+                      <span className={`text-sm font-bold ${
+                        darkMode ? 'text-gray-400' : 'text-gray-600'
+                      }`}>
+                        {news.date}
+                      </span>
+                      <span className={`text-sm ${
+                        darkMode ? 'text-gray-300' : 'text-gray-700'
+                      }`}>
+                        {news.title}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+                </motion.div>
+              ))}
+            </div>
+          </section>
 
-        {/* Majors Section */}
+          {/* Majors Section */}
 
-      </SidebarLayout>
+        </div>
+      </main>
 
       {/* Footer */}
       <footer className={`border-t py-2 ${

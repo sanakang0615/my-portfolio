@@ -57,11 +57,11 @@ const Projects = () => {
         setSearchQuery={setSearchQuery} 
       />
       <main className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)]">
-        <div className="max-w-5xl mx-auto px-6 w-full pt-8">
+        <div className="max-w-5xl mx-auto px-6 w-full pt-18">
           {/* Projects Section */}
           <section id="projects" className="mb-16">
-            <h2 className="text-2xl font-bold mb-2">Projects</h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <h2 className="text-3xl font-bold mb-2">Projects</h2>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
               A selection of projects that I have either led or co-led, for research, courseWorks, and of course, for fun!
             </p>
 

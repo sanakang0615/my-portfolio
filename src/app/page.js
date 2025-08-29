@@ -364,35 +364,19 @@ const Portfolio = () => {
               {/* Info + 소개문단 - 왼쪽으로 이동 */}
               <div className="flex-1 flex flex-col justify-center h-full min-w-0">
               <div className="prose max-w-3xl text-center md:text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
+    
     <p className="text-md leading-normal mb-4">
-      I am a second-year Master&apos;s student in Management Engineering at{' '}
-      <span className="tossface mr-1">🇰🇷</span>
-      <a className="text-blue-600 font-semibold" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer">
-        KAIST
-      </a>, specializing in Information Systems. 
-      I am currently a Short-term Scholar at{' '}
-      <span className="tossface mr-1">🇺🇸</span>
-      <a className="text-red-400 font-semibold" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">
-        Carnegie Mellon University
-      </a> (until July 2025).
-      I work at the intersection of AI/ML, marketing, and information systems, bridging real-world problems with academic research. 
+      I am a second-year Master’s student in Management Engineering at <a className="text-blue-700" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor Sunghyuk Park’s Lab, concentrating in Information Systems. My research spans two main areas: <strong>(1) causal inference and economics</strong> and <strong>(2) natural language processing</strong> with a particular focus on low-resource languages.
+      I completed my undergraduate studies at <a className="text-blue-700" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, where I double-majored in Computer Science and Business Technology Management. During that time, I actively participated in projects related to data analytics, web development, and blockchain applications.
     </p>
 
+    <p className="text-md leading-normal mb-4">
+      In Spring and Summer 2025, I joined the School of Computer Science at <a className="text-blue-700" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer"> Carnegie Mellon University </a>  as a Visiting Scholar in the S3D (Science, Software, and Societal Systems) program, where I had the opportunity to further expand my research experience and international collaborations.
+    </p>
 
     <p className="text-md leading-normal mb-4">
-    Outside of research, I have a few hobbies.  
-    Feel free to check them out in the <a href="/hobbies/drawings" className="text-gray-600 font-semibold">Hobbies</a> tab above.  
-    I enjoy <span className="tossface mr-1">🎨</span>drawing inspired by music,  
-    and also work on small side projects, like <span className="tossface mr-1">🎮</span> 
-    <a 
-      className="text-gray-600 font-semibold" 
-      href="https://wordchain.sanakang.xyz" 
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
-      a vocabulary game
-    </a> I built during GRE prep.
-  </p>
+      Outside of research, I enjoy exploring creative outlets and side projects. I like drawing while listening to music, and I also experiment with small coding projects, such as a vocabulary learning game I developed during my GRE preparation. You can find more about these interests in the Hobbies tab above.
+    </p>
 
   {/* Social Links */}
   <div className="flex items-center space-x-6 mt-6">
@@ -496,8 +480,8 @@ const Portfolio = () => {
         darkMode ? 'border-gray-800 bg-gray-900' : 'border-gray-200 bg-white'
       }`}>
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            © 2025 Sana Kang. The website was designed by Sana Kang and built with React.js.
+          <p className="text-xs text-gray-600 dark:text-gray-400">
+            © 2025 Sana Kang. The website was designed by Sana Kang and built with React.js. Design inspiration from <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a>.
           </p>
         </div>
       </footer>

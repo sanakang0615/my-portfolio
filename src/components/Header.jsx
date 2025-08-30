@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
@@ -6,10 +6,13 @@ import {
   Linkedin, 
   Moon,
   Sun,
+  Menu,
+  X,
 } from 'lucide-react';
 
 const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
   const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const isActive = (path) => {
     if (path === '/') {
@@ -31,86 +34,72 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
   }, [darkMode]);
 
+  const navigationItems = [
+    { href: '/', label: 'About' },
+    { href: '/research', label: 'Publications' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/hobbies/drawings', label: 'Hobbies' },
+    { href: '/cv', label: 'CV' },
+  ];
+
   return (
     <header className={`sticky top-0 z-50 border-b backdrop-blur-md transition-colors duration-300 ${
       darkMode ? 'bg-gray-900/80 border-gray-800' : 'bg-white/80 border-gray-200'
     }`}>
-      <div className="w-full px-6 py-2">
+      <div className="w-full px-3 md:px-6 py-2">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-4 px-12">
-            {/* Left side - Sana Kang name (hidden on About page) */}
+          {/* Left side - Sana Kang name (hidden on About page and mobile) */}
+          <div className="hidden md:flex items-center">
             {pathname !== '/' && (
-              <div className="flex items-center space-x-3 ml-12">
-                <h1 className="text-xl font-semibold">Sana Kang</h1>
+              <div className="flex items-center">
+                <h1 className="text-lg md:text-xl font-semibold">Sana Kang</h1>
               </div>
             )}
           </div>
 
-          <div className="flex items-center space-x-4">
-            {/* Navigation tabs - right aligned */}
-            <nav className="hidden md:flex space-x-4">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex space-x-4">
+            {navigationItems.map((item) => (
               <Link 
-                href="/" 
+                key={item.href}
+                href={item.href} 
                 className={`text-sm transition-colors ${
-                  isActive('/') 
+                  isActive(item.href) 
                     ? 'text-blue-500 font-medium' 
                     : 'hover:text-blue-400'
                 }`}
               >
-                About
+                {item.label}
               </Link>
-              <Link 
-                href="/research" 
-                className={`text-sm transition-colors ${
-                  isActive('/research') 
-                    ? 'text-blue-500 font-medium' 
-                    : 'hover:text-blue-400'
-                }`}
-              >
-                Publications
-              </Link>
-              <Link 
-                href="/projects" 
-                className={`text-sm transition-colors ${
-                  isActive('/projects') 
-                    ? 'text-blue-500 font-medium' 
-                    : 'hover:text-blue-400'
-                }`}
-              >
-                Projects
-              </Link>
-              <Link 
-                href="/hobbies/drawings" 
-                className={`text-sm transition-colors ${
-                  isActive('/hobbies/drawings') 
-                    ? 'text-blue-500 font-medium' 
-                    : 'hover:text-blue-400'
-                }`}
-              >
-                Hobbies
-              </Link>
-              <Link 
-                href="/cv" 
-                className={`text-sm transition-colors ${
-                  isActive('/cv') 
-                    ? 'text-blue-500 font-medium' 
-                    : 'hover:text-blue-400'
-                }`}
-              >
-                CV
-              </Link>
-            </nav>
+            ))}
+          </nav>
 
-            {/* Dark mode toggle */}
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className={`p-2 pr-1 md:pr-4 rounded-md transition-colors ${
-                darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
-              }`}
-            >
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-          </div>
+          {/* Mobile Navigation */}
+          <nav className="lg:hidden flex space-x-2">
+            {navigationItems.map((item) => (
+              <Link 
+                key={item.href}
+                href={item.href} 
+                className={`text-xs px-2 py-1 rounded transition-colors ${
+                  isActive(item.href) 
+                    ? 'text-blue-500 font-medium bg-blue-50 dark:bg-blue-900/20' 
+                    : 'hover:text-blue-400'
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Dark mode toggle */}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className={`p-1.5 md:p-2 rounded-md transition-colors ${
+              darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
+            }`}
+          >
+            {darkMode ? <Sun size={18} className="md:w-5 md:h-5" /> : <Moon size={18} className="md:w-5 md:h-5" />}
+          </button>
         </div>
       </div>
     </header>

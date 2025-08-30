@@ -55,6 +55,14 @@ const Research = () => {
 
               return sortedYears.map((year, yearIndex) => (
                 <div key={year}>
+                  {/* Year Header for Mobile */}
+                  <div className="md:hidden mb-4">
+                    <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-black'}`}>
+                      {year}
+                    </h3>
+                    <div className={`h-px mt-2 ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}></div>
+                  </div>
+                  
                   {/* Publications for this year */}
                   {groupedPublications[year].map((pub, pubIndex) => (
                     <motion.div
@@ -66,8 +74,8 @@ const Research = () => {
                       className="relative"
                     >
                       <div className="flex flex-row gap-6 items-start py-6">
-                        {/* Category Tag */}
-                        <div className="flex-shrink-0">
+                        {/* Category Tag - 모바일에서 숨김 */}
+                        <div className="hidden md:flex flex-shrink-0">
                           <span className={`px-3 py-0.5 text-xs font-medium uppercase tracking-wide rounded-xs ${
                             darkMode ? 'bg-green-600 text-white' : 'bg-green-500 text-white'
                           }`}>
@@ -137,9 +145,9 @@ const Research = () => {
                           </div>
                         </div>
 
-                        {/* Large Faint Year (Right Aligned) - Only show for first publication of each year */}
+                        {/* Large Faint Year (Right Aligned) - Only show for first publication of each year on desktop */}
                         {pubIndex === 0 && (
-                          <div className="flex-shrink-0">
+                          <div className="hidden md:flex flex-shrink-0">
                             <span className={`text-6xl font-light ${darkMode ? 'text-gray-300 opacity-20' : 'text-gray-300 opacity-40'}`}>
                               {year}
                             </span>
@@ -151,9 +159,9 @@ const Research = () => {
                     </motion.div>
                   ))}
 
-                  {/* Separator Line between year groups */}
+                  {/* Separator Line between year groups - Desktop only */}
                   {yearIndex < sortedYears.length - 1 && (
-                    <div className={`h-px ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}></div>
+                    <div className={`hidden md:block h-px ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}></div>
                   )}
                 </div>
               ));

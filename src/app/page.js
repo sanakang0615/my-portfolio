@@ -361,25 +361,25 @@ const Portfolio = () => {
           <section id="top" className="mb-16">
             <h2 className="text-4xl font-semibold mb-4 mt-2 text-center md:text-left"> Sana Kang </h2>
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-              {/* Info + 소개문단 - 왼쪽으로 이동 */}
-              <div className="flex-1 flex flex-col justify-center h-full min-w-0">
+              {/* Info + 소개문단 - 모바일에서는 아래쪽, 데스크톱에서는 왼쪽 */}
+              <div className="flex-1 flex flex-col justify-center h-full min-w-0 order-3 md:order-1">
               <div className="prose max-w-3xl text-center md:text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
     
-    <p className="text-md leading-normal mb-4">
-      I am a second-year Master’s student in Management Engineering at <a className="text-blue-700" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor Sunghyuk Park’s Lab, concentrating in Information Systems. My research spans two main areas: <strong>(1) causal inference and economics</strong> and <strong>(2) natural language processing</strong> with a particular focus on low-resource languages.
+    <p className="text-sm md:text-md leading-normal mb-4">
+      I am a second-year Master's student in Management Engineering at <a className="text-blue-700" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor Sunghyuk Park's Lab, concentrating in Information Systems. My research spans two main areas: <strong>(1) causal inference and economics</strong> and <strong>(2) natural language processing</strong> with a particular focus on low-resource languages.
       I completed my undergraduate studies at <a className="text-blue-700" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, where I double-majored in Computer Science and Business Technology Management. During that time, I actively participated in projects related to data analytics, web development, and blockchain applications.
     </p>
 
-    <p className="text-md leading-normal mb-4">
+    <p className="text-sm md:text-md leading-normal mb-4">
       In Spring and Summer 2025, I joined the School of Computer Science at <a className="text-blue-700" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer"> Carnegie Mellon University </a>  as a Visiting Scholar in the S3D (Science, Software, and Societal Systems) program, where I had the opportunity to further expand my research experience and international collaborations.
     </p>
 
-    <p className="text-md leading-normal mb-4">
+    <p className="text-sm md:text-md leading-normal mb-4">
       I will be applying to PhD programs in the U.S. this fall, with plans to begin my studies in 2026.
     </p>
 
-  {/* Social Links */}
-  <div className="flex items-center space-x-6 mt-6">
+  {/* Social Links - 데스크톱에서만 표시 */}
+  <div className="hidden md:flex items-center justify-center md:justify-start space-x-6 mt-6">
     <a 
       href="https://github.com/sanakang0615" 
       target="_blank" 
@@ -422,8 +422,52 @@ const Portfolio = () => {
   </div>
 
               </div>
-              {/* Profile Image - 오른쪽으로 이동 */}
-              <div className="flex-shrink-0">
+              
+              {/* Social Links - 모바일에서는 사진과 소개글 사이, 데스크톱에서는 숨김 */}
+              <div className="order-2 md:hidden flex justify-center mb-6">
+                <div className="flex items-center space-x-6">
+                  <a 
+                    href="https://github.com/sanakang0615" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  >
+                    <Github size={24} />
+                  </a>
+                  
+                  <a 
+                    href="https://www.linkedin.com/in/sana-kang-20a94528a" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  >
+                    <Linkedin size={24} />
+                  </a>
+                  
+                  <a 
+                    href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  >
+                    <FontAwesomeIcon icon={faGoogleScholar} size="lg" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" />
+                  </a>
+                  
+                  <a 
+                    href="https://x.com/sanakang0615" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              
+              {/* Profile Image - 모바일에서는 위쪽, 데스크톱에서는 오른쪽 */}
+              <div className="flex-shrink-0 order-1 md:order-2">
                 <div className={`w-40 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
                   <Image
                     src="/my_photo/my_photo.png"
@@ -448,11 +492,10 @@ const Portfolio = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-start space-x-3 py-1"
+                  className="flex items-start py-1"
                 >
-                  <span className="tossface text-lg flex-shrink-0">{news.icon.props.children}</span>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center space-x-3">
+                    <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-3">
                       <span className={`text-sm font-bold ${
                         darkMode ? 'text-gray-400' : 'text-gray-600'
                       }`}>

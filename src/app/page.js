@@ -366,7 +366,7 @@ const Portfolio = () => {
               <div className="prose max-w-3xl text-center md:text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
     
     <p className="text-sm md:text-md leading-normal mb-4">
-      I am a second-year Master's student in Management Engineering at <a className="text-blue-700" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor Sunghyuk Park's Lab, concentrating in Information Systems. My research spans two main areas: <strong>(1) causal inference and economics</strong> and <strong>(2) natural language processing</strong> with a particular focus on low-resource languages.
+      I am a second-year Master&apos;s student in Management Engineering at <a className="text-blue-700" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor Sunghyuk Park&apos;s Lab, concentrating in Information Systems. My research spans two main areas: <strong>(1) causal inference and economics</strong> and <strong>(2) natural language processing</strong> with a particular focus on low-resource languages.
       I completed my undergraduate studies at <a className="text-blue-700" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, where I double-majored in Computer Science and Business Technology Management. During that time, I actively participated in projects related to data analytics, web development, and blockchain applications.
     </p>
 

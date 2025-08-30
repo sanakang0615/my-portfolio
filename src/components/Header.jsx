@@ -47,9 +47,9 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
       darkMode ? 'bg-gray-900/80 border-gray-800' : 'bg-white/80 border-gray-200'
     }`}>
       <div className="w-full px-3 md:px-6 py-2">
-        <div className="flex justify-between items-center">
+        <div className="flex items-center">
           {/* Left side - Sana Kang name (hidden on About page and mobile) */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center flex-1">
             {pathname !== '/' && (
               <div className="flex items-center">
                 <h1 className="text-lg md:text-xl font-semibold">Sana Kang</h1>
@@ -57,8 +57,8 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
             )}
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-4">
+          {/* Desktop Navigation - Right aligned */}
+          <nav className="hidden lg:flex space-x-4 mr-4">
             {navigationItems.map((item) => (
               <Link 
                 key={item.href}
@@ -74,8 +74,8 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
             ))}
           </nav>
 
-          {/* Mobile Navigation */}
-          <nav className="lg:hidden flex space-x-2">
+          {/* Mobile Navigation - Right aligned */}
+          <nav className="lg:hidden flex space-x-2 mr-4">
             {navigationItems.map((item) => (
               <Link 
                 key={item.href}

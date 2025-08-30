@@ -144,7 +144,7 @@ const Projects = () => {
                         <div className="flex flex-row gap-6 items-start py-6">
                           {/* Category Tag - 모바일에서 숨김 */}
                           <div className="hidden md:flex flex-shrink-0">
-                            <span className={`px-3 py-0.5 text-xs font-medium uppercase tracking-wide rounded-xs ${
+                            <span className={`px-3 mt-1 py-0.5 text-xs font-medium uppercase tracking-wide rounded-xs ${
                               darkMode ? 'bg-blue-600 text-white' : 'bg-blue-500 text-white'
                             }`}>
                               {project.type}

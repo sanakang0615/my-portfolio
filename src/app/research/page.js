@@ -76,7 +76,7 @@ const Research = () => {
                       <div className="flex flex-row gap-6 items-start py-6">
                         {/* Category Tag - 모바일에서 숨김 */}
                         <div className="hidden md:flex flex-shrink-0">
-                          <span className={`px-3 py-0.5 text-xs font-medium uppercase tracking-wide rounded-xs ${
+                          <span className={`px-3 py-0.5 mt-1 text-xs font-medium uppercase tracking-wide rounded-xs ${
                             darkMode ? 'bg-green-600 text-white' : 'bg-green-500 text-white'
                           }`}>
                             {pub.type === 'Conference' ? 'Conf' : 

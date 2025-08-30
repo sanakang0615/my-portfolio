@@ -49,7 +49,7 @@ const CV = () => {
           {/* PDF Content */}
           <div className="w-full h-[calc(100vh-200px)] overflow-hidden">
             <iframe
-              src="/CV/CV_Sana_Kang_0618.pdf"
+              src="/CV/CV_SanaKang_0830.pdf"
               className="w-full h-full border-0"
               title="CV PDF Viewer"
               allowFullScreen

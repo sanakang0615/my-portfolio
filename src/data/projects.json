@@ -10,6 +10,15 @@
       "links": {}
     },
     {
+      "title": "KAIST AI-Based Educational Environment Innovation Project",
+      "type": "Web App",
+      "description": "Selected as one of 11 teams in a university-wide initiative, managing a project with a budget of 9.6 million KRW.<br/> Leading the development of an AI-driven system for summarizing lab seminar Q&A and generating graphicalrepresentations through a human-centered HCI approach. <br/>Position: Team Lead<br/>",
+      "role": "Project",
+      "tags": ["MVP", "Web App", "Full-stack Development", "LLM"],
+      "stack": ["NextJS", "LLM"],
+      "links": {}
+    },
+    {
       "title": "AdOasis Marketing AI Analysis Generator",
       "type": "Web App",
       "description": "Description in progress",

@@ -371,7 +371,7 @@ const Portfolio = () => {
     </p>
 
     <p className="text-sm md:text-md leading-normal mb-4">
-      In Spring and Summer 2025, I joined the School of Computer Science at <a className="text-blue-700" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer"> Carnegie Mellon University </a>  as a Visiting Scholar in the S3D (Science, Software, and Societal Systems) program, where I had the opportunity to further expand my research experience and international collaborations.
+      In Spring and Summer 2025, I joined the School of Computer Science at <a className="text-blue-700" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer"> Carnegie Mellon University </a>  as a Visiting Scholar in the S3D Department, where I had the opportunity to further expand my research experience and international collaborations.
     </p>
 
     <p className="text-sm md:text-md leading-normal mb-4">

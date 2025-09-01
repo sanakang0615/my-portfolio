@@ -5,19 +5,29 @@ import Link from 'next/link';
 import { Github, Linkedin, Search, Sun, Moon } from 'lucide-react';
 import Header from '../components/Header';
 
-const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children }) => {
+const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children, darkMode: externalDarkMode, setDarkMode: externalSetDarkMode, showSearch: externalShowSearch, setShowSearch: externalSetShowSearch, searchQuery: externalSearchQuery, setSearchQuery: externalSetSearchQuery }) => {
   const [mounted, setMounted] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [internalDarkMode, setInternalDarkMode] = useState(false);
+  const [internalShowSearch, setInternalShowSearch] = useState(false);
+  const [internalSearchQuery, setInternalSearchQuery] = useState("");
+
+  // Use external darkMode if provided, otherwise use internal state
+  const darkMode = externalDarkMode !== undefined ? externalDarkMode : internalDarkMode;
+  const setDarkMode = externalSetDarkMode || setInternalDarkMode;
+  const showSearch = externalShowSearch !== undefined ? externalShowSearch : internalShowSearch;
+  const setShowSearchState = externalSetShowSearch || setInternalShowSearch;
+  const searchQuery = externalSearchQuery !== undefined ? externalSearchQuery : internalSearchQuery;
+  const setSearchQueryState = externalSetSearchQuery || setInternalSearchQuery;
 
   useEffect(() => {
     setMounted(true);
-    const savedMode = localStorage.getItem('darkMode');
-    if (savedMode !== null) {
-      setDarkMode(JSON.parse(savedMode));
+    if (externalDarkMode === undefined) {
+      const savedMode = localStorage.getItem('darkMode');
+      if (savedMode !== null) {
+        setInternalDarkMode(JSON.parse(savedMode));
+      }
     }
-  }, []);
+  }, [externalDarkMode]);
 
 
 
@@ -27,12 +37,12 @@ const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children }) => {
       // Check if Cmd (Mac) or Ctrl (Windows/Linux) + K is pressed
       if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
         event.preventDefault(); // Prevent default browser behavior
-        setShowSearch(true);
+        setShowSearchState(true);
       }
       
       // Close search with Escape key
       if (event.key === 'Escape' && showSearch) {
-        setShowSearch(false);
+        setShowSearchState(false);
       }
     };
 
@@ -56,13 +66,13 @@ const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children }) => {
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         showSearch={showSearch}
-        setShowSearch={setShowSearch}
+        setShowSearch={setShowSearchState}
         searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
+        setSearchQuery={setSearchQueryState}
       />
       {/* Search Modal (간단 버전) */}
       {showSearch && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-black/40" onClick={() => setShowSearch(false)}>
+        <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-black/40" onClick={() => setShowSearchState(false)}>
           <div className={`w-full max-w-2xl rounded-lg shadow-2xl border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`} onClick={e => e.stopPropagation()}>
             <div className="p-4 flex items-center space-x-3 mb-4">
               <Search size={20} className="text-blue-500" />
@@ -70,7 +80,7 @@ const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children }) => {
                 type="text"
                 placeholder="Search..."
                 value={searchQuery}
-                onChange={e => setSearchQuery(e.target.value)}
+                onChange={e => setSearchQueryState(e.target.value)}
                 className={`flex-1 bg-transparent text-lg outline-none ${darkMode ? 'placeholder-gray-400' : 'placeholder-gray-500'}`}
                 autoFocus
               />
@@ -99,8 +109,19 @@ const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children }) => {
       )}
       {/* Sidebar + Main Content */}
       <SidebarLayout navItems={navItems} sidebarTitle={sidebarTitle} darkMode={darkMode}>
-        {typeof children === 'function' ? children({ darkMode }) : children}
+        {typeof children === 'function' ? children({ darkMode, setDarkMode }) : children}
       </SidebarLayout>
+      
+      {/* Footer */}
+      <footer className={`border-t py-2 ${
+        darkMode ? 'border-gray-800 bg-gray-900' : 'border-gray-200 bg-white'
+      }`}>
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <p className="text-xs text-gray-600 dark:text-gray-400">
+            © 2025 Sana Kang. The website was designed by Sana Kang and built with React.js. Design inspiration from <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer" className="hover:underline">al-folio</a>.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

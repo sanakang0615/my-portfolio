@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Palette, ExternalLink, Music, Play, Youtube, Apple, Gamepad2, Map } from 'lucide-react';
 import Header from '../../../components/Header';
+import Footer from '../../../components/Footer';
 import { Users, Calendar, Code, FileText } from 'lucide-react';
 import { Sun, Moon } from 'lucide-react';
 
@@ -219,6 +220,7 @@ const Hobbies = () => {
           </section>
         </div>
       </main>
+      <Footer darkMode={darkMode} />
     </div>
   );
 };

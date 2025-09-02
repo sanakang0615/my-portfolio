@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Eye, X, Download } from 'lucide-react';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 const CV = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -89,6 +90,7 @@ const CV = () => {
           </div>
         </div>
       </main>
+      <Footer darkMode={darkMode} />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect, useMemo } from "react";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import projectsData from "../../data/projects.json";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -335,6 +336,7 @@ const Projects = () => {
           </section>
         </div>
       </main>
+      <Footer darkMode={darkMode} />
     </div>
   );
 };

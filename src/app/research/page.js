@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import publicationsData from '../../data/publications.json';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -170,6 +171,7 @@ const Research = () => {
           </section>
         </div>
       </main>
+      <Footer darkMode={darkMode} />
     </div>
   );
 };

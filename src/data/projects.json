@@ -16,7 +16,8 @@
       "role": "Project",
       "tags": ["MVP", "Web App", "Full-stack Development", "LLM"],
       "stack": ["NextJS", "LLM"],
-      "links": {}
+      "links": {},
+      "period": "2024"
     },
     {
       "title": "AdOasis Marketing AI Analysis Generator",

@@ -365,12 +365,12 @@ const Portfolio = () => {
                   <div className="prose max-w-3xl text-center md:text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
         
         <p className="text-sm md:text-md leading-normal mb-4">
-          I am a second-year Master&apos;s student in Management Engineering at <a className="text-blue-700" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor Sunghyuk Park&apos;s Lab, concentrating in Information Systems. My research spans two main areas: <strong>(1) causal inference and economics</strong> and <strong>(2) natural language processing</strong> with a particular focus on low-resource languages.
-          I completed my undergraduate studies at <a className="text-blue-700" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, where I double-majored in Computer Science and Business Technology Management. During that time, I actively participated in projects related to data analytics, web development, and blockchain applications.
+          I am a second-year Master&apos;s student in Management Engineering at <a className="text-blue-600" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor Sunghyuk Park&apos;s Lab, concentrating in Information Systems. My research spans two main areas: <strong>(1) causal inference and econometrics</strong> and <strong>(2) natural language processing</strong> with a particular focus on low-resource languages.
+          I completed my undergraduate studies at <a className="text-blue-600" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, where I double-majored in Computer Science and Business Technology Management. During that time, I actively participated in projects related to data analytics, web development, and blockchain applications.
         </p>
 
         <p className="text-sm md:text-md leading-normal mb-4">
-          In Spring and Summer 2025, I joined the School of Computer Science at <a className="text-blue-700" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer"> Carnegie Mellon University </a>  as a Visiting Scholar in the S3D Department, where I had the opportunity to further expand my research experience and international collaborations.
+          In Spring and Summer 2025, I joined the School of Computer Science at <a className="text-blue-600" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer"> Carnegie Mellon University </a>  as a Visiting Scholar in the S3D Department, where I had the opportunity to further expand my research experience and international collaborations.
         </p>
 
         <p className="text-sm md:text-md leading-normal mb-4">
@@ -494,17 +494,63 @@ const Portfolio = () => {
                       className="flex items-start py-1"
                     >
                       <div className="flex-1 min-w-0">
-                        <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-3">
+                        <div className="flex flex-col sm:flex-row sm:items-start space-y-1 sm:space-y-0 sm:space-x-3">
                           <span className={`text-sm font-bold ${
                             darkMode ? 'text-gray-400' : 'text-gray-600'
                           }`}>
                             {news.date}
                           </span>
-                          <span className={`text-sm ${
-                            darkMode ? 'text-gray-300' : 'text-gray-700'
-                          }`}>
-                            {news.title}
-                          </span>
+                          {news.links && news.links.length > 0 ? (
+                            <span className={`text-sm ${
+                              darkMode ? 'text-gray-300' : 'text-gray-700'
+                            }`}>
+                              {(() => {
+                                const renderLinkedTitle = (title, links) => {
+                                  let parts = [title];
+                                  links.forEach((l) => {
+                                    const nextParts = [];
+                                    parts.forEach((part) => {
+                                      if (typeof part === 'string' && part.includes(l.text)) {
+                                        const splitIdx = part.indexOf(l.text);
+                                        const before = part.slice(0, splitIdx);
+                                        const after = part.slice(splitIdx + l.text.length);
+                                        nextParts.push(before,
+                                          <a key={`${l.text}-${splitIdx}`} href={l.href} target="_blank" rel="noopener noreferrer" className="text-blue-600">{l.text}</a>,
+                                          after
+                                        );
+                                      } else {
+                                        nextParts.push(part);
+                                      }
+                                    });
+                                    parts = nextParts;
+                                  });
+                                  return parts;
+                                };
+                                return renderLinkedTitle(news.title, news.links);
+                              })()}
+                            </span>
+                          ) : news.link && news.linkText && news.title.includes(news.linkText) ? (
+                            <span className={`text-sm ${
+                              darkMode ? 'text-gray-300' : 'text-gray-700'
+                            }`}>
+                              {news.title.split(news.linkText)[0]}
+                              <a
+                                href={news.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-600"
+                              >
+                                {news.linkText}
+                              </a>
+                              {news.title.split(news.linkText)[1]}
+                            </span>
+                          ) : (
+                            <span className={`text-sm ${
+                              darkMode ? 'text-gray-300' : 'text-gray-700'
+                            }`}>
+                              {news.title}
+                            </span>
+                          )}
                         </div>
                       </div>
                     </motion.div>

@@ -3,22 +3,39 @@
     {
         "date": "2025.08",
         "icon": "📄",
-        "title": "PhoniTale Paper Accepted to EMNLP 2025 Main Conference."
+        "title": "Accepted to EMNLP 2025 Main Conference.",
+        "linkText": "EMNLP 2025",
+        "link": "https://2025.emnlp.org/"
     },
     {
         "date": "2025.06",
         "icon": "📚",
-        "title": "Book Chapter Accepted in \"Handbook on Artificial Intelligence and Strategy\" @ UMich Ross"
+        "title": "Book Chapter Accepted in Handbook on Artificial Intelligence and Strategy, with Prof. Prithwiraj Choudhury and Prof. Do Yoon Kim",
+        "linkText": "Handbook on Artificial Intelligence and Strategy",
+        "link": "https://rossweb.bus.umich.edu/ai-handbook/",
+        "links": [
+          { "text": "Prithwiraj Choudhury", "href": "https://www.lse.ac.uk/management/people/academic-staff/raj-choudhury" },
+          { "text": "Do Yoon Kim", "href": "https://www.bc.edu/bc-web/schools/carroll-school/faculty-research/faculty-directory/do-yoon-kim.html" }
+        ]
     },
     {
         "date": "2025.05",
         "icon": "🖥️",
-        "title": "Started RA with Prof. Minkyung Kim (CMU Tepper) and Prof. Meng Liu (WashU Olin)"
+        "title": "Started as a Research Assistant with Prof. Minkyung Kim and Prof. Meng Liu at CMU Tepper",
+        "links": [
+          { "text": "Minkyung Kim", "href": "https://scholars.cmu.edu/13042-minkyung-kim" },
+          { "text": "Meng Liu", "href": "https://olin.washu.edu/faculty/meng-liu" },
+          { "text": "CMU Tepper", "href": "https://www.cmu.edu/tepper/index.html" }
+        ]
     },
     {
         "date": "2025.01",
         "icon": "🇺🇸",
-        "title": "Started a Visiting Researcher at CMU S3D (Computer Science Department)"
+        "title": "Started as a Visiting Researcher at CMU School of Computer Science (S3D Department)",
+        "links": [
+          { "text": "CMU School of Computer Science", "href": "https://www.cs.cmu.edu/" },
+          { "text": "S3D Department", "href": "https://s3d.cmu.edu/" }
+        ]
     }
   ]
 } 

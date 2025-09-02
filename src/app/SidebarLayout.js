@@ -77,8 +77,8 @@ const SidebarLayout = ({ navItems, children, sidebarTitle = "NAVIGATION", darkMo
         }
       `}</style>
 
-      {/* Sidebar Navigation - hidden on mobile */}
-      <div className={`relative sticky top-20 h-screen transition-all duration-300 hidden md:block ${collapsed ? 'w-16' : 'w-63'} \
+      {/* Sidebar Navigation - disabled (always hidden) */}
+      <div className={`relative sticky top-20 h-screen transition-all duration-300 hidden ${collapsed ? 'w-16' : 'w-63'} \
         ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border-r overflow-y-auto sidebar-main-scroll flex flex-col`}>
         <div className="p-4 flex flex-col h-full flex-1">
           {/* Collapse Button - absolute top right */}
@@ -154,7 +154,49 @@ const SidebarLayout = ({ navItems, children, sidebarTitle = "NAVIGATION", darkMo
                             <div className="flex items-start space-x-2">
                               <span className={`font-bold pt-0.5 text-[10px] min-w-[36px] text-left ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>{news.date}</span>
                               <span className="tossface text-base text-[12px] text-left">{news.icon.props.children}</span>
-                              <span className={`text-[14.5px] flex-1 text-left ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>{news.title}</span>
+                              {news.links && news.links.length > 0 ? (
+                                <span className={`text-[14.5px] flex-1 text-left ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>
+                                  {(() => {
+                                    const renderLinkedTitle = (title, links) => {
+                                      let parts = [title];
+                                      links.forEach((l) => {
+                                        const nextParts = [];
+                                        parts.forEach((part) => {
+                                          if (typeof part === 'string' && part.includes(l.text)) {
+                                            const splitIdx = part.indexOf(l.text);
+                                            const before = part.slice(0, splitIdx);
+                                            const after = part.slice(splitIdx + l.text.length);
+                                            nextParts.push(before,
+                                              <a key={`${l.text}-${splitIdx}`} href={l.href} target="_blank" rel="noopener noreferrer" className="text-blue-600">{l.text}</a>,
+                                              after
+                                            );
+                                          } else {
+                                            nextParts.push(part);
+                                          }
+                                        });
+                                        parts = nextParts;
+                                      });
+                                      return parts;
+                                    };
+                                    return renderLinkedTitle(news.title, news.links);
+                                  })()}
+                                </span>
+                              ) : news.link && news.linkText && news.title.includes(news.linkText) ? (
+                                <span className={`text-[14.5px] flex-1 text-left ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>
+                                  {news.title.split(news.linkText)[0]}
+                                  <a
+                                    href={news.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600"
+                                  >
+                                    {news.linkText}
+                                  </a>
+                                  {news.title.split(news.linkText)[1]}
+                                </span>
+                              ) : (
+                                <span className={`text-[14.5px] flex-1 text-left ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>{news.title}</span>
+                              )}
                             </div>
                           </div>
                         ))}

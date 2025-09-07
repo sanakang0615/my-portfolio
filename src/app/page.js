@@ -380,7 +380,7 @@ const Portfolio = () => {
   href="https://www.cmu.edu/" 
   target="_blank" 
   rel="noopener noreferrer">Carnegie Mellon University </a> 
-  as a Visiting Scholar in the S3D Department, where I had the opportunity to further expand my research experience and international collaborations. Under the guidance of Professors 
+  as a Visiting Scholar in the S3D Department. Under the guidance of Professors 
   <a 
     className="text-blue-600 hover:underline" 
     href="https://scholar.google.com/citations?user=IWcGY98AAAAJ&hl=en" 
@@ -393,7 +393,12 @@ const Portfolio = () => {
     href="http://ayesha.lti.cs.cmu.edu/mlsp/people/rsingh/index.html" 
     target="_blank" 
     rel="noopener noreferrer"
-  > Rita Singh</a>, I led the development of the <em>PhoniTale</em> paper as first author, which was accepted to EMNLP Main. In addition, since May 2025 I have been serving as a Research Intern with Professor <a 
+  > Rita Singh</a> at the <a 
+    className="text-blue-600 hover:underline" 
+    href="https://www.lti.cs.cmu.edu/index.html" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >Language Technologies Institute</a>, I led the PhoniTale project as first author, which was accepted to EMNLP Main. Since May 2025, I have also been working as a Research Assistant with Professor <a 
     className="text-blue-600 hover:underline" 
     href="https://scholars.cmu.edu/13042-minkyung-kim" 
     target="_blank" 
@@ -405,8 +410,8 @@ const Portfolio = () => {
     href="https://www.cmu.edu/tepper/index.html" 
     target="_blank" 
     rel="noopener noreferrer"
-  > Tepper School of Business</a>, working on a project that examines the policy impact of real estate compensation.
-These experiences have strengthened my foundation for pursuing advanced research. </p> 
+  > Tepper School of Business</a> on a project examining the policy impact of real estate compensation.
+These experiences have provided valuable opportunities to broaden my research expertise and engage in international collaborations. </p> 
 
         <p className="text-sm md:text-base leading-relaxed mb-4">
           I will be applying to PhD programs in the U.S. this fall, planning to begin in Fall 2026.

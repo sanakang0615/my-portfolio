@@ -364,17 +364,17 @@ const Portfolio = () => {
                   <div className="flex-1 flex flex-col justify-center h-full min-w-0 order-3 md:order-1">
                   <div className="prose max-w-3xl text-center md:text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
         
-        <p className="text-sm md:text-md leading-normal mb-4">
+        <p className="text-sm md:text-base leading-relaxed mb-4">
           I am a second-year Master&apos;s student in Management Engineering at <a className="text-blue-600" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor Sunghyuk Park&apos;s Lab, concentrating in Information Systems. My research spans two main areas: <strong>(1) causal inference and econometrics</strong> and <strong>(2) natural language processing</strong> with a particular focus on low-resource languages.
           I completed my undergraduate studies at <a className="text-blue-600" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, where I double-majored in Computer Science and Business Technology Management. During that time, I actively participated in projects related to data analytics, web development, and blockchain applications.
         </p>
 
-        <p className="text-sm md:text-md leading-normal mb-4">
+        <p className="text-sm md:text-base leading-relaxed mb-4">
           In Spring and Summer 2025, I joined the School of Computer Science at <a className="text-blue-600" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer"> Carnegie Mellon University </a>  as a Visiting Scholar in the S3D Department, where I had the opportunity to further expand my research experience and international collaborations.
         </p>
 
-        <p className="text-sm md:text-md leading-normal mb-4">
-          I will be applying to PhD programs in the U.S. this fall, with plans to begin my studies in 2026.
+        <p className="text-sm md:text-base leading-relaxed mb-4">
+          I will be applying to PhD programs in the U.S. this fall, with plans to begin studies in 2026.
         </p>
 
       {/* Social Links - 데스크톱에서만 표시 */}
@@ -467,13 +467,14 @@ const Portfolio = () => {
                   
                   {/* Profile Image - 모바일에서는 위쪽, 데스크톱에서는 오른쪽 */}
                   <div className="flex-shrink-0 order-1 md:order-2">
-                    <div className={`w-40 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
+                    <div className={`w-72 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
                       <Image
-                        src="/my_photo/my_photo.png"
+                        src="/my_photo/my_photo_outside_2.png"
                         alt="Profile Photo"
-                        width={160}
-                        height={160}
+                        width={288}
+                        height={288}
                         className="w-full h-full object-cover"
+                        quality={95}
                       />
                     </div>
                   </div>
@@ -495,13 +496,13 @@ const Portfolio = () => {
                     >
                       <div className="flex-1 min-w-0">
                         <div className="flex flex-col sm:flex-row sm:items-start space-y-1 sm:space-y-0 sm:space-x-3">
-                          <span className={`text-sm font-bold ${
+                          <span className={`text-sm md:text-base font-bold ${
                             darkMode ? 'text-gray-400' : 'text-gray-600'
                           }`}>
                             {news.date}
                           </span>
                           {news.links && news.links.length > 0 ? (
-                            <span className={`text-sm ${
+                            <span className={`text-sm md:text-base ${
                               darkMode ? 'text-gray-300' : 'text-gray-700'
                             }`}>
                               {(() => {
@@ -530,7 +531,7 @@ const Portfolio = () => {
                               })()}
                             </span>
                           ) : news.link && news.linkText && news.title.includes(news.linkText) ? (
-                            <span className={`text-sm ${
+                            <span className={`text-sm md:text-base ${
                               darkMode ? 'text-gray-300' : 'text-gray-700'
                             }`}>
                               {news.title.split(news.linkText)[0]}
@@ -545,7 +546,7 @@ const Portfolio = () => {
                               {news.title.split(news.linkText)[1]}
                             </span>
                           ) : (
-                            <span className={`text-sm ${
+                            <span className={`text-sm md:text-base ${
                               darkMode ? 'text-gray-300' : 'text-gray-700'
                             }`}>
                               {news.title}

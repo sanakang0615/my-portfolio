@@ -211,7 +211,7 @@ const SidebarLayout = ({ navItems, children, sidebarTitle = "NAVIGATION", darkMo
         </div>
       </div>
       {/* Main Content - adjusted padding for mobile */}
-      <div className="flex-1 max-w-none px-6 py-8">{children}</div>
+      <div className="flex-1 max-w-none px-4 md:px-6 py-8">{children}</div>
     </div>
   );
 };

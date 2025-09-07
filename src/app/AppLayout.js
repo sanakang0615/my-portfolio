@@ -73,7 +73,7 @@ const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children, darkMode: 
       />
       {/* Search Modal (간단 버전) */}
       {showSearch && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-black/40" onClick={() => setShowSearchState(false)}>
+        <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 md:px-4 bg-black/40" onClick={() => setShowSearchState(false)}>
           <div className={`w-full max-w-2xl rounded-lg shadow-2xl border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`} onClick={e => e.stopPropagation()}>
             <div className="p-4 flex items-center space-x-3 mb-4">
               <Search size={20} className="text-blue-500" />

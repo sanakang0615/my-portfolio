@@ -234,7 +234,7 @@ const Portfolio = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4"
+                className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 md:px-4"
                 onClick={() => setShowSearch(false)}
               >
                 <motion.div
@@ -354,7 +354,7 @@ const Portfolio = () => {
           </AnimatePresence>
 
           <main className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)]">
-            <div className="max-w-5xl mx-auto px-6 w-full pt-6">
+            <div className="max-w-5xl mx-auto px-4 md:px-6 w-full pt-6">
               {/* Main Content (About, News, Projects, Publications 섹션만) */}
               {/* About Section */}
               <section id="top" className="mb-16">
@@ -362,19 +362,54 @@ const Portfolio = () => {
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
                   {/* Info + 소개문단 - 모바일에서는 아래쪽, 데스크톱에서는 왼쪽 */}
                   <div className="flex-1 flex flex-col justify-center h-full min-w-0 order-3 md:order-1">
-                  <div className="prose max-w-3xl text-center md:text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
+                  <div className="prose max-w-3xl text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
         
         <p className="text-sm md:text-base leading-relaxed mb-4">
-          I am a second-year Master&apos;s student in Management Engineering at <a className="text-blue-600" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor Sunghyuk Park&apos;s Lab, concentrating in Information Systems. My research spans two main areas: <strong>(1) causal inference and econometrics</strong> and <strong>(2) natural language processing</strong> with a particular focus on low-resource languages.
+          I am a second-year Master&apos;s student in Management Engineering at <a className="text-blue-600" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor Sunghyuk Park&apos;s Lab, concentrating in Information Systems. My research spans two main areas: <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>📊</span> causal inference and econometrics</strong> and <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤖</span> natural language processing</strong> with a particular focus on low-resource languages.
           I completed my undergraduate studies at <a className="text-blue-600" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, where I double-majored in Computer Science and Business Technology Management. During that time, I actively participated in projects related to data analytics, web development, and blockchain applications.
         </p>
 
         <p className="text-sm md:text-base leading-relaxed mb-4">
-          In Spring and Summer 2025, I joined the School of Computer Science at <a className="text-blue-600" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer"> Carnegie Mellon University </a>  as a Visiting Scholar in the S3D Department, where I had the opportunity to further expand my research experience and international collaborations.
-        </p>
+  In Spring and Summer 2025, I joined the 
+  <a 
+    className="text-blue-600 hover:underline" 
+    href="https://www.cs.cmu.edu/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  > School of Computer Science</a> at <a className="text-blue-600 hover:underline" 
+  href="https://www.cmu.edu/" 
+  target="_blank" 
+  rel="noopener noreferrer">Carnegie Mellon University </a> 
+  as a Visiting Scholar in the S3D Department, where I had the opportunity to further expand my research experience and international collaborations. Under the guidance of Professors 
+  <a 
+    className="text-blue-600 hover:underline" 
+    href="https://scholar.google.com/citations?user=IWcGY98AAAAJ&hl=en" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  > Bhiksha Raj </a> 
+  and 
+  <a 
+    className="text-blue-600 hover:underline" 
+    href="http://ayesha.lti.cs.cmu.edu/mlsp/people/rsingh/index.html" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  > Rita Singh</a>, I led the development of the <em>PhoniTale</em> paper as first author, which was accepted to EMNLP Main. In addition, since May 2025 I have been serving as a Research Intern with Professor <a 
+    className="text-blue-600 hover:underline" 
+    href="https://scholars.cmu.edu/13042-minkyung-kim" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >Minkyung Kim </a> 
+  at the 
+  <a 
+    className="text-blue-600 hover:underline" 
+    href="https://www.cmu.edu/tepper/index.html" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  > Tepper School of Business</a>, working on a project that examines the policy impact of real estate compensation.
+These experiences have strengthened my foundation for pursuing advanced research. </p> 
 
         <p className="text-sm md:text-base leading-relaxed mb-4">
-          I will be applying to PhD programs in the U.S. this fall, with plans to begin studies in 2026.
+          I will be applying to PhD programs in the U.S. this fall, planning to begin in Fall 2026.
         </p>
 
       {/* Social Links - 데스크톱에서만 표시 */}
@@ -467,7 +502,7 @@ const Portfolio = () => {
                   
                   {/* Profile Image - 모바일에서는 위쪽, 데스크톱에서는 오른쪽 */}
                   <div className="flex-shrink-0 order-1 md:order-2">
-                    <div className={`w-72 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
+                    <div className={`w-72 md:w-80 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
                       <Image
                         src="/my_photo/my_photo_outside_2.png"
                         alt="Profile Photo"

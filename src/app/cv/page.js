@@ -43,7 +43,7 @@ const CV = () => {
         setShowSearch={setShowSearch}
       />
       
-      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-4">
+      <main className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-4 md:px-4">
         {/* CV Content */}
         <div className={`w-full max-w-7xl rounded-lg shadow-2xl overflow-hidden ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
           {/* Header */}
@@ -71,10 +71,10 @@ const CV = () => {
             <a
               href="/CV/CV_SanaKang_0830.pdf"
               download="CV_SanaKang.pdf"
-              className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors ${
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-sm ${
                 darkMode 
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white' 
-                  : 'bg-blue-600 hover:bg-blue-700 text-white'
+                  ? 'bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-gray-200 shadow-gray-900/20 hover:shadow-gray-900/30' 
+                  : 'bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-700 shadow-gray-200/50 hover:shadow-gray-300/60'
               }`}
             >
               <Download size={20} />

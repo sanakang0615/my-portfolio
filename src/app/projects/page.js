@@ -60,7 +60,7 @@ const Projects = () => {
         setSearchQuery={setSearchQuery} 
       />
       <main className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)]">
-        <div className="max-w-5xl mx-auto px-6 w-full pt-18">
+        <div className="max-w-5xl mx-auto px-4 md:px-6 w-full pt-18">
           {/* Projects Section */}
           <section id="projects" className="mb-16">
             <h2 className="text-3xl font-bold mb-2">Projects</h2>

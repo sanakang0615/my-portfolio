@@ -1,6 +1,27 @@
 {
   "newsItems": [
     {
+      "date": "2025.11",
+      "icon": "📄",
+      "title": " Heading to Suzhou to present at EMNLP 2025. (Come check out my poster!)",
+      "linkText": "my poster",
+      "link": "https://drive.google.com/file/d/1un7ErDFVJ3WJ9Wy8SiJOaE0TxMVGQvPC/view?usp=sharing"
+    },
+    {
+      "date": "2025.11",
+      "icon": "📄",
+      "title": "Featured in The Korea JoongAng Daily highlighting outstanding student achievements from KAIST.",
+      "linkText": "The Korea JoongAng Daily",
+      "link": "https://www.joongang.co.kr/article/25379464"
+    },
+    {
+      "date": "2025.10",
+      "icon": "📄",
+      "title": "Won the Excellence Award at the LLM Clinical Note Challenge organized by Bundang Seoul National University Hospital.",
+      "linkText": "Bundang Seoul National University Hospital",
+      "link": "https://www.snubh.org/dh/en/"
+    },
+    {
         "date": "2025.08",
         "icon": "📄",
         "title": "Accepted to EMNLP 2025 Main Conference.",
@@ -10,7 +31,7 @@
     {
         "date": "2025.06",
         "icon": "📚",
-        "title": "Chapter Accepted in Handbook on Artificial Intelligence and Strategy, with Prof. Prithwiraj Choudhury and Prof. Do Yoon Kim",
+        "title": "Accepted to Handbook on AI and Strategy (Edward Elgar Publishing), with Prof. Prithwiraj Choudhury and Do Yoon Kim",
         "linkText": "Handbook on Artificial Intelligence and Strategy",
         "link": "https://rossweb.bus.umich.edu/ai-handbook/",
         "links": [

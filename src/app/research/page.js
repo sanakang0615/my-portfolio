@@ -37,8 +37,8 @@ const Research = () => {
         <div className="max-w-5xl mx-auto px-4 md:px-6 w-full pt-18">
           <section id="publications" className="mb-16">
             <h2 className={`text-3xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-black'}`}>Publications</h2>
-            <p className={`text-sm mb-8 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Information Systems | Causal Inference | NLP | Low-resource Language </p>
-            
+            {/* <p className={`text-sm mb-8 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Information Systems | Causal Inference | NLP | Low-resource Language </p>
+             */}
                         <div className="space-y-0">
             {(() => {
               // Group publications by year

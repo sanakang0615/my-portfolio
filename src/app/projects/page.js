@@ -64,12 +64,12 @@ const Projects = () => {
           {/* Projects Section */}
           <section id="projects" className="mb-16">
             <h2 className="text-3xl font-bold mb-2">Projects</h2>
-            <p className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-500"} mb-2`}>
+            {/* <p className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-500"} mb-2`}>
               I have hands-on experience in web and mobile development, along with full-stack engineering. 
               My work spans AI/ML modeling, data analytics, and blockchain applications, and I have also led app design and project planning.
-            </p>
+            </p> */}
 
-            <p className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-500"} mb-6`}>
+            {/* <p className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-500"} mb-6`}>
               <strong>Tech Stack</strong>
               <li className="pl-1.5">
                 Advanced: ReactJS, NextJS, Streamlit, Python, MongoDB, Express, FastAPI, HuggingFace, TensorFlow, PyTorch, Pandas, OpenAI
@@ -80,7 +80,7 @@ const Projects = () => {
               <li className="pl-1.5">
                 Beginner: Scala, Flutter, AutoCAD, Dart
               </li>
-            </p>
+            </p> */}
 
             {/* Projects List */}
             <div className="space-y-0">

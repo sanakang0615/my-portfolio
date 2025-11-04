@@ -354,7 +354,7 @@ const Portfolio = () => {
           </AnimatePresence>
 
           <main className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)]">
-            <div className="max-w-5xl mx-auto px-4 md:px-6 w-full pt-6">
+            <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-4 xl:px-2 w-full pt-6">
               {/* Main Content (About, News, Projects, Publications 섹션만) */}
               {/* About Section */}
               <section id="top" className="mb-16">
@@ -515,7 +515,7 @@ These experiences have greatly broadened my research expertise and enabled inter
                   <div className="flex-shrink-0 order-1 md:order-2">
                     <div className={`w-72 md:w-80 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
                       <Image
-                        src="/my_photo/my_photo_outside_2.png"
+                        src="/my_photo/my_photo_4.jpg"
                         alt="Profile Photo"
                         width={288}
                         height={288}
@@ -542,7 +542,7 @@ These experiences have greatly broadened my research expertise and enabled inter
                     >
                       <div className="flex-1 min-w-0">
                         <div className="flex flex-col sm:flex-row sm:items-start space-y-1 sm:space-y-0 sm:space-x-3">
-                          <span className={`text-sm md:text-base font-bold ${
+                          <span className={`text-sm md:text-base font-bold flex-shrink-0 w-16 sm:w-20 ${
                             darkMode ? 'text-gray-400' : 'text-gray-600'
                           }`}>
                             {news.date}

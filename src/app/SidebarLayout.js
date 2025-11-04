@@ -152,7 +152,7 @@ const SidebarLayout = ({ navItems, children, sidebarTitle = "NAVIGATION", darkMo
                             }`}
                           >
                             <div className="flex items-start space-x-2">
-                              <span className={`font-bold pt-0.5 text-[10px] min-w-[36px] text-left ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>{news.date}</span>
+                              <span className={`font-bold pt-0.5 text-[10px] flex-shrink-0 w-12 text-left ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>{news.date}</span>
                               <span className="tossface text-base text-[12px] text-left">{news.icon.props.children}</span>
                               {news.links && news.links.length > 0 ? (
                                 <span className={`text-[14.5px] flex-1 text-left ${darkMode ? 'text-gray-400' : 'text-gray-800'}`}>
@@ -211,7 +211,7 @@ const SidebarLayout = ({ navItems, children, sidebarTitle = "NAVIGATION", darkMo
         </div>
       </div>
       {/* Main Content - adjusted padding for mobile */}
-      <div className="flex-1 max-w-none px-4 md:px-6 py-8">{children}</div>
+      <div className="flex-1 max-w-none px-4 md:px-6 lg:px-4 xl:px-2 py-8">{children}</div>
     </div>
   );
 };

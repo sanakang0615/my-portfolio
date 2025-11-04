@@ -38,7 +38,7 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
     { href: '/', label: 'About' },
     { href: '/research', label: 'Publications' },
     { href: '/projects', label: 'Projects' },
-    { href: '/hobbies/drawings', label: 'Hobbies' },
+    { href: '/hobbies/drawings', label: 'I Draw' },
     { href: '/cv', label: 'CV' },
   ];
 

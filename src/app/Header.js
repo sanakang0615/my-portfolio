@@ -18,7 +18,7 @@ const Header = ({ darkMode, setDarkMode, showSearch, setShowSearch, searchQuery,
           </div>
           <nav className="hidden md:flex space-x-6 ml-8">
             <Link href="/" className="text-sm hover:text-blue-400 transition-colors font-['Pretendard']">Works</Link>
-            <Link href="/hobbies/drawings" className="text-sm hover:text-blue-400 transition-colors font-['Pretendard']">Hobbies</Link>
+            <Link href="/hobbies/drawings" className="text-sm hover:text-blue-400 transition-colors font-['Pretendard']">I Draw</Link>
             <Link href="/blog" className="text-sm hover:text-blue-400 transition-colors font-['Pretendard']">Blog</Link>
             <Link href="/cv" className="text-sm hover:text-blue-400 transition-colors font-['Pretendard']">CV</Link>
             <Link href="/aboutsite" className="text-sm hover:text-blue-400 transition-colors font-['Pretendard']">What&apos;s This?</Link>

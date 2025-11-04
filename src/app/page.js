@@ -365,8 +365,9 @@ const Portfolio = () => {
                   <div className="prose max-w-3xl text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
         
         <p className="text-sm md:text-base leading-relaxed mb-4">
-          I am a second-year Master&apos;s student in Management Engineering at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor <a className="text-blue-600 hover:underline" href="https://scholar.google.com/citations?user=_B36WMgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Sunghyuk Park</a>&apos;s Lab, concentrating in Information Systems. My research spans two main areas: <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>📊</span> causal inference and econometrics</strong> and <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤖</span> natural language processing</strong> with a particular focus on low-resource languages.
-          I completed my undergraduate studies at <a className="text-blue-600" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, where I double-majored in Computer Science and Business Technology Management. During that time, I actively participated in projects related to data analytics, web development, and blockchain applications.
+          I am a second-year Master&apos;s student in Management Engineering at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor <a className="text-blue-600 hover:underline" href="https://scholar.google.com/citations?user=_B36WMgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Sunghyuk Park</a>&apos;s Lab, concentrating in Information Systems.
+          My research interests include (1) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔎</span> causal world models in large language models</strong>, (2) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> the social science of AI</strong>, and (3) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🌏</span> multilingual NLP</strong>.
+          I completed my undergraduate studies at <a className="text-blue-600" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, where I double-majored in Computer Science and Business Technology Management. During that time, I actively participated in projects related to machine learning, big data analytics, and blockchain applications.
         </p>
 
         <p className="text-sm md:text-base leading-relaxed mb-4">
@@ -398,7 +399,7 @@ const Portfolio = () => {
     href="https://www.lti.cs.cmu.edu/index.html" 
     target="_blank" 
     rel="noopener noreferrer"
-  >Language Technologies Institute</a>, I led the PhoniTale project as first author, which was accepted to EMNLP Main. Since May 2025, I have also been working as a Research Assistant with Professor <a 
+  >Language Technologies Institute</a>, I led the PhoniTale project as first author, which was accepted to EMNLP Main. From May to October 2025, I have also been working as a Research Assistant with Professor <a 
     className="text-blue-600 hover:underline" 
     href="https://scholars.cmu.edu/13042-minkyung-kim" 
     target="_blank" 
@@ -410,12 +411,17 @@ const Portfolio = () => {
     href="https://www.cmu.edu/tepper/index.html" 
     target="_blank" 
     rel="noopener noreferrer"
-  > Tepper School of Business</a> on a project examining the policy impact of real estate compensation.
-These experiences have provided valuable opportunities to broaden my research expertise and engage in international collaborations. </p> 
+  > Tepper School of Business</a> on a project using causal inference to study the impact of real estate policies.
+These experiences have greatly broadened my research expertise and enabled international collaborations.</p> 
 
-        <p className="text-sm md:text-base leading-relaxed mb-4">
-          I will be applying to PhD programs in the U.S. this fall, planning to begin in Fall 2026.
-        </p>
+        <div className="flex items-center gap-3 bg-blue-100 border-l-4 border-blue-400 rounded-xl p-2 shadow-sm">
+          <div className="flex-shrink-0 text-blue-500 flex items-center">
+            <span className="tossface pl-1 pt-0.5">🎒</span>
+          </div>
+          <div className="text-gray-900 text-sm md:text-base flex items-center" style={{ fontWeight: 300 }}>
+            I plan to apply for CS PhD programs this fall, aiming to start in Fall 2026.
+          </div>
+        </div>
 
       {/* Social Links - 데스크톱에서만 표시 */}
       <div className="hidden md:flex items-center justify-center md:justify-start space-x-6 mt-6">

@@ -365,53 +365,47 @@ const Portfolio = () => {
                   <div className="prose max-w-3xl text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
         
         <p className="text-sm md:text-base leading-relaxed mb-4">
-          I am a second-year Master&apos;s student in Management Engineering at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> in Professor <a className="text-blue-600 hover:underline" href="https://scholar.google.com/citations?user=_B36WMgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Sunghyuk Park</a>&apos;s Lab, concentrating in Information Systems.
-          My research interests include (1) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔎</span> causal world models in large language models</strong>, (2) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> the social science of AI</strong>, and (3) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🌏</span> multilingual NLP</strong>.
-          I completed my undergraduate studies at <a className="text-blue-600" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, where I double-majored in Computer Science and Business Technology Management. During that time, I actively participated in projects related to machine learning, big data analytics, and blockchain applications.
+          I am a second-year Master&apos;s student in Management Engineering at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, specializing in Information Systems.
+          My research interests include (1) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔎</span> causal world models in large language models</strong>, (2) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> computational social science</strong>, and (3) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🌏</span> multilingual NLP</strong>.
+          I completed my undergraduate studies at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> with a double major in Computer Science and Business Technology Management.
         </p>
 
         <p className="text-sm md:text-base leading-relaxed mb-4">
-  In Spring and Summer 2025, I joined the 
-  <a 
-    className="text-blue-600 hover:underline" 
-    href="https://www.cs.cmu.edu/" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  > School of Computer Science</a> at <a className="text-blue-600 hover:underline" 
-  href="https://www.cmu.edu/" 
-  target="_blank" 
-  rel="noopener noreferrer">Carnegie Mellon University </a> 
-  as a Visiting Scholar in the S3D Department. Under the guidance of Professors 
-  <a 
-    className="text-blue-600 hover:underline" 
-    href="https://scholar.google.com/citations?user=IWcGY98AAAAJ&hl=en" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  > Bhiksha Raj </a> 
-  and 
-  <a 
-    className="text-blue-600 hover:underline" 
-    href="http://ayesha.lti.cs.cmu.edu/mlsp/people/rsingh/index.html" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  > Rita Singh</a> at the <a 
-    className="text-blue-600 hover:underline" 
-    href="https://www.lti.cs.cmu.edu/index.html" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >Language Technologies Institute</a>, I led the PhoniTale project as first author, which was accepted to EMNLP Main. From May to October 2025, I have also been working as a Research Assistant with Professor <a 
-    className="text-blue-600 hover:underline" 
-    href="https://scholars.cmu.edu/13042-minkyung-kim" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >Minkyung Kim </a> 
-  at the 
-  <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/tepper/index.html" target="_blank" rel="noopener noreferrer" > Tepper School of Business</a> on a project using causal inference to study the impact of real estate policies.
-  These experiences have greatly broadened my research expertise and enabled international collaborations
-  </p> 
-  <p className="text-sm md:text-base leading-relaxed mb-4">
-    Before moving into computer science, I spent some time in physics. I was a silver medalist at the Korean Young Physicists&apos; Tournament — the national qualifier for the <a className="text-blue-600 hover:underline" href="https://www.iypt.org/" target="_blank" rel="noopener noreferrer" >IYPT</a> — and once took <a className="text-blue-600 hover:underline" href="https://drive.google.com/file/d/1AUU32I23TXZlf7HxasYZxXek8i-3h0E2/view?usp=sharing" target="_blank" rel="noopener noreferrer" >a selfie</a> with <a className="text-blue-600 hover:underline" href="https://www.nobelprize.org/prizes/physics/2017/thorne/facts/" target="_blank" rel="noopener noreferrer" >Kip Thorne</a> a year before his Nobel Prize in Physics.
-  </p> 
+          In 2025, I joined <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a>&apos;s <a 
+            className="text-blue-600 hover:underline" 
+            href="https://www.cs.cmu.edu/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          > School of Computer Science</a> as a Visiting Scholar, working with Professors 
+          <a 
+            className="text-blue-600 hover:underline" 
+            href="https://scholar.google.com/citations?user=IWcGY98AAAAJ&hl=en" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          > Bhiksha Raj </a> 
+          and 
+          <a 
+            className="text-blue-600 hover:underline" 
+            href="http://ayesha.lti.cs.cmu.edu/mlsp/people/rsingh/index.html" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          > Rita Singh</a> at the <a 
+            className="text-blue-600 hover:underline" 
+            href="https://www.lti.cs.cmu.edu/index.html" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >Language Technologies Institute</a>. There, I led the PhoniTale project—later accepted to EMNLP. I also worked with Professor <a 
+            className="text-blue-600 hover:underline" 
+            href="https://scholars.cmu.edu/13042-minkyung-kim" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >Minkyung Kim </a> 
+          at the 
+          <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/tepper/index.html" target="_blank" rel="noopener noreferrer" > Tepper School of Business</a> on a causal inference study examining the impact of real estate policies. These experiences strengthened my expertise in AI, causal modeling, and computational social science.
+        </p> 
+        <p className="text-sm md:text-base leading-relaxed mb-4">
+          Before moving into computer science, I spent some time in physics. I was a silver medalist at the Korean Young Physicists&apos; Tournament—the national qualifier for the <a className="text-blue-600 hover:underline" href="https://www.iypt.org/" target="_blank" rel="noopener noreferrer" >IYPT</a>—and once took a<span className="tossface pl-1 pt-0.5">📷 </span><a className="text-blue-600 hover:underline" href="https://drive.google.com/file/d/1AUU32I23TXZlf7HxasYZxXek8i-3h0E2/view?usp=sharing" target="_blank" rel="noopener noreferrer" >selfie</a> with <a className="text-blue-600 hover:underline" href="https://www.nobelprize.org/prizes/physics/2017/thorne/facts/" target="_blank" rel="noopener noreferrer" >Kip Thorne</a> a year before he won the Nobel Prize in Physics!
+        </p> 
 
         <div className="flex items-center gap-3 bg-blue-100 border-l-4 border-blue-400 rounded-xl p-2 shadow-sm">
           <div className="flex-shrink-0 text-blue-500 flex items-center">

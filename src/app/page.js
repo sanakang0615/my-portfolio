@@ -406,13 +406,14 @@ const Portfolio = () => {
     rel="noopener noreferrer"
   >Minkyung Kim </a> 
   at the 
-  <a 
-    className="text-blue-600 hover:underline" 
-    href="https://www.cmu.edu/tepper/index.html" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  > Tepper School of Business</a> on a project using causal inference to study the impact of real estate policies.
-These experiences have greatly broadened my research expertise and enabled international collaborations.</p> 
+  <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/tepper/index.html" target="_blank" rel="noopener noreferrer" > Tepper School of Business</a> on a project using causal inference to study the impact of real estate policies.
+  These experiences have greatly broadened my research expertise and enabled international collaborations
+  </p> 
+  <p className="text-sm md:text-base leading-relaxed mb-4">
+    Before moving into computer science, I spent some time in physics.
+    I was a silver medalist at the Korean Young Physicists&apos; Tournament, the national selection round for the <a className="text-blue-600 hover:underline" href="https://www.iypt.org/" target="_blank" rel="noopener noreferrer" >IYPT</a>,
+    and I even managed to take <a className="text-blue-600 hover:underline" href="https://drive.google.com/file/d/1AUU32I23TXZlf7HxasYZxXek8i-3h0E2/view?usp=sharing" target="_blank" rel="noopener noreferrer" >a selfie</a> with <a className="text-blue-600 hover:underline" href="https://www.nobelprize.org/prizes/physics/2017/thorne/facts/" target="_blank" rel="noopener noreferrer" >Kip Thorne</a>, one year before his Nobel Prize in Physics.
+  </p> 
 
         <div className="flex items-center gap-3 bg-blue-100 border-l-4 border-blue-400 rounded-xl p-2 shadow-sm">
           <div className="flex-shrink-0 text-blue-500 flex items-center">

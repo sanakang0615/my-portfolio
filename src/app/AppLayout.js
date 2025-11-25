@@ -23,10 +23,13 @@ const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children, darkMode: 
   useEffect(() => {
     setMounted(true);
     if (externalDarkMode === undefined) {
-      const savedMode = localStorage.getItem('darkMode');
-      if (savedMode !== null) {
-        setInternalDarkMode(JSON.parse(savedMode));
+      async function settingData() {
+        const savedMode = await localStorage.getItem('darkMode');
+        if (savedMode !== null) {
+          setInternalDarkMode(JSON.parse(savedMode));
+        }
       }
+      settingData();
     }
   }, [externalDarkMode]);
 

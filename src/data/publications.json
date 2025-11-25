@@ -13,29 +13,6 @@
         "image": "/publications/phonitale.png"
     },
     {
-      "title": "When Hyperlocal Meets Algorithm: A Natural Experiment in Community-to-AI Pricing Transition",
-      "authors": "<span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Myeongseok Gwon, Sung-hyuk Park",
-      "year": "2025",
-      "venue": "Under review at WISE (2025)",
-      "type": "Conference",
-      "status": "Under Review",
-      "tags": ["Hyperlocal marketplace", "Algorithmic pricing", "Price dispersion", "Anchoring effect", "Platform competition", "Natural experiment"],
-      "links": { },
-      "image": ""
-    },
-    {
-      "title": "LLMs Meet Match-Up Theory: A New Frontier in Influencer Recommendation",
-      "authors": "Myeongseok Gwon, <span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Minhyeong Lee, Sung-hyuk Park",
-      "year": "2025",
-      "venue": "Under review at WITS (2025)",
-      "type": "Conference",
-      "status": "Under Review",
-      "tags": ["IS", "Multimodal Learning", "LLM", "Recommender System", "Influencer Marketing"],
-      "links": { },
-      "description": "An interpretable influencer recommendation framework integrating match-up theory with LLM-based multimodal alignment. The system employs GPT-4o to generate brand-influencer fitness scores from Instagram captions, hashtags, and images, and demonstrates robust predictive power via econometric validation under label sparsity.",
-      "image": "/publications/llm-match-up.png"
-    },
-    {
         "title": "Beyond English-Centric AI: Strategic FrameWorkss for Developing Low-Resource Language Models",
         "authors": "Prithwiraj Choudhury, Do Yoon Kim, <span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>",
         "year": "2025",
@@ -48,6 +25,18 @@
         "image": "/publications/beyond-english.png"
     },
     {
+      "title": "LLMs Meet Match-Up Theory: A New Frontier in Influencer Recommendation",
+      "authors": "Myeongseok Gwon, <span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Minhyeong Lee, Sung-hyuk Park",
+      "year": "2025",
+      "venue": "To be submitted to ICWSM 2026",
+      "type": "Conference",
+      "status": "Under Review",
+      "tags": ["IS", "Multimodal Learning", "LLM", "Recommender System", "Influencer Marketing"],
+      "links": { },
+      "description": "An interpretable influencer recommendation framework integrating match-up theory with LLM-based multimodal alignment. The system employs GPT-4o to generate brand-influencer fitness scores from Instagram captions, hashtags, and images, and demonstrates robust predictive power via econometric validation under label sparsity.",
+      "image": "/publications/llm-match-up.png"
+    },
+    {
       "title": "Transforming Cardiology with AI: A Rigorous Review of Machine Learning Innovations and Implementation Pathways",
       "authors": "<span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Daesan-Oh, Sung-Hyuk Park, Firenze Inc. Team",
       "year": "2025",
@@ -57,6 +46,18 @@
       "links": {  },
       "image": "/publications/healthcare-ai.png",
       "description": "A survey paper that highlights the clinical utility and machine learning impact of large-scale health datasets, including population biobanks (e.g., UK Biobank, KoGES) and electronic health records (e.g., CPRD). The paper synthesizes key characteristics, such as data types and ancestry diversity, and demonstrates their role in improving risk prediction, validating cross-ethnic generalization, and addressing algorithmic bias in clinical applications."
-    }
+    },
+    {
+      "title": "Beyond English-Centric AI: Strategic FrameWorkss for Developing Low-Resource Language Models",
+      "authors": "Jaejung Roh, Hayder Albeit, Alistar Badinurmiyafar Abdulhusein, <span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Chanyoung Kim",
+      "year": "2025",
+      "venue": " Korean Patent Application No.10-2023-0161352 (filed Nov 20, 2023); Publication No. KR 10-2025-0074380 (published May 27, 2025)",
+      "status": "Accepted",
+      "type": "Patent",
+      "tags": [],
+      "links": { },
+      "description": "",
+      "image": "g"
+  }
   ]
 } 

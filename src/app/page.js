@@ -1,7 +1,6 @@
 "use client"
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
 import publicationsData from '../data/publications.json';
 import { 
   Mail, 
@@ -364,57 +363,67 @@ const Portfolio = () => {
                   <div className="flex-1 flex flex-col justify-center h-full min-w-0 order-3 md:order-1">
                   <div className="prose max-w-3xl text-left" style={{ color: darkMode ? '#cbd5e1' : '#374151' }}>
         
-        <p className="text-sm md:text-base leading-relaxed mb-4">
-          I am a second-year Master&apos;s student in Management Engineering at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, specializing in Information Systems.
-          My research interests include (1) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔎</span> causal world models in LLMs</strong>, (2) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> computational social science</strong>, and (3) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🌏</span> multilingual NLP</strong>.
-          I completed my undergraduate studies at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> with a double major in Computer Science and Business Technology Management.
-        </p>
-
-        <p className="text-sm md:text-base leading-relaxed mb-4">
-          In 2025, I joined <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a>&apos;s <a 
-            className="text-blue-600 hover:underline" 
-            href="https://www.cs.cmu.edu/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          > School of Computer Science</a> as a Visiting Scholar, working with Professors 
-          <a 
-            className="text-blue-600 hover:underline" 
-            href="https://scholar.google.com/citations?user=IWcGY98AAAAJ&hl=en" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          > Bhiksha Raj </a> 
-          and 
-          <a 
+        {/* <p className="text-sm md:text-base leading-relaxed mb-4">
+          I am a second-year Master&apos;s student in Management Engineering at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a>, specializing in Information Systems and advised by Prof. <a 
             className="text-blue-600 hover:underline" 
             href="http://ayesha.lti.cs.cmu.edu/mlsp/people/rsingh/index.html" 
             target="_blank" 
             rel="noopener noreferrer"
-          > Rita Singh</a> at the <a 
+          >Sunghyuk Park</a>.
+          My research interests include (1) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔎</span> causal world models in LLMs</strong>, (2) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> computational social science</strong>, and (3) <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🌏</span> multilingual NLP</strong>.
+          I completed my undergraduate studies at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> with a double major in Computer Science and Business Technology Management.
+        </p> */}
+        <p className="text-sm md:text-base leading-relaxed mb-4">
+          I am a second-year Master&apos;s student in Information Systems at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST</a>, advised by Professor <a 
+            className="text-blue-600 hover:underline" 
+            href="https://pure.kaist.ac.kr/en/persons/sunghyuk-park/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >Sunghyuk Park</a>.
+          My research interests include <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔎</span> causal world models for LLMs</strong>, <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> AI for the Humanities</strong>, and <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🌏</span> multilingual NLP</strong>.
+          I completed my undergraduate studies at KAIST with a double major in Computer Science and Business Technology Management.
+        </p>
+
+        <p className="text-sm md:text-base leading-relaxed mb-4">
+          As a visiting scholar at <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a> SCS, I was fortunate to work with 
+          Professors <a 
+            className="text-blue-600 hover:underline" 
+            href="http://ayesha.lti.cs.cmu.edu/mlsp/people/rsingh/index.html" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          > Rita Singh</a> and
+          <a 
+            className="text-blue-600 hover:underline" 
+            href="https://www.lti.cs.cmu.edu/people/faculty/raj-bhiksha.html" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          > Bhiksha Raj</a> at the <a 
             className="text-blue-600 hover:underline" 
             href="https://www.lti.cs.cmu.edu/index.html" 
             target="_blank" 
             rel="noopener noreferrer"
-          >Language Technologies Institute</a>. There, I led the PhoniTale project—later accepted to EMNLP. I also worked with Professor <a 
+          >Language Technologies Institute</a>. I also worked as a research assistant for Professor <a 
             className="text-blue-600 hover:underline" 
             href="https://scholars.cmu.edu/13042-minkyung-kim" 
             target="_blank" 
             rel="noopener noreferrer"
           >Minkyung Kim </a> 
-          at the 
-          <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/tepper/index.html" target="_blank" rel="noopener noreferrer" > Tepper School of Business</a> on a causal inference study examining the impact of real estate policies. These experiences strengthened my expertise in AI, causal modeling, and computational social science.
+          at 
+          <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/tepper/index.html" target="_blank" rel="noopener noreferrer" > CMU Tepper</a> on a causal inference study examining the impact of real estate policies.
+          {/* These experiences strengthened my expertise in AI, causal modeling, and computational social science. */}
         </p> 
         <p className="text-sm md:text-base leading-relaxed mb-4">
-          Before moving into computer science, I spent some time in physics. I was a silver medalist at the Korean Young Physicists&apos; Tournament—the national qualifier for the <a className="text-blue-600 hover:underline" href="https://www.iypt.org/" target="_blank" rel="noopener noreferrer" >IYPT</a>—and once took a<span className="tossface pl-1 pt-0.5">📷 </span><a className="text-blue-600 hover:underline" href="https://drive.google.com/file/d/1AUU32I23TXZlf7HxasYZxXek8i-3h0E2/view?usp=sharing" target="_blank" rel="noopener noreferrer" >selfie</a> with Professor <a className="text-blue-600 hover:underline" href="https://www.nobelprize.org/prizes/physics/2017/thorne/facts/" target="_blank" rel="noopener noreferrer" >Kip Thorne</a> a year before he won the Nobel Prize in Physics!
+          Before moving into CS, I spent time in physics. I was a silver medalist at the Korean Young Physicists&apos; Tournament (the national qualifier for the <a className="text-blue-600 hover:underline" href="https://www.iypt.org/" target="_blank" rel="noopener noreferrer" >IYPT</a>) and once took a<span className="tossface pl-1 pt-0.5">📷 </span><a className="text-blue-600 hover:underline" href="https://drive.google.com/file/d/1AUU32I23TXZlf7HxasYZxXek8i-3h0E2/view?usp=sharing" target="_blank" rel="noopener noreferrer" >selfie</a> with Professor <a className="text-blue-600 hover:underline" href="https://www.nobelprize.org/prizes/physics/2017/thorne/facts/" target="_blank" rel="noopener noreferrer" >Kip Thorne</a> a year before he won the Nobel Prize in Physics!
         </p> 
 
-        <div className="flex items-center gap-3 bg-blue-100 border-l-4 border-blue-400 rounded-xl p-2 shadow-sm">
+        {/* <div className="flex items-center gap-3 bg-blue-100 border-l-4 border-blue-400 rounded-xl p-2 shadow-sm">
           <div className="flex-shrink-0 text-blue-500 flex items-center">
             <span className="tossface pl-1 pt-0.5">🎒</span>
           </div>
           <div className="text-gray-900 text-sm md:text-base flex items-center" style={{ fontWeight: 300 }}>
             I plan to apply for CS PhD programs this fall, aiming to start in Fall 2026.
           </div>
-        </div>
+        </div> */}
 
       {/* Social Links - 데스크톱에서만 표시 */}
       <div className="hidden md:flex items-center justify-center md:justify-start space-x-6 mt-6">
@@ -424,7 +433,7 @@ const Portfolio = () => {
           rel="noopener noreferrer" 
           className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
         >
-          <Github size={24} />
+          <Github size={20} />
         </a>
         
         <a 
@@ -433,7 +442,7 @@ const Portfolio = () => {
           rel="noopener noreferrer" 
           className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
         >
-          <Linkedin size={24} />
+          <Linkedin size={20} />
         </a>
         
         <a 
@@ -442,7 +451,7 @@ const Portfolio = () => {
           rel="noopener noreferrer" 
           className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
         >
-          <FontAwesomeIcon icon={faGoogleScholar} size="lg" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" />
+          <FontAwesomeIcon icon={faGoogleScholar} size="1x" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" />
         </a>
         
         <a 
@@ -451,7 +460,7 @@ const Portfolio = () => {
           rel="noopener noreferrer" 
           className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
           </svg>
         </a>
@@ -470,7 +479,7 @@ const Portfolio = () => {
                         rel="noopener noreferrer" 
                         className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                       >
-                        <Github size={24} />
+                        <Github size={20} />
                       </a>
                       
                       <a 
@@ -479,7 +488,7 @@ const Portfolio = () => {
                         rel="noopener noreferrer" 
                         className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                       >
-                        <Linkedin size={24} />
+                        <Linkedin size={20} />
                       </a>
                       
                       <a 
@@ -488,7 +497,7 @@ const Portfolio = () => {
                         rel="noopener noreferrer" 
                         className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                       >
-                        <FontAwesomeIcon icon={faGoogleScholar} size="lg" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" />
+                        <FontAwesomeIcon icon={faGoogleScholar} size="1x" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" />
                       </a>
                       
                       <a 
@@ -497,7 +506,7 @@ const Portfolio = () => {
                         rel="noopener noreferrer" 
                         className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                       >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                       </a>
@@ -506,14 +515,11 @@ const Portfolio = () => {
                   
                   {/* Profile Image - 모바일에서는 위쪽, 데스크톱에서는 오른쪽 */}
                   <div className="flex-shrink-0 order-1 md:order-2">
-                    <div className={`w-72 md:w-80 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
-                      <Image
-                        src="/my_photo/my_photo_4.jpg"
+                    <div className={`w-72 md:w-80 h-72 md:h-80 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
+                      <img
+                        src="/my_photo/my_photo_emnlp_2.jpg"
                         alt="Profile Photo"
-                        width={288}
-                        height={288}
-                        className="w-full h-full object-cover"
-                        quality={95}
+                        className="w-full h-full object-cover object-top"
                       />
                     </div>
                   </div>

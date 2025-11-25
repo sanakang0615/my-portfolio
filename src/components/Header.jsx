@@ -51,9 +51,9 @@ const Header = ({ darkMode, setDarkMode, setShowSearch }) => {
           {/* Left side - Sana Kang name (hidden on About page and mobile) */}
           <div className="hidden md:flex items-center flex-1">
             {pathname !== '/' && (
-              <div className="flex items-center">
+              <Link href="/" className="flex items-center">
                 <h1 className="text-lg md:text-xl font-semibold">Sana Kang</h1>
-              </div>
+              </Link>
             )}
           </div>
 

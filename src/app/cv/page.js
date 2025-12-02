@@ -50,14 +50,14 @@ const CV = () => {
           <div className={`flex items-center justify-between p-4 border-b ${darkMode ? 'border-gray-600 bg-gray-800' : 'border-gray-200 bg-white'}`}>
             <div className="flex items-center gap-4">
               <h3 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-800'}`}>Curriculum Vitae</h3>
-              <span className={`text-sm font-semibold ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Last updated: 25.11.25</span>
+              <span className={`text-sm font-semibold ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Last updated: 25.12.01</span>
             </div>
           </div>
           
           {/* Desktop PDF Viewer */}
           <div className="hidden md:block w-full h-[calc(100vh-180px)] overflow-hidden">
             <iframe
-              src="/CV/CV_SanaKang_1125.pdf"
+              src="/CV/CV_SanaKang_1201.pdf"
               className="w-full h-full border-0"
               title="CV PDF Viewer"
               allowFullScreen

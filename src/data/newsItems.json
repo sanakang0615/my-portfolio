@@ -3,38 +3,34 @@
     {
       "date": "2025.11",
       "icon": "📄",
-      "title": " Heading to Suzhou to present at EMNLP 2025. (Come check out my poster!)",
-      "linkText": "my poster",
-      "link": "https://drive.google.com/file/d/1un7ErDFVJ3WJ9Wy8SiJOaE0TxMVGQvPC/view?usp=sharing"
+      "title": "Won the 1st prize at the Global Data Convergence Talent Prog. Showcase hosted by Ministry of Science & ICT and IITP.",
+      "linkText": "",
+      "link": "https://www.iitp.kr/"
     },
     {
       "date": "2025.11",
       "icon": "📄",
-      "title": "Featured in The Korea JoongAng Daily highlighting outstanding student achievements from KAIST.",
-      "linkText": "The Korea JoongAng Daily",
-      "link": "https://www.joongang.co.kr/article/25379464"
+      "title": "Heading to Suzhou to present at the EMNLP 2025 Main Conference. (Come check out my poster!)",
+      "links": [
+        { "text": "EMNLP 2025", "href": "https://2025.emnlp.org/" },
+        { "text": "my poster", "href": "https://drive.google.com/file/d/1un7ErDFVJ3WJ9Wy8SiJOaE0TxMVGQvPC/view?usp=sharing" }
+      ]
     },
     {
       "date": "2025.10",
       "icon": "📄",
-      "title": "Won the Excellence Award at the LLM Clinical Note Challenge organized by Seoul National University Bundang Hospital (SNUBH).",
+      "title": "Won the Excellence Award at the LLM Clinical Note Challenge organized by Seoul National University Bundang Hospital.",
       "linkText": "Seoul National University Bundang Hospital",
       "link": "https://www.snubh.org/dh/en/"
     },
     {
-        "date": "2025.08",
-        "icon": "📄",
-        "title": "Accepted to EMNLP 2025 Main Conference.",
-        "linkText": "EMNLP 2025",
-        "link": "https://2025.emnlp.org/"
-    },
-    {
         "date": "2025.06",
         "icon": "📚",
-        "title": "Accepted to Handbook on AI and Strategy (Edward Elgar Publishing), with Prof. Prithwiraj Choudhury and Do Yoon Kim",
+        "title": "Accepted to Handbook on AI and Strategy (Edward Elgar Publishing), with Prof. Prithwiraj Choudhury and Do Yoon Kim.",
         "linkText": "Handbook on Artificial Intelligence and Strategy",
         "link": "https://rossweb.bus.umich.edu/ai-handbook/",
         "links": [
+          { "text": "Handbook on AI and Strategy", "href": "https://www.e-elgar.com/shop/gbp/handbook-of-artificial-intelligence-and-strategy-9781035345878.html?srsltid=AfmBOortPK2FBOOnLlovv5UYmIpwRI0Z9n_hpnw1Y7XQjB7nEytsLOBr" },
           { "text": "Prithwiraj Choudhury", "href": "https://www.lse.ac.uk/management/people/academic-staff/raj-choudhury" },
           { "text": "Do Yoon Kim", "href": "https://www.bc.edu/bc-web/schools/carroll-school/faculty-research/faculty-directory/do-yoon-kim.html" }
         ]
@@ -42,7 +38,7 @@
     {
         "date": "2025.05",
         "icon": "🖥️",
-        "title": "Started as a Research Assistant with Prof. Minkyung Kim and Prof. Meng Liu at CMU Tepper",
+        "title": "Started as a Research Assistant with Prof. Minkyung Kim and Prof. Meng Liu at CMU Tepper.",
         "links": [
           { "text": "Minkyung Kim", "href": "https://scholars.cmu.edu/13042-minkyung-kim" },
           { "text": "Meng Liu", "href": "https://olin.washu.edu/faculty/meng-liu" },

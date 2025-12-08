@@ -380,7 +380,7 @@ const Portfolio = () => {
             target="_blank" 
             rel="noopener noreferrer"
           >Sunghyuk Park</a>.
-          My research interests include <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔎</span> causal world models for LLMs</strong>, <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> AI for the Humanities</strong>, and <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🌏</span> multilingual NLP</strong>.
+          My research interests include <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔗</span> causal world models for LLMs</strong> and <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> AI for high-stakes domains (healthcare, human behavior)</strong>.
           I completed my undergraduate studies at KAIST with a double major in Computer Science and Business Technology Management.
         </p>
 

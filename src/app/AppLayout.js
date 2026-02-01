@@ -64,7 +64,7 @@ const AppLayout = ({ navItems, sidebarTitle = "NAVIGATION", children, darkMode: 
   }
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
+    <div className={`min-h-screen h-auto transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
       {/* Header */}
       <Header
         darkMode={darkMode}

@@ -8,7 +8,7 @@ const SidebarLayout = ({ navItems, children, sidebarTitle = "NAVIGATION", darkMo
   const activeNav = navItems.find(item => item.id === activeSection);
   const displayTitle = sidebarTitle;
   return (
-    <div className="flex">
+    <div className="flex min-h-0">
       {/* Custom Scrollbar Styles */}
       <style jsx global>{`
         /* 사이드바 전체 스크롤바 */

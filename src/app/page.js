@@ -374,46 +374,49 @@ const Portfolio = () => {
           I completed my undergraduate studies at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> with a double major in Computer Science and Business Technology Management.
         </p> */}
         <p className="text-sm md:text-base leading-relaxed mb-4">
-          I am a second-year Master&apos;s student in Information Systems at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST</a>, advised by Professor <a 
-            className="text-blue-600 hover:underline" 
-            href="https://pure.kaist.ac.kr/en/persons/sunghyuk-park/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >Sunghyuk Park</a>.
-          My research interests include <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔗</span> causal world models for LLMs</strong> and <strong><span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> AI for high-stakes domains (healthcare, human behavior)</strong>.
-          I completed my undergraduate studies at KAIST with a double major in Computer Science and Business Technology Management.
+          I completed my Master&apos;s in Information Systems at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST</a>, advised by Professor Sunghyuk Park.
+          My research interests include <span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔗</span> causal world models for LLMs and <span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> AI for high-stakes domains (healthcare, human behavior).
+          I completed my undergraduate studies at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST</a> with a double major in Computer Science and Business Technology Management.
         </p>
 
         <p className="text-sm md:text-base leading-relaxed mb-4">
-          As a visiting scholar at <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a> SCS, I was fortunate to work with 
-          Professors <a 
+          As a visiting scholar at <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a> School of Computer Science, I was fortunate to work with 
+          Professors
+          {/* <a 
             className="text-blue-600 hover:underline" 
             href="http://ayesha.lti.cs.cmu.edu/mlsp/people/rsingh/index.html" 
             target="_blank" 
             rel="noopener noreferrer"
-          > Rita Singh</a> and
-          <a 
+          > Rita Singh</a> */}
+          and
+          {/* <a 
             className="text-blue-600 hover:underline" 
             href="https://www.lti.cs.cmu.edu/people/faculty/raj-bhiksha.html" 
             target="_blank" 
             rel="noopener noreferrer"
-          > Bhiksha Raj</a> at the <a 
+          > Bhiksha Raj</a> */} Bhiksha Raj 
+          at the <a 
             className="text-blue-600 hover:underline" 
             href="https://www.lti.cs.cmu.edu/index.html" 
             target="_blank" 
             rel="noopener noreferrer"
-          >Language Technologies Institute</a>. I also worked as a research assistant for Professor <a 
+          >Language Technologies Institute</a>. I also worked as a research assistant for Professor
+          {/* <a 
             className="text-blue-600 hover:underline" 
             href="https://scholars.cmu.edu/13042-minkyung-kim" 
             target="_blank" 
             rel="noopener noreferrer"
-          >Minkyung Kim </a> 
+          >Minkyung Kim </a>  */}
+          Minkyung Kim
           at 
           <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/tepper/index.html" target="_blank" rel="noopener noreferrer" > CMU Tepper</a> on a causal inference study examining the impact of real estate policies.
           {/* These experiences strengthened my expertise in AI, causal modeling, and computational social science. */}
         </p> 
         <p className="text-sm md:text-base leading-relaxed mb-4">
-          Before moving into CS, I spent time in physics. I was a silver medalist at the Korean Young Physicists&apos; Tournament (the national qualifier for the <a className="text-blue-600 hover:underline" href="https://www.iypt.org/" target="_blank" rel="noopener noreferrer" >IYPT</a>) and once took a<span className="tossface pl-1 pt-0.5">📷 </span><a className="text-blue-600 hover:underline" href="https://drive.google.com/file/d/1AUU32I23TXZlf7HxasYZxXek8i-3h0E2/view?usp=sharing" target="_blank" rel="noopener noreferrer" >selfie</a> with Professor <a className="text-blue-600 hover:underline" href="https://www.nobelprize.org/prizes/physics/2017/thorne/facts/" target="_blank" rel="noopener noreferrer" >Kip Thorne</a> a year before he won the Nobel Prize in Physics!
+          Before moving into CS, I spent time in physics. I was a silver medalist at the Korean Young Physicists&apos; Tournament (the national qualifier for the <a className="text-blue-600 hover:underline" href="https://www.iypt.org/" target="_blank" rel="noopener noreferrer" >IYPT</a>) and once took a<span className="tossface pl-1 pt-0.5">📷 </span><a className="text-blue-600 hover:underline" href="https://drive.google.com/file/d/1AUU32I23TXZlf7HxasYZxXek8i-3h0E2/view?usp=sharing" target="_blank" rel="noopener noreferrer" >selfie</a> with Professor
+          {/* <a className="text-blue-600 hover:underline" href="https://www.nobelprize.org/prizes/physics/2017/thorne/facts/" target="_blank" rel="noopener noreferrer" >Kip Thorne</a> */}
+          Kip Thorne
+          a year before he won the Nobel Prize in Physics!
         </p> 
 
         {/* <div className="flex items-center gap-3 bg-blue-100 border-l-4 border-blue-400 rounded-xl p-2 shadow-sm">
@@ -515,13 +518,13 @@ const Portfolio = () => {
                   
                   {/* Profile Image - 모바일에서는 위쪽, 데스크톱에서는 오른쪽 */}
                   <div className="flex-shrink-0 order-1 md:order-2">
-                    <div className={`w-72 md:w-80 h-72 md:h-80 mt-0 rounded-lg overflow-hidden border-2 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'} flex items-center justify-center`}>
-                      <img
-                        src="/my_photo/my_photo_emnlp_2.jpg"
-                        alt="Profile Photo"
-                        className="w-full h-full object-cover object-top"
-                      />
-                    </div>
+                    <img
+                      src="/my_photo/my_photo_2026.jpg"
+                      alt="Profile Photo"
+                      className={`w-56 md:w-64 h-auto rounded-lg border-2 ${
+                        darkMode ? 'border-gray-700' : 'border-gray-200'
+                      } object-contain object-top`}
+                    />
                   </div>
                 </div>
               </section>

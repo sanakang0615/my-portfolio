@@ -57,7 +57,7 @@ const CV = () => {
           {/* Desktop PDF Viewer */}
           <div className="hidden md:block w-full h-[calc(100vh-180px)] overflow-hidden">
             <iframe
-              src="/CV/CV_SanaKang_1201.pdf"
+              src="/CV/CV_SanaKang_0310.pdf"
               className="w-full h-full border-0"
               title="CV PDF Viewer"
               allowFullScreen
@@ -69,8 +69,8 @@ const CV = () => {
             
             
             <a
-              href="/CV/CV_SanaKang_0830.pdf"
-              download="CV_SanaKang.pdf"
+              href="/CV/CV_SanaKang_0310.pdf"
+              download="CV_SanaKang_0310.pdf"
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-sm ${
                 darkMode 
                   ? 'bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-gray-200 shadow-gray-900/20 hover:shadow-gray-900/30' 

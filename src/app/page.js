@@ -375,27 +375,13 @@ const Portfolio = () => {
         </p> */}
         <p className="text-sm md:text-base leading-relaxed mb-4">
           I completed my Master&apos;s in Information Systems at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST</a>, advised by Professor Sunghyuk Park.
-          My research interests include <span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔗</span> causal world models for LLMs and <span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> AI for high-stakes domains (healthcare, human behavior).
+          My research interests include <span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔗</span> Causal world models for LLMs and <span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> AI for high-stakes domains (healthcare, human behavior).
           I completed my undergraduate studies at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST</a> with a double major in Computer Science and Business Technology Management.
         </p>
 
         <p className="text-sm md:text-base leading-relaxed mb-4">
           As a visiting scholar at <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a> School of Computer Science, I was fortunate to work with 
-          Professors
-          {/* <a 
-            className="text-blue-600 hover:underline" 
-            href="http://ayesha.lti.cs.cmu.edu/mlsp/people/rsingh/index.html" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          > Rita Singh</a> */}
-          and
-          {/* <a 
-            className="text-blue-600 hover:underline" 
-            href="https://www.lti.cs.cmu.edu/people/faculty/raj-bhiksha.html" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          > Bhiksha Raj</a> */} Bhiksha Raj 
-          at the <a 
+          Professors Rita Singh and Bhiksha Raj at the <a 
             className="text-blue-600 hover:underline" 
             href="https://www.lti.cs.cmu.edu/index.html" 
             target="_blank" 
@@ -408,14 +394,11 @@ const Portfolio = () => {
             rel="noopener noreferrer"
           >Minkyung Kim </a>  */}
           Minkyung Kim
-          at 
-          <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/tepper/index.html" target="_blank" rel="noopener noreferrer" > CMU Tepper</a> on a causal inference study examining the impact of real estate policies.
+          at <a className="text-blue-600 hover:underline" href="https://www.cmu.edu/tepper/index.html" target="_blank" rel="noopener noreferrer" >CMU Tepper</a> on a causal inference study examining the impact of real estate policies.
           {/* These experiences strengthened my expertise in AI, causal modeling, and computational social science. */}
         </p> 
         <p className="text-sm md:text-base leading-relaxed mb-4">
-          Before moving into CS, I spent time in physics. I was a silver medalist at the Korean Young Physicists&apos; Tournament (the national qualifier for the <a className="text-blue-600 hover:underline" href="https://www.iypt.org/" target="_blank" rel="noopener noreferrer" >IYPT</a>) and once took a<span className="tossface pl-1 pt-0.5">📷 </span><a className="text-blue-600 hover:underline" href="https://drive.google.com/file/d/1AUU32I23TXZlf7HxasYZxXek8i-3h0E2/view?usp=sharing" target="_blank" rel="noopener noreferrer" >selfie</a> with Professor
-          {/* <a className="text-blue-600 hover:underline" href="https://www.nobelprize.org/prizes/physics/2017/thorne/facts/" target="_blank" rel="noopener noreferrer" >Kip Thorne</a> */}
-          Kip Thorne
+          Before moving into CS, I spent time in physics. I was a silver medalist at the Korean Young Physicists&apos; Tournament (the national qualifier for the <a className="text-blue-600 hover:underline" href="https://www.iypt.org/" target="_blank" rel="noopener noreferrer" >IYPT</a>) and once took a<span className="tossface pl-1 pt-0.5">📷 </span><a className="text-blue-600 hover:underline" href="https://drive.google.com/file/d/1AUU32I23TXZlf7HxasYZxXek8i-3h0E2/view?usp=sharing" target="_blank" rel="noopener noreferrer" >selfie</a> with Professor Kip Thorne
           a year before he won the Nobel Prize in Physics!
         </p> 
 

@@ -1,6 +1,28 @@
 {
   "newsItems": [
     {
+      "date": "2026.08",
+      "icon": "🎤",
+      "title": "Presented \"When Rubrics Change: Cross-Rubric Generalization for Critical Thinking Essay Scoring\" as an author and speaker at the KDD-26 AIEd Special Day in Jeju.",
+      "links": [
+        {
+          "text": "KDD-26 AIEd Special Day",
+          "href": "https://sites.google.com/view/aiedkdd26/schedule-proceedings"
+        }
+      ]
+    },
+    {
+      "date": "2026.05",
+      "icon": "🎓",
+      "title": "Heading to Seoul to attend the Festival of Learning (FoL) 2026 in person.",
+      "links": [
+        {
+          "text": "Festival of Learning (FoL) 2026",
+          "href": "https://festival-of-learning-2026.info/"
+        }
+      ]
+    },
+    {
       "date": "2026.02",
       "icon": "🏥",
       "title": "Started as a Researcher at the Center for AI in Healthcare, Seoul National University Bundang Hospital.",

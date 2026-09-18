@@ -374,9 +374,9 @@ const Portfolio = () => {
           I completed my undergraduate studies at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST </a> with a double major in Computer Science and Business Technology Management.
         </p> */}
         <p className="text-sm md:text-base leading-relaxed mb-4">
-          I completed my Master&apos;s in Information Systems at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST</a>, advised by Professor Sunghyuk Park.
-          My research interests include <span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔗</span> Causal world models for LLMs and <span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> AI for high-stakes domains (healthcare, human behavior).
-          I completed my undergraduate studies at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer"> KAIST</a> with a double major in Computer Science and Business Technology Management.
+          I am a first-year Computer Science Ph.D. student at <a className="text-blue-600 hover:underline" href="https://www.cics.umass.edu/" target="_blank" rel="noopener noreferrer">UMass Amherst</a>, advised by Professor <a className="text-blue-600 hover:underline" href="https://people.umass.edu/~andrewlan/" target="_blank" rel="noopener noreferrer">Andrew Lan</a>.
+          My research is in <span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>💬</span> NLP, with a focus on <span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🤝</span> modeling human behavior, learning in the age of AI, and human–agent work more broadly; <span className="tossface" style={{ fontSize: '1.1em', filter: 'saturate(1.5) contrast(1.2)', display: 'inline-block' }}>🔗</span> causal methods are one of the approaches I use.
+          I completed my undergraduate and master&apos;s studies at <a className="text-blue-600 hover:underline" href="https://www.kaist.ac.kr/en" target="_blank" rel="noopener noreferrer">KAIST</a> in Computer Science and Information Systems.
         </p>
 
         <p className="text-sm md:text-base leading-relaxed mb-4">

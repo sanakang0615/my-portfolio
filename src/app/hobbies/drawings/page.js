@@ -111,7 +111,7 @@ const Hobbies = () => {
             <p className={`text-sm leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
               I love listening to a single piece of music on repeat and translating the emotions into paintings. Here are a few of my works. If you&apos;d like to see more, please visit my{' '}
               <a
-                href="https://musicdrawnby.sanakang.xyz"
+                href="https://musicdrawnby.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`font-semibold hover:underline inline-flex items-center gap-1 ${

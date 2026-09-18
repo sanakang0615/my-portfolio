@@ -1,6 +1,18 @@
 {
   "publications": [
     {
+        "title": "When Rubrics Change: Cross-Rubric Generalization for Critical Thinking Essay Scoring",
+        "year": "2026",
+        "authors": "Nischal Ashok Kumar, Payu Wittawatolarn, <span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Marisa Peczuh, Blair Lehman, Ryan Baker, Caitlin Mills, Sherry Lachman, Ruochen Sun, Andrew Lan",
+        "venue": "<a href='https://sites.google.com/view/aiedkdd26/schedule-proceedings'>KDD 2026 AI for Education (AIEd) Special Day</a>",
+        "status": "Presented",
+        "type": "Conference",
+        "tags": ["CS", "NLP", "Education", "LLM", "Essay Scoring"],
+        "links": {"website": "https://sites.google.com/view/aiedkdd26/schedule-proceedings"},
+        "description": "A study of cross-rubric generalization for automated scoring of critical thinking essays when evaluation rubrics change at test time.",
+        "image": ""
+    },
+    {
         "title": "PHONITALE: Phonologically Grounded Mnemonic Generation for Typologically Distant Language Pairs",
         "year": "2025",
         "authors": "<span style='text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2.5px;'> Sana Kang</span>, Myeongseok Gwon, Suyeong Kwon, Jaewook Lee, Andrew Lan, Bhiksha Raj, Rita Singh",

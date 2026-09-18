@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "title": "When Rubrics Change: Cross-Rubric Generalization for Critical Thinking Essay Scoring",
+      "type": "Research",
+      "description": "# Overview\n\nFull paper presented at the [KDD-26 AI for Education (AIEd) Special Day](https://sites.google.com/view/aiedkdd26/schedule-proceedings) in Jeju. I was an author and in-person presenter.\n\nWe study how automated essay scoring models generalize when **critical-thinking rubrics change**, rather than assuming a single fixed rubric at train and test time.\n\n# Authors\n\nNischal Ashok Kumar, Payu Wittawatolarn, Sana Kang, Marisa Peczuh, Blair Lehman, Ryan Baker, Caitlin Mills, Sherry Lachman, Ruochen Sun, and Andrew Lan (UMass, UMN, Brighter Research, Adelaide, AERDF).",
+      "role": "Author & Presenter (KDD-26 AIEd Special Day)",
+      "tags": ["NLP", "Education", "LLM", "Essay Scoring"],
+      "stack": ["Python", "NLP", "LLM"],
+      "period": "2026",
+      "links": {
+        "paper": "https://sites.google.com/view/aiedkdd26/schedule-proceedings"
+      },
+      "emoji": "📝",
+      "images": []
+    },
+    {
       "title": "Kyobo Life Insurance AI Chatbot",
       "type": "Web App",
       "description": "Description in progress",

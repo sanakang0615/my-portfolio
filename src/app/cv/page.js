@@ -50,14 +50,14 @@ const CV = () => {
           <div className={`flex items-center justify-between p-4 border-b ${darkMode ? 'border-gray-600 bg-gray-800' : 'border-gray-200 bg-white'}`}>
             <div className="flex items-center gap-4">
               <h3 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-800'}`}>Curriculum Vitae</h3>
-              <span className={`text-sm font-semibold ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Last updated: 25.12.01</span>
+              <span className={`text-sm font-semibold ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Last updated: 26.08.11</span>
             </div>
           </div>
           
           {/* Desktop PDF Viewer */}
           <div className="hidden md:block w-full h-[calc(100vh-180px)] overflow-hidden">
             <iframe
-              src="/CV/CV_SanaKang_0310.pdf"
+              src="/CV/CV_SanaKang_0811.pdf"
               className="w-full h-full border-0"
               title="CV PDF Viewer"
               allowFullScreen
@@ -69,8 +69,8 @@ const CV = () => {
             
             
             <a
-              href="/CV/CV_SanaKang_0310.pdf"
-              download="CV_SanaKang_0310.pdf"
+              href="/CV/CV_SanaKang_0811.pdf"
+              download="CV_SanaKang_0811.pdf"
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-sm ${
                 darkMode 
                   ? 'bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-gray-200 shadow-gray-900/20 hover:shadow-gray-900/30' 

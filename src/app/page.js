@@ -469,7 +469,7 @@ const Portfolio = () => {
                             display: "inline-block",
                           }}
                         >
-                          �
+                          🔤
                         </span>{" "}
                         NLP, with a focus on{" "}
                         <span
